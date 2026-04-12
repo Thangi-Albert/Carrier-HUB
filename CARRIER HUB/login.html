@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Account Creation</title>
-     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <title>Get Started On Your Account</title>
+       <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="sign up .css">
+    <link rel="stylesheet" href="login.css">
 </head>
 <body>
 
@@ -18,7 +18,7 @@
             <!-- Logo -->
             <div class="logo">
                 <a href="index.html">
-                    <span class="logo-text">WILLTECH</span>
+                    <span class="in">WILLTECH</span>
                 </a>
             </div>
 
@@ -39,50 +39,49 @@
 
             <!-- Auth Options -->
             <div class="auth-buttons" id="authButtons">
-                <a href="login.html" class="btn-login">Login</a>
+                <a href="#login" class="btn-login">Login</a>
                 <a href="sign up.html" class="btn-signup">Sign Up</a>
             </div>
         </div>
     </nav>
 
-
-<section>
+    <section>
 
         <!-- Heading -->
         <header>
-            <h2>Create your account</h2>
-            <p>Select how you want to join WillTech</p>
+            <h2>Welcome Back</h2>
+            <p>Login to your WillTech account</p>
         </header>
 
-        <!-- Signup Options -->
+        <!-- Login Options -->
         <div id="options">
 
-            <button onclick="selectRole('mentor')" class="signup-option">
+            <button onclick="selectAccountType('mentor')" class="login-option">
                 <i class="fas fa-chalkboard-user"></i>
-                <span>Sign up as a Mentor</span>
-                <p>Share your expertise and guide others</p>
+                <span>Mentor Account</span>
+                <p>Access your mentorship dashboard</p>
             </button>
-            <button onclick="selectRole('student')" class="signup-option">
+            <button onclick="selectAccountType('student')" class="login-option">
                 <i class="fas fa-graduation-cap"></i>
-                <span>Sign up as a Student</span>
-                <p>Learn from experienced professionals</p>
+                <span>Student Account</span>
+                <p>Access your learning journey</p>
             </button>
-            <button onclick="selectRole('jobseeker')" class="signup-option">
+            <button onclick="selectAccountType('jobseeker')" class="login-option">
                 <i class="fas fa-briefcase"></i>
-                <span>Sign up as a Job Seeker</span>
-                <p>Find your dream job opportunity</p>
+                <span>Job Seeker Account</span>
+                <p>Access job opportunities</p>
             </button>
-            <button onclick="selectRole('client')" class="signup-option">
+            <button onclick="selectAccountType('client')" class="login-option">
                 <i class="fas fa-building"></i>
-                <span>Sign up as a Client</span>
-                <p>Hire talented professionals</p>
+                <span>Client Account</span>
+                <p>Manage hiring and careers</p>
             </button>
 
         </div>
 
         <!-- Social Login Options -->
         <div id="social-login">
-            <p>Or sign up with</p>
+            <p>Or login with</p>
             <div class="social-buttons">
                 <button class="social-btn google" onclick="socialLogin('google')">
                     <i class="fab fa-google"></i> Google
@@ -100,241 +99,114 @@
         <!-- Forms Container -->
         <div id="forms">
 
-            <!-- Mentor Form -->
+            <!-- Mentor Login Form -->
             <form id="mentor" class="form-step">
-                <h3>Mentor Sign Up</h3>
+                <h3>Mentor Login</h3>
                 
                 <div class="form-group">
-                    <input type="text" placeholder="Full Name" required>
-                </div>
-
-                <div class="form-group">
                     <input type="email" placeholder="Email Address" required>
-                </div>
-
-                <div class="form-group">
-                    <input type="tel" placeholder="Phone Number" required>
-                </div>
-
-                <div class="form-group">
-                    <input type="text" placeholder="Area of Expertise" required>
-                </div>
-
-                <div class="form-group">
-                    <input type="number" placeholder="Years of Experience" required>
-                </div>
-
-                <div class="form-group">
-                    <input type="number" placeholder="Hourly Rate ($)" required>
-                </div>
-
-                <div class="form-group">
-                    <textarea placeholder="Brief Bio (Tell us about yourself)" rows="4"></textarea>
                 </div>
 
                 <div class="form-group">
                     <input type="password" placeholder="Password" required>
                 </div>
 
-                <div class="form-group">
-                    <input type="password" placeholder="Confirm Password" required>
-                </div>
-
                 <div class="form-group checkbox">
-                    <input type="checkbox" id="mentor-terms" required>
-                    <label for="mentor-terms">I agree to the Terms of Service and Privacy Policy</label>
+                    <input type="checkbox" id="mentor-remember">
+                    <label for="mentor-remember">Remember me</label>
                 </div>
 
-                <button type="submit">Create Mentor Account</button>
+                <button type="submit">Login to Mentor Account</button>
+
+                <div class="form-footer">
+                    <p>Don't have an account? <a href="sign up.html">Sign up here</a></p>
+                    <p><a href="#forgot">Forgot your password?</a></p>
+                </div>
             </form>
 
-            <!-- Student Form -->
+            <!-- Student Login Form -->
             <form id="student" class="form-step">
-                <h3>Student Sign Up</h3>
+                <h3>Student Login</h3>
                 
                 <div class="form-group">
-                    <input type="text" placeholder="Full Name" required>
-                </div>
-
-                <div class="form-group">
                     <input type="email" placeholder="Email Address" required>
-                </div>
-
-                <div class="form-group">
-                    <input type="tel" placeholder="Phone Number" required>
-                </div>
-
-                <div class="form-group">
-                    <select required>
-                        <option value="">Select Your Field of Interest</option>
-                        <option value="technology">Technology</option>
-                        <option value="business">Business</option>
-                        <option value="design">Design</option>
-                        <option value="marketing">Marketing</option>
-                        <option value="finance">Finance</option>
-                        <option value="healthcare">Healthcare</option>
-                        <option value="other">Other</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <input type="text" placeholder="Current School/University" required>
-                </div>
-
-                <div class="form-group">
-                    <textarea placeholder="Tell us about your study goals and interests" rows="4"></textarea>
                 </div>
 
                 <div class="form-group">
                     <input type="password" placeholder="Password" required>
                 </div>
 
-                <div class="form-group">
-                    <input type="password" placeholder="Confirm Password" required>
-                </div>
-
                 <div class="form-group checkbox">
-                    <input type="checkbox" id="student-terms" required>
-                    <label for="student-terms">I agree to the Terms of Service and Privacy Policy</label>
+                    <input type="checkbox" id="student-remember">
+                    <label for="student-remember">Remember me</label>
                 </div>
 
-                <button type="submit">Create Student Account</button>
+                <button type="submit">Login to Student Account</button>
+
+                <div class="form-footer">
+                    <p>Don't have an account? <a href="sign up.html">Sign up here</a></p>
+                    <p><a href="#forgot">Forgot your password?</a></p>
+                </div>
             </form>
 
-            <!-- Job Seeker Form -->
+            <!-- Job Seeker Login Form -->
             <form id="jobseeker" class="form-step">
-                <h3>Job Seeker Sign Up</h3>
+                <h3>Job Seeker Login</h3>
                 
                 <div class="form-group">
-                    <input type="text" placeholder="Full Name" required>
-                </div>
-
-                <div class="form-group">
                     <input type="email" placeholder="Email Address" required>
-                </div>
-
-                <div class="form-group">
-                    <input type="tel" placeholder="Phone Number" required>
-                </div>
-
-                <div class="form-group">
-                    <input type="text" placeholder="Desired Job Role" required>
-                </div>
-
-                <div class="form-group">
-                    <select required>
-                        <option value="">Select Your Experience Level</option>
-                        <option value="entry">Entry Level (0-2 years)</option>
-                        <option value="junior">Junior (2-5 years)</option>
-                        <option value="mid">Mid Level (5-10 years)</option>
-                        <option value="senior">Senior (10+ years)</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <input type="text" placeholder="Industry Focus">
-                </div>
-
-                <div class="form-group">
-                    <label for="resume">Upload Resume (PDF or DOC)</label>
-                    <input type="file" id="resume" accept=".pdf,.doc,.docx" required>
-                </div>
-
-                <div class="form-group">
-                    <textarea placeholder="Cover Letter or Professional Summary" rows="4"></textarea>
                 </div>
 
                 <div class="form-group">
                     <input type="password" placeholder="Password" required>
                 </div>
 
-                <div class="form-group">
-                    <input type="password" placeholder="Confirm Password" required>
-                </div>
-
                 <div class="form-group checkbox">
-                    <input type="checkbox" id="jobseeker-terms" required>
-                    <label for="jobseeker-terms">I agree to the Terms of Service and Privacy Policy</label>
+                    <input type="checkbox" id="jobseeker-remember">
+                    <label for="jobseeker-remember">Remember me</label>
                 </div>
 
-                <button type="submit">Create Job Seeker Account</button>
+                <button type="submit">Login to Job Seeker Account</button>
+
+                <div class="form-footer">
+                    <p>Don't have an account? <a href="sign up.html">Sign up here</a></p>
+                    <p><a href="#forgot">Forgot your password?</a></p>
+                </div>
             </form>
 
-            <!-- Client Form -->
+            <!-- Client Login Form -->
             <form id="client" class="form-step">
-                <h3>Client Sign Up</h3>
+                <h3>Client Login</h3>
                 
-                <div class="form-group">
-                    <input type="text" placeholder="Company Name" required>
-                </div>
-
                 <div class="form-group">
                     <input type="email" placeholder="Business Email" required>
                 </div>
 
                 <div class="form-group">
-                    <input type="tel" placeholder="Business Phone Number" required>
-                </div>
-
-                <div class="form-group">
-                    <input type="text" placeholder="Company Website">
-                </div>
-
-                <div class="form-group">
-                    <input type="text" placeholder="Company Size" required>
-                </div>
-
-                <div class="form-group">
-                    <select required>
-                        <option value="">Select Your Industry</option>
-                        <option value="technology">Technology</option>
-                        <option value="finance">Finance</option>
-                        <option value="healthcare">Healthcare</option>
-                        <option value="retail">Retail</option>
-                        <option value="education">Education</option>
-                        <option value="manufacturing">Manufacturing</option>
-                        <option value="other">Other</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <textarea placeholder="Describe Your Hiring Needs" rows="4" required></textarea>
-                </div>
-
-                <div class="form-group">
-                    <input type="text" placeholder="Your Name (Contact Person)" required>
-                </div>
-
-                <div class="form-group">
-                    <input type="text" placeholder="Your Job Title" required>
-                </div>
-
-                <div class="form-group">
                     <input type="password" placeholder="Password" required>
                 </div>
 
-                <div class="form-group">
-                    <input type="password" placeholder="Confirm Password" required>
-                </div>
-
                 <div class="form-group checkbox">
-                    <input type="checkbox" id="client-terms" required>
-                    <label for="client-terms">I agree to the Terms of Service and Privacy Policy</label>
+                    <input type="checkbox" id="client-remember">
+                    <label for="client-remember">Remember me</label>
                 </div>
 
-                <button type="submit">Create Client Account</button>
+                <button type="submit">Login to Client Account</button>
+
+                <div class="form-footer">
+                    <p>Don't have an account? <a href="sign up.html">Sign up here</a></p>
+                    <p><a href="#forgot">Forgot your password?</a></p>
+                </div>
             </form>
 
         </div>
 
     </section>
 
-
     <script>
         // Initialize - hide all forms on page load
         window.addEventListener('DOMContentLoaded', function() {
             hideAllForms();
-            resetButtonStyles();
         });
 
         // Function to hide all forms
@@ -345,24 +217,19 @@
             });
         }
 
-        // Function to reset button styles
-        function resetButtonStyles() {
-            const buttons = document.querySelectorAll('.signup-option');
-            buttons.forEach(btn => {
-                btn.classList.remove('active');
-            });
-        }
-
-        // Function to select role and show corresponding form
-        function selectRole(role) {
+        // Function to select account type and show corresponding form
+        function selectAccountType(type) {
             // Hide all forms
             hideAllForms();
 
             // Reset all buttons
-            resetButtonStyles();
+            const buttons = document.querySelectorAll('.login-option');
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+            });
 
             // Show selected form
-            const selectedForm = document.getElementById(role);
+            const selectedForm = document.getElementById(type);
             if (selectedForm) {
                 selectedForm.classList.add('active');
                 
@@ -373,9 +240,8 @@
             }
 
             // Add active class to selected button
-            const buttons = document.querySelectorAll('.signup-option');
             buttons.forEach(btn => {
-                if (btn.getAttribute('onclick') === `selectRole('${role}')`) {
+                if (btn.getAttribute('onclick') === `selectAccountType('${type}')`) {
                     btn.classList.add('active');
                 }
             });
@@ -383,9 +249,8 @@
 
         // Social login function
         function socialLogin(provider) {
-            console.log('Signing up with ' + provider);
-            // Add your social login logic here
-            alert('Signing up with ' + provider.charAt(0).toUpperCase() + provider.slice(1) + ' - Integration coming soon!');
+            console.log('Logging in with ' + provider);
+            alert('Logging in with ' + provider.charAt(0).toUpperCase() + provider.slice(1) + ' - Integration coming soon!');
         }
 
         // Hamburger menu toggle
@@ -424,12 +289,12 @@
             form.addEventListener('submit', function(e) {
                 e.preventDefault();
                 const formType = this.id;
-                alert('Form submitted for ' + formType.charAt(0).toUpperCase() + formType.slice(1) + '!\n\nIntegration with backend coming soon.');
-                // Add your form submission logic here
+                alert('Logging in as ' + formType.charAt(0).toUpperCase() + formType.slice(1) + '!\n\nIntegration with backend coming soon.');
             });
         });
     </script>
-    
+
+
 
 
 
@@ -450,7 +315,7 @@
         <!-- Top Section -->
         <div>
 
-            <!-- Left Side (Brand + Contact Info) -->
+            <!-- Left Side (Brand + Contfo) -->
             <div>
                 <div>
                     <p><strong>WILLTECH</strong></p>
@@ -528,10 +393,29 @@
 
 
 
-
     <script>
-      
+         // Hamburger menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        const authButtons = document.getElementById('authButtons');
 
-            </script>
+        if (hamburger) {
+            hamburger.addEventListener('click', function() {
+                hamburger.classList.toggle('active');
+                navLinks.classList.toggle('active');
+                authButtons.classList.toggle('active');
+            });
+
+            // Close menu when a link is clicked
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', function() {
+                    hamburger.classList.remove('active');
+                    navLinks.classList.remove('active');
+                    authButtons.classList.remove('active');
+                });
+            });
+            }
+    </script>
+    
 </body>
 </html>
