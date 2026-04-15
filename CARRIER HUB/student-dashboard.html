@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard | WILLTECH</title>
+    <link rel="stylesheet" href="mentor-dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>WILLTECH</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="#dashboard" class="active"><i class="fas fa-chart-line"></i> Dashboard</a></li>
+                    <li><a href="#my-courses"><i class="fas fa-book-open"></i> My Courses</a></li>
+                    <li><a href="#mentors"><i class="fas fa-chalkboard-user"></i> My Mentors</a></li>
+                    <li><a href="#sessions"><i class="fas fa-video"></i> Sessions</a></li>
+                    <li><a href="#assignments"><i class="fas fa-tasks"></i> Assignments</a></li>
+                    <li><a href="#progress"><i class="fas fa-chart-bar"></i> Progress</a></li>
+                    <li><a href="#messages"><i class="fas fa-envelope"></i> Messages</a></li>
+                    <li><a href="#certificates"><i class="fas fa-certificate"></i> Certificates</a></li>
+                    <li><a href="#settings"><i class="fas fa-cog"></i> Settings</a></li>
+                    <li><a href="login.html" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Navigation Bar -->
+            <header class="top-bar">
+                <div class="search-container">
+                    <i class="fas fa-search"></i>
+                    <input type="search" placeholder="Search courses, mentors, or assignments...">
+                </div>
+            </header>
+
+            <!-- ===================== DASHBOARD PAGE ===================== -->
+            <section id="dashboard" class="content-section">
+                <div class="welcome-header">
+                    <div>
+                        <h1>Welcome back, Scholar! </h1>
+                        <p>Here's your learning progress overview for this week</p>
+                    </div>
+                    <button class="primary-btn"><i class="fas fa-search"></i> Explore Courses</button>
+                </div>
+
+                <!-- Stats Grid -->
+                <div class="stats-grid">
+                    <div class="stat-card blue-gradient">
+                        <div class="stat-icon">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>Active Courses</h3>
+                            <p class="stat-number">5</p>
+                            <span class="stat-change positive">+1 this week</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card green-gradient">
+                        <div class="stat-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>Learning Hours</h3>
+                            <p class="stat-number">48.5</p>
+                            <span class="stat-change positive">+8 this week</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card purple-gradient">
+                        <div class="stat-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>Average Score</h3>
+                            <p class="stat-number">87%</p>
+                            <span class="stat-change positive">Up 5% this month</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card orange-gradient">
+                        <div class="stat-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>Achievements</h3>
+                            <p class="stat-number">12</p>
+                            <span class="stat-change">Total unlocked</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Upcoming Sessions Section -->
+                <section id="upcoming-sessions" class="card-section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-video"></i> Upcoming Sessions</h2>
+                        <a href="#sessions" class="view-all">View All →</a>
+                    </div>
+                    
+                    <div class="sessions-list">
+                        <div class="session-card">
+                            <div class="session-info">
+                                <div class="student-avatar">
+                                    <img src="ASSETS/1686666364030.jfif" alt="John">
+                                </div>
+                                <div>
+                                    <h4>John Doe</h4>
+                                    <p><i class="fas fa-code"></i> JavaScript Basics</p>
+                                    <span class="time">Tomorrow 10:30 AM</span>
+                                </div>
+                            </div>
+                            <div class="session-actions">
+                                <button class="secondary-btn"><i class="fas fa-video"></i> Join</button>
+                                <button class="icon-btn"><i class="fas fa-ellipsis-v"></i></button>
+                            </div>
+                        </div>
+
+                        <div class="session-card">
+                            <div class="session-info">
+                                <div class="student-avatar">
+                                    <img src="ASSETS/gettyimages-1290562713.avif" alt="Sarah">
+                                </div>
+                                <div>
+                                    <h4>Sarah Johnson</h4>
+                                    <p><i class="fas fa-palette"></i> UI/UX Design Principles</p>
+                                    <span class="time">Thursday 2:00 PM</span>
+                                </div>
+                            </div>
+                            <div class="session-actions">
+                                <button class="secondary-btn"><i class="fas fa-video"></i> Join</button>
+                                <button class="icon-btn"><i class="fas fa-ellipsis-v"></i></button>
+                            </div>
+                        </div>
+
+                        <div class="session-card">
+                            <div class="session-info">
+                                <div class="student-avatar">
+                                    <i class="fas fa-user-circle" style="font-size: 48px; color: #6366f1;"></i>
+                                </div>
+                                <div>
+                                    <h4>Michael Chen</h4>
+                                    <p><i class="fas fa-database"></i> Database Design</p>
+                                    <span class="time">Next Monday 3:00 PM</span>
+                                </div>
+                            </div>
+                            <div class="session-actions">
+                                <button class="secondary-btn"><i class="fas fa-video"></i> Join</button>
+                                <button class="icon-btn"><i class="fas fa-ellipsis-v"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Current Courses Section -->
+                <section id="current-courses" class="card-section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-book-open"></i> Your Active Courses</h2>
+                        <a href="#my-courses" class="view-all">View All →</a>
+                    </div>
+
+                    <div class="courses-grid">
+                        <div class="course-card">
+                            <div class="course-header">
+                                <div class="course-badge blue">Web Development</div>
+                                <button class="icon-btn"><i class="fas fa-ellipsis-h"></i></button>
+                            </div>
+                            <h3>Advanced JavaScript ES6+</h3>
+                            <p class="course-desc">Master modern JavaScript features and best practices for building scalable applications.</p>
+                            <div class="course-stats">
+                                <span><i class="fas fa-chalkboard-user"></i> John Doe</span>
+                                <span><i class="fas fa-clock"></i> 24 Hours</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 68%"></div>
+                            </div>
+                            <p class="progress-text">68% Complete</p>
+                            <button class="secondary-btn full-width">Continue Learning</button>
+                        </div>
+
+                        <div class="course-card">
+                            <div class="course-header">
+                                <div class="course-badge green">Backend</div>
+                                <button class="icon-btn"><i class="fas fa-ellipsis-h"></i></button>
+                            </div>
+                            <h3>Node.js & Express Fundamentals</h3>
+                            <p class="course-desc">Build robust backend applications with Node.js and create RESTful APIs with Express.</p>
+                            <div class="course-stats">
+                                <span><i class="fas fa-chalkboard-user"></i> Michael Chen</span>
+                                <span><i class="fas fa-clock"></i> 30 Hours</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 45%"></div>
+                            </div>
+                            <p class="progress-text">45% Complete</p>
+                            <button class="secondary-btn full-width">Continue Learning</button>
+                        </div>
+
+                        <div class="course-card">
+                            <div class="course-header">
+                                <div class="course-badge purple">Design</div>
+                                <button class="icon-btn"><i class="fas fa-ellipsis-h"></i></button>
+                            </div>
+                            <h3>UI/UX Design Essentials</h3>
+                            <p class="course-desc">Learn user-centered design principles and create beautiful, functional interfaces.</p>
+                            <div class="course-stats">
+                                <span><i class="fas fa-chalkboard-user"></i> Sarah Johnson</span>
+                                <span><i class="fas fa-clock"></i> 20 Hours</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 82%"></div>
+                            </div>
+                            <p class="progress-text">82% Complete</p>
+                            <button class="secondary-btn full-width">Continue Learning</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Recent Activity Section -->
+                <section class="card-section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-history"></i> Recent Activity</h2>
+                    </div>
+
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <div class="activity-icon green">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h4>Assignment Completed</h4>
+                                <p>Submitted JavaScript Project - Todo App with 95% score</p>
+                                <span class="time-ago">2 hours ago</span>
+                            </div>
+                        </div>
+
+                        <div class="activity-item">
+                            <div class="activity-icon blue">
+                                <i class="fas fa-video"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h4>Session Completed</h4>
+                                <p>Finished mentoring session with John Doe - JavaScript Basics Module 5</p>
+                                <span class="time-ago">5 hours ago</span>
+                            </div>
+                        </div>
+
+                        <div class="activity-item">
+                            <div class="activity-icon purple">
+                                <i class="fas fa-medal"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h4>Achievement Unlocked</h4>
+                                <p>You've completed "5 Assignments" - Quick Learner Badge</p>
+                                <span class="time-ago">1 day ago</span>
+                            </div>
+                        </div>
+
+                        <div class="activity-item">
+                            <div class="activity-icon orange">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h4>Course Milestone Reached</h4>
+                                <p>You've reached 50% completion on JavaScript ES6+ course</p>
+                                <span class="time-ago">2 days ago</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <!-- ===================== MY COURSES PAGE ===================== -->
+            <section id="my-courses" class="content-section page-section" style="display:none;">
+                <div class="page-header">
+                    <div><h1>My Courses</h1><p>Track your enrolled courses and learning progress</p></div>
+                    <button class="primary-btn"><i class="fas fa-search"></i> Explore More Courses</button>
+                </div>
+                <div class="filter-bar">
+                    <div class="filter-tabs">
+                        <button class="filter-tab active">All Courses (5)</button>
+                        <button class="filter-tab">In Progress (3)</button>
+                        <button class="filter-tab">Completed (2)</button>
+                        <button class="filter-tab">Wishlist (4)</button>
+                    </div>
+                    <select class="filter-select"><option>Sort by: Most Recent</option><option>Sort by: Progress</option><option>Sort by: Difficulty</option></select>
+                </div>
+                <div class="card-section" style="padding:0">
+                    <div class="courses-table-wrap">
+                        <table class="courses-table">
+                            <thead><tr><th>Course</th><th>Mentor</th><th>Duration</th><th>Progress</th><th>Status</th><th>Actions</th></tr></thead>
+                            <tbody>
+                                <tr><td><div class="course-row-info"><div class="course-row-icon blue"><i class="fab fa-js-square"></i></div><div><strong>Advanced JavaScript ES6+</strong><p>Web Development · Started 2 weeks ago</p></div></div></td><td>John Doe</td><td>24 Hours</td><td><div style="display:flex;align-items:center;gap:8px"><div class="mini-progress"><div class="mini-fill" style="width:68%"></div></div><span>68%</span></div></td><td><span class="status-pill green">In Progress</span></td><td><div class="row-actions"><button class="icon-btn"><i class="fas fa-play"></i></button><button class="icon-btn"><i class="fas fa-bookmark"></i></button><button class="icon-btn"><i class="fas fa-ellipsis-v"></i></button></div></td></tr>
+                                <tr><td><div class="course-row-info"><div class="course-row-icon green"><i class="fas fa-server"></i></div><div><strong>Node.js & Express Fundamentals</strong><p>Backend · Started 3 weeks ago</p></div></div></td><td>Michael Chen</td><td>30 Hours</td><td><div style="display:flex;align-items:center;gap:8px"><div class="mini-progress"><div class="mini-fill" style="width:45%"></div></div><span>45%</span></div></td><td><span class="status-pill green">In Progress</span></td><td><div class="row-actions"><button class="icon-btn"><i class="fas fa-play"></i></button><button class="icon-btn"><i class="fas fa-bookmark"></i></button><button class="icon-btn"><i class="fas fa-ellipsis-v"></i></button></div></td></tr>
+                                <tr><td><div class="course-row-info"><div class="course-row-icon purple"><i class="fas fa-palette"></i></div><div><strong>UI/UX Design Essentials</strong><p>Design · Started 1 month ago</p></div></div></td><td>Sarah Johnson</td><td>20 Hours</td><td><div style="display:flex;align-items:center;gap:8px"><div class="mini-progress"><div class="mini-fill" style="width:82%"></div></div><span>82%</span></div></td><td><span class="status-pill green">In Progress</span></td><td><div class="row-actions"><button class="icon-btn"><i class="fas fa-play"></i></button><button class="icon-btn"><i class="fas fa-bookmark"></i></button><button class="icon-btn"><i class="fas fa-ellipsis-v"></i></button></div></td></tr>
+                                <tr><td><div class="course-row-info"><div class="course-row-icon orange"><i class="fas fa-database"></i></div><div><strong>React Fundamentals</strong><p>Frontend · Completed 1 week ago</p></div></div></td><td>John Doe</td><td>28 Hours</td><td><div style="display:flex;align-items:center;gap:8px"><div class="mini-progress"><div class="mini-fill" style="width:100%"></div></div><span>100%</span></div></td><td><span class="status-pill green">Completed</span></td><td><div class="row-actions"><button class="icon-btn"><i class="fas fa-redo"></i></button><button class="icon-btn"><i class="fas fa-certificate"></i></button><button class="icon-btn"><i class="fas fa-ellipsis-v"></i></button></div></td></tr>
+                                <tr><td><div class="course-row-info"><div class="course-row-icon gray"><i class="fas fa-code-branch"></i></div><div><strong>Git & Version Control</strong><p>DevOps · Completed 3 weeks ago</p></div></div></td><td>Michael Chen</td><td>12 Hours</td><td><div style="display:flex;align-items:center;gap:8px"><div class="mini-progress"><div class="mini-fill" style="width:100%"></div></div><span>100%</span></div></td><td><span class="status-pill green">Completed</span></td><td><div class="row-actions"><button class="icon-btn"><i class="fas fa-redo"></i></button><button class="icon-btn"><i class="fas fa-certificate"></i></button><button class="icon-btn"><i class="fas fa-ellipsis-v"></i></button></div></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===================== MENTORS PAGE ===================== -->
+            <section id="mentors" class="content-section page-section" style="display:none;">
+                <div class="page-header">
+                    <div><h1>My Mentors</h1><p>Connect with and manage your mentoring relationships</p></div>
+                    <button class="primary-btn"><i class="fas fa-plus"></i> Find a Mentor</button>
+                </div>
+                <div class="stats-grid" style="margin-bottom:28px">
+                    <div class="stat-card blue-gradient"><div class="stat-icon"><i class="fas fa-chalkboard-user"></i></div><div class="stat-content"><h3>Active Mentors</h3><p class="stat-number">3</p><span class="stat-change positive">All responsive</span></div></div>
+                    <div class="stat-card green-gradient"><div class="stat-icon"><i class="fas fa-video"></i></div><div class="stat-content"><h3>Sessions This Month</h3><p class="stat-number">8</p><span class="stat-change positive">+2 scheduled</span></div></div>
+                    <div class="stat-card purple-gradient"><div class="stat-icon"><i class="fas fa-star"></i></div><div class="stat-content"><h3>Avg. Rating</h3><p class="stat-number">4.8/5.0</p><span class="stat-change positive">Very satisfied</span></div></div>
+                    <div class="stat-card orange-gradient"><div class="stat-icon"><i class="fas fa-clock"></i></div><div class="stat-content"><h3>Total Hours</h3><p class="stat-number">35.5</p><span class="stat-change">With mentors</span></div></div>
+                </div>
+                <div class="card-section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-chalkboard-user"></i> Your Mentor Team</h2>
+                    </div>
+                    <div class="students-grid">
+                        <div class="student-card"><div class="student-card-top"><div class="student-av" style="background:linear-gradient(135deg,#6366f1,#8b5cf6)"><span>JD</span></div><div class="student-status-dot active"></div></div><h4>John Doe</h4><p>JavaScript & React Expert</p><div class="student-progress"><div class="progress-bar"><div class="progress" style="width:85%"></div></div><span>8.5 hrs/mth</span></div><div class="student-meta"><span><i class="fas fa-trophy" style="color:#f59e0b"></i> Top Mentor</span><span><i class="fas fa-star" style="color:#f59e0b"></i> 4.9/5.0</span></div><button class="secondary-btn full-width" style="margin-top:12px">View Profile</button></div>
+                        <div class="student-card"><div class="student-card-top"><div class="student-av" style="background:linear-gradient(135deg,#10b981,#059669)"><span>MC</span></div><div class="student-status-dot active"></div></div><h4>Michael Chen</h4><p>Backend Development Specialist</p><div class="student-progress"><div class="progress-bar"><div class="progress" style="width:72%"></div></div><span>7.2 hrs/mth</span></div><div class="student-meta"><span><i class="fas fa-trophy" style="color:#f59e0b"></i> Excellent</span><span><i class="fas fa-star" style="color:#f59e0b"></i> 4.7/5.0</span></div><button class="secondary-btn full-width" style="margin-top:12px">View Profile</button></div>
+                        <div class="student-card"><div class="student-card-top"><div class="student-av" style="background:linear-gradient(135deg,#ec4899,#8b5cf6)"><span>SJ</span></div><div class="student-status-dot active"></div></div><h4>Sarah Johnson</h4><p>UI/UX Design & Frontend</p><div class="student-progress"><div class="progress-bar"><div class="progress" style="width:65%"></div></div><span>6.5 hrs/mth</span></div><div class="student-meta"><span><i class="fas fa-trophy" style="color:#f59e0b"></i> Professional</span><span><i class="fas fa-star" style="color:#f59e0b"></i> 4.6/5.0</span></div><button class="secondary-btn full-width" style="margin-top:12px">View Profile</button></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===================== SESSIONS PAGE ===================== -->
+            <section id="sessions" class="content-section page-section" style="display:none;">
+                <div class="page-header">
+                    <div><h1>My Sessions</h1><p>Schedule and track all your mentoring sessions</p></div>
+                    <button class="primary-btn"><i class="fas fa-calendar-plus"></i> Schedule Session</button>
+                </div>
+                <div class="calendar-strip card-section" style="padding:20px 24px">
+                    <div class="cal-header">
+                        <button class="icon-btn"><i class="fas fa-chevron-left"></i></button>
+                        <h3>April 2026</h3>
+                        <button class="icon-btn"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                    <div class="cal-days">
+                        <div class="cal-day"><span>Mon</span><strong>14</strong></div>
+                        <div class="cal-day"><span>Tue</span><strong>15</strong></div>
+                        <div class="cal-day"><span>Wed</span><strong>16</strong></div>
+                        <div class="cal-day has-event"><span>Thu</span><strong>17</strong><div class="cal-dot"></div></div>
+                        <div class="cal-day active"><span>Fri</span><strong>18</strong><div class="cal-dot"></div></div>
+                        <div class="cal-day has-event"><span>Sat</span><strong>19</strong><div class="cal-dot"></div></div>
+                        <div class="cal-day"><span>Sun</span><strong>20</strong></div>
+                    </div>
+                </div>
+                <div class="card-section">
+                    <div class="section-header"><h2><i class="fas fa-calendar-day"></i> Upcoming Sessions</h2></div>
+                    <div class="sessions-list">
+                        <div class="session-card"><div class="session-time-block"><span class="session-hour">10:30</span><span class="session-ampm">AM</span><span class="session-dur">60 min</span></div><div class="session-info" style="flex:1"><div class="student-avatar"><div class="student-av sm" style="background:linear-gradient(135deg,#6366f1,#8b5cf6)"><span>JD</span></div></div><div><h4>John Doe</h4><p><i class="fas fa-code"></i> JavaScript Basics · Module 5</p><span class="time">10:30 AM – 11:30 AM</span></div></div><div style="display:flex;flex-direction:column;gap:6px;align-items:flex-end"><span class="status-pill green">Ready</span><div class="session-actions"><button class="secondary-btn"><i class="fas fa-video"></i> Join</button><button class="icon-btn"><i class="fas fa-ellipsis-v"></i></button></div></div></div>
+                        <div class="session-card"><div class="session-time-block"><span class="session-hour">2:00</span><span class="session-ampm">PM</span><span class="session-dur">60 min</span></div><div class="session-info" style="flex:1"><div class="student-avatar"><div class="student-av sm" style="background:linear-gradient(135deg,#ec4899,#8b5cf6)"><span>SJ</span></div></div><div><h4>Sarah Johnson</h4><p><i class="fas fa-palette"></i> UI Design · Module 8</p><span class="time">2:00 PM – 3:00 PM</span></div></div><div style="display:flex;flex-direction:column;gap:6px;align-items:flex-end"><span class="status-pill yellow">Scheduled</span><div class="session-actions"><button class="secondary-btn"><i class="fas fa-video"></i> Join</button><button class="icon-btn"><i class="fas fa-ellipsis-v"></i></button></div></div></div>
+                    </div>
+                </div>
+                <div class="card-section">
+                    <div class="section-header"><h2><i class="fas fa-history"></i> Past Sessions</h2></div>
+                    <div class="sessions-list">
+                        <div class="session-card session-past"><div class="session-time-block"><span class="session-hour">10:00</span><span class="session-ampm">AM</span><span class="session-dur">Apr 14</span></div><div class="session-info" style="flex:1"><div class="student-avatar"><div class="student-av sm" style="background:linear-gradient(135deg,#6366f1,#8b5cf6)"><span>JD</span></div></div><div><h4>John Doe</h4><p><i class="fas fa-code"></i> JavaScript Basics · Module 4</p><span class="time">Duration: 58 min</span></div></div><div style="display:flex;flex-direction:column;gap:6px;align-items:flex-end"><span class="status-pill gray">Completed</span><div class="session-actions"><button class="secondary-btn"><i class="fas fa-file-alt"></i> Notes</button></div></div></div>
+                        <div class="session-card session-past"><div class="session-time-block"><span class="session-hour">3:00</span><span class="session-ampm">PM</span><span class="session-dur">Apr 12</span></div><div class="session-info" style="flex:1"><div class="student-avatar"><div class="student-av sm" style="background:linear-gradient(135deg,#10b981,#059669)"><span>MC</span></div></div><div><h4>Michael Chen</h4><p><i class="fas fa-server"></i> Backend Basics · Module 3</p><span class="time">Duration: 62 min</span></div></div><div style="display:flex;flex-direction:column;gap:6px;align-items:flex-end"><span class="status-pill gray">Completed</span><div class="session-actions"><button class="secondary-btn"><i class="fas fa-file-alt"></i> Notes</button></div></div></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===================== ASSIGNMENTS PAGE ===================== -->
+            <section id="assignments" class="content-section page-section" style="display:none;">
+                <div class="page-header">
+                    <div><h1>Assignments</h1><p>View and submit your course assignments</p></div>
+                </div>
+                <div class="filter-bar">
+                    <div class="filter-tabs">
+                        <button class="filter-tab active">All (8)</button>
+                        <button class="filter-tab">Pending (2)</button>
+                        <button class="filter-tab">Submitted (4)</button>
+                        <button class="filter-tab">Graded (2)</button>
+                    </div>
+                </div>
+                <div class="card-section" style="padding:0">
+                    <div class="courses-table-wrap">
+                        <table class="courses-table">
+                            <thead><tr><th>Assignment</th><th>Course</th><th>Due Date</th><th>Status</th><th>Score</th><th>Actions</th></tr></thead>
+                            <tbody>
+                                <tr><td><div class="course-row-info"><div class="course-row-icon blue"><i class="fas fa-code"></i></div><div><strong>Todo App Project</strong><p>Build a functional todo application</p></div></div></td><td>JavaScript ES6+</td><td>Apr 20, 2026</td><td><span class="status-pill green">Submitted</span></td><td><strong style="color:#10b981">95%</strong></td><td><div class="row-actions"><button class="icon-btn"><i class="fas fa-eye"></i></button><button class="icon-btn"><i class="fas fa-download"></i></button></div></td></tr>
+                                <tr><td><div class="course-row-info"><div class="course-row-icon green"><i class="fas fa-server"></i></div><div><strong>REST API Development</strong><p>Create a RESTful API with Node.js</p></div></div></td><td>Node.js & Express</td><td>Apr 25, 2026</td><td><span class="status-pill yellow">Pending</span></td><td>—</td><td><div class="row-actions"><button class="icon-btn"><i class="fas fa-arrow-up"></i></button><button class="icon-btn"><i class="fas fa-ellipsis-v"></i></button></div></td></tr>
+                                <tr><td><div class="course-row-info"><div class="course-row-icon purple"><i class="fas fa-palette"></i></div><div><strong>Wireframing Exercise</strong><p>Create wireframes for an e-commerce site</p></div></div></td><td>UI/UX Design</td><td>Apr 18, 2026</td><td><span class="status-pill green">Submitted</span></td><td><strong style="color:#10b981">88%</strong></td><td><div class="row-actions"><button class="icon-btn"><i class="fas fa-eye"></i></button><button class="icon-btn"><i class="fas fa-download"></i></button></div></td></tr>
+                                <tr><td><div class="course-row-info"><div class="course-row-icon gray"><i class="fas fa-check-circle"></i></div><div><strong>Array Methods Quiz</strong><p>Multiple choice assessment on array methods</p></div></div></td><td>JavaScript ES6+</td><td>Apr 15, 2026</td><td><span class="status-pill green">Graded</span></td><td><strong style="color:#10b981">92%</strong></td><td><div class="row-actions"><button class="icon-btn"><i class="fas fa-eye"></i></button><button class="icon-btn"><i class="fas fa-download"></i></button></div></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===================== PROGRESS PAGE ===================== -->
+            <section id="progress" class="content-section page-section" style="display:none;">
+                <div class="page-header">
+                    <div><h1>Your Learning Progress</h1><p>Track your growth and achievements</p></div>
+                </div>
+                <div class="card-section">
+                    <div class="section-header"><h2><i class="fas fa-chart-bar"></i> Course Progress Overview</h2></div>
+                    <div class="earnings-chart">
+                        <div class="chart-bars">
+                            <div class="chart-bar-wrap"><div class="chart-bar" style="height:45%"><span class="bar-tip">40%</span></div><span class="bar-label">JS ES6</span></div>
+                            <div class="chart-bar-wrap"><div class="chart-bar" style="height:32%"><span class="bar-tip">30%</span></div><span class="bar-label">Node.js</span></div>
+                            <div class="chart-bar-wrap"><div class="chart-bar" style="height:58%"><span class="bar-tip">55%</span></div><span class="bar-label">UI/UX</span></div>
+                            <div class="chart-bar-wrap"><div class="chart-bar" style="height:75%"><span class="bar-tip">72%</span></div><span class="bar-label">React</span></div>
+                            <div class="chart-bar-wrap"><div class="chart-bar active-bar" style="height:88%"><span class="bar-tip">85%</span></div><span class="bar-label">Git</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="stats-grid" style="margin-bottom:28px">
+                    <div class="stat-card blue-gradient"><div class="stat-icon"><i class="fas fa-book-open"></i></div><div class="stat-content"><h3>Total Courses</h3><p class="stat-number">5</p><span class="stat-change positive">+1 this month</span></div></div>
+                    <div class="stat-card green-gradient"><div class="stat-icon"><i class="fas fa-check-circle"></i></div><div class="stat-content"><h3>Completed</h3><p class="stat-number">2</p><span class="stat-change positive">40% completion</span></div></div>
+                    <div class="stat-card purple-gradient"><div class="stat-icon"><i class="fas fa-trophy"></i></div><div class="stat-content"><h3>Achievements</h3><p class="stat-number">12</p><span class="stat-change positive">Badges earned</span></div></div>
+                    <div class="stat-card orange-gradient"><div class="stat-icon"><i class="fas fa-star"></i></div><div class="stat-content"><h3>Avg Score</h3><p class="stat-number">87%</p><span class="stat-change positive">Excellent</span></div></div>
+                </div>
+            </section>
+
+            <!-- ===================== MESSAGES PAGE ===================== -->
+            <section id="messages" class="content-section page-section" style="display:none;padding:0">
+                <div class="messages-layout">
+                    <div class="messages-sidebar">
+                        <div class="messages-sidebar-header"><h2>Messages</h2><button class="icon-btn"><i class="fas fa-edit"></i></button></div>
+                        <div class="search-container" style="margin:0 16px 16px;padding:8px 14px"><i class="fas fa-search"></i><input type="search" placeholder="Search messages..."></div>
+                        <div class="conversations-list">
+                            <div class="conversation-item active"><div class="student-av sm" style="background:linear-gradient(135deg,#6366f1,#8b5cf6)"><span>JD</span></div><div class="conv-info"><div class="conv-top"><strong>John Doe</strong><span class="conv-time">2m ago</span></div><p>Excellent work on the assignment!</p></div><div class="conv-badge">2</div></div>
+                            <div class="conversation-item"><div class="student-av sm" style="background:linear-gradient(135deg,#10b981,#059669)"><span>MC</span></div><div class="conv-info"><div class="conv-top"><strong>Michael Chen</strong><span class="conv-time">1h ago</span></div><p>Let me know if you need help with...</p></div></div>
+                            <div class="conversation-item"><div class="student-av sm" style="background:linear-gradient(135deg,#ec4899,#8b5cf6)"><span>SJ</span></div><div class="conv-info"><div class="conv-top"><strong>Sarah Johnson</strong><span class="conv-time">3h ago</span></div><p>Your design mockups look great!</p></div><div class="conv-badge">1</div></div>
+                        </div>
+                    </div>
+                    <div class="chat-window">
+                        <div class="chat-header">
+                            <div class="student-av sm" style="background:linear-gradient(135deg,#6366f1,#8b5cf6)"><span>JD</span></div>
+                            <div><strong>John Doe</strong><p><span class="online-dot"></span> Online · JavaScript Mentor</p></div>
+                            <div style="margin-left:auto;display:flex;gap:8px"><button class="icon-btn"><i class="fas fa-video"></i></button><button class="icon-btn"><i class="fas fa-phone"></i></button><button class="icon-btn"><i class="fas fa-info-circle"></i></button></div>
+                        </div>
+                        <div class="chat-messages">
+                            <div class="msg-group"><div class="msg received"><p>Hi! How did you find the async/await lesson?</p><span>2:10 PM</span></div><div class="msg received"><p>Any questions I can help clarify?</p><span>2:12 PM</span></div></div>
+                            <div class="msg-group sent-group"><div class="msg sent"><p>It was great! I understood the concepts well.</p><span>2:15 PM</span></div><div class="msg sent"><p>I've started working on the assignment.</p><span>2:16 PM</span></div></div>
+                            <div class="msg-group"><div class="msg received"><p>Excellent work on the assignment! Your todo app is exactly what I was looking for. Great implementation of async/await! 🎉</p><span>2:20 PM</span></div></div>
+                        </div>
+                        <div class="chat-input-bar">
+                            <button class="icon-btn"><i class="fas fa-paperclip"></i></button>
+                            <input type="text" class="chat-input" placeholder="Type a message...">
+                            <button class="primary-btn" style="padding:10px 16px"><i class="fas fa-paper-plane"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===================== CERTIFICATES PAGE ===================== -->
+            <section id="certificates" class="content-section page-section" style="display:none;">
+                <div class="page-header">
+                    <div><h1>Certificates</h1><p>View and download your certificates of completion</p></div>
+                </div>
+                <div class="card-section">
+                    <div class="section-header"><h2><i class="fas fa-certificate"></i> Your Certificates</h2></div>
+                    <div class="courses-grid">
+                        <div class="course-card">
+                            <div class="course-header">
+                                <div class="course-badge green">Completed</div>
+                                <button class="icon-btn"><i class="fas fa-ellipsis-h"></i></button>
+                            </div>
+                            <div style="text-align:center;padding:20px;margin:20px 0">
+                                <i class="fas fa-certificate" style="font-size:60px;color:#f59e0b"></i>
+                            </div>
+                            <h3>React Fundamentals</h3>
+                            <p class="course-desc">Awarded for completing the React Fundamentals course with excellence.</p>
+                            <div class="course-stats">
+                                <span><i class="fas fa-calendar"></i> Issued Apr 10, 2026</span>
+                                <span><i class="fas fa-star"></i> 28 Hours</span>
+                            </div>
+                            <button class="secondary-btn full-width">Download Certificate</button>
+                        </div>
+
+                        <div class="course-card">
+                            <div class="course-header">
+                                <div class="course-badge green">Completed</div>
+                                <button class="icon-btn"><i class="fas fa-ellipsis-h"></i></button>
+                            </div>
+                            <div style="text-align:center;padding:20px;margin:20px 0">
+                                <i class="fas fa-certificate" style="font-size:60px;color:#f59e0b"></i>
+                            </div>
+                            <h3>Git & Version Control</h3>
+                            <p class="course-desc">Awarded for completing the Git & Version Control course with excellence.</p>
+                            <div class="course-stats">
+                                <span><i class="fas fa-calendar"></i> Issued Mar 28, 2026</span>
+                                <span><i class="fas fa-star"></i> 12 Hours</span>
+                            </div>
+                            <button class="secondary-btn full-width">Download Certificate</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===================== SETTINGS PAGE ===================== -->
+            <section id="settings" class="content-section page-section" style="display:none;">
+                <div class="page-header">
+                    <div><h1>Settings</h1><p>Manage your account preferences and learning settings</p></div>
+                    <button class="primary-btn"><i class="fas fa-save"></i> Save All Changes</button>
+                </div>
+                <div class="settings-layout">
+                    <div class="settings-nav card-section" style="padding:8px">
+                        <a href="#" class="settings-nav-item active"><i class="fas fa-bell"></i> Notifications</a>
+                        <a href="#" class="settings-nav-item"><i class="fas fa-lock"></i> Security & Privacy</a>
+                        <a href="#" class="settings-nav-item"><i class="fas fa-credit-card"></i> Billing</a>
+                        <a href="#" class="settings-nav-item"><i class="fas fa-palette"></i> Appearance</a>
+                        <a href="#" class="settings-nav-item"><i class="fas fa-cog"></i> Learning Preferences</a>
+                    </div>
+                    <div class="settings-content">
+                        <div class="form-card">
+                            <h3><i class="fas fa-bell"></i> Notification Preferences</h3>
+                            <div class="settings-list">
+                                <div class="setting-row"><div><strong>Session Reminders</strong><p>Get notified 30 minutes before a session</p></div><label class="toggle"><input type="checkbox" checked><span class="toggle-slider"></span></label></div>
+                                <div class="setting-row"><div><strong>Assignment Deadlines</strong><p>Notify when assignments are due soon</p></div><label class="toggle"><input type="checkbox" checked><span class="toggle-slider"></span></label></div>
+                                <div class="setting-row"><div><strong>Course Updates</strong><p>Get notified when course content is updated</p></div><label class="toggle"><input type="checkbox" checked><span class="toggle-slider"></span></label></div>
+                                <div class="setting-row"><div><strong>Mentor Messages</strong><p>Notify on new messages from mentors</p></div><label class="toggle"><input type="checkbox" checked><span class="toggle-slider"></span></label></div>
+                                <div class="setting-row"><div><strong>Marketing Emails</strong><p>Product updates and new course offers</p></div><label class="toggle"><input type="checkbox"><span class="toggle-slider"></span></label></div>
+                            </div>
+                        </div>
+                        <div class="form-card">
+                            <h3><i class="fas fa-lock"></i> Security</h3>
+                            <div class="form-grid">
+                                <div class="form-group full-col"><label>Current Password</label><input type="password" placeholder="Enter current password" class="form-input"></div>
+                                <div class="form-group"><label>New Password</label><input type="password" placeholder="New password" class="form-input"></div>
+                                <div class="form-group"><label>Confirm New Password</label><input type="password" placeholder="Confirm new password" class="form-input"></div>
+                            </div>
+                            <button class="secondary-btn" style="margin-top:16px"><i class="fas fa-key"></i> Update Password</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+<script>
+    const navLinks = document.querySelectorAll('.sidebar-nav a');
+    const pages = {
+        'dashboard': document.getElementById('dashboard'),
+        'my-courses': document.getElementById('my-courses'),
+        'mentors': document.getElementById('mentors'),
+        'sessions': document.getElementById('sessions'),
+        'assignments': document.getElementById('assignments'),
+        'progress': document.getElementById('progress'),
+        'messages': document.getElementById('messages'),
+        'certificates': document.getElementById('certificates'),
+        'settings': document.getElementById('settings'),
+    };
+
+    function showPage(id) {
+        Object.values(pages).forEach(p => { if(p) p.style.display = 'none'; });
+        const target = pages[id];
+        if (target) { target.style.display = 'block'; target.style.animation = 'fadeInUp 0.35s ease'; }
+    }
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            // Check if this is the logout button
+            if (this.classList.contains('logout-btn')) {
+                return; // Allow default navigation to login.html
+            }
+            
+            const href = this.getAttribute('href').replace('#','');
+            e.preventDefault();
+            navLinks.forEach(l => l.classList.remove('active'));
+            this.classList.add('active');
+            showPage(href);
+        });
+    });
+
+    document.querySelectorAll('.filter-tab').forEach(btn => {
+        btn.addEventListener('click', function() {
+            this.closest('.filter-tabs').querySelectorAll('.filter-tab').forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
+</script>
+</body>
+</html>

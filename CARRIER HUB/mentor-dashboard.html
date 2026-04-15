@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentor Dashboard | WILLTECH</title>
+    <link rel="stylesheet" href="mentor-dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>WILLTECH</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="#overview" class="active"><i class="fas fa-chart-line"></i> Dashboard</a></li>
+                    <li><a href="#profile"><i class="fas fa-user-circle"></i> Profile</a></li>
+                    <li><a href="#courses"><i class="fas fa-book-open"></i> My Courses</a></li>
+                    <li><a href="#students"><i class="fas fa-users"></i> Students</a></li>
+                    <li><a href="#sessions"><i class="fas fa-video"></i> Sessions</a></li>
+                    <li><a href="#assignments"><i class="fas fa-tasks"></i> Assignments</a></li>
+                    <li><a href="#earnings"><i class="fas fa-wallet"></i> Earnings</a></li>
+                    <li><a href="#messages"><i class="fas fa-envelope"></i> Messages</a></li>
+                    <li><a href="#reviews"><i class="fas fa-star"></i> Reviews</a></li>
+                    <li><a href="#settings"><i class="fas fa-cog"></i> Settings</a></li>
+                    <li><a href="login.html" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Navigation Bar -->
+            <header class="top-bar">
+                <div class="search-container">
+                    <i class="fas fa-search"></i>
+                    <input type="search" placeholder="Search students, courses, or resources...">
+                </div>
+
+                
+              
+            </header>
+
+            <!-- Welcome Section -->
+            <section id="overview" class="content-section">
+                <div class="welcome-header">
+                    <div>
+                        <h1>Welcome back, Mentor! </h1>
+                        <p>Here's your performance overview for this week</p>
+                    </div>
+                    <button class="primary-btn"><i class="fas fa-plus"></i> Create Course</button>
+                </div>
+
+                <!-- Stats Grid -->
+                <div class="stats-grid">
+                    <div class="stat-card blue-gradient">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>Active Students</h3>
+                            <p class="stat-number">24</p>
+                            <span class="stat-change positive">+4 this week</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card green-gradient">
+                        <div class="stat-icon">
+                            <i class="fas fa-wallet"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>Total Earnings</h3>
+                            <p class="stat-number">$5,240</p>
+                            <span class="stat-change positive">+12% this month</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card purple-gradient">
+                        <div class="stat-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>Average Rating</h3>
+                            <p class="stat-number">4.9/5.0</p>
+                            <span class="stat-change positive">Based on 87 reviews</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card orange-gradient">
+                        <div class="stat-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>Total Hours</h3>
+                            <p class="stat-number">412</p>
+                            <span class="stat-change">Mentoring experience</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Today's Sessions Section -->
+                <section id="sessions-overview" class="card-section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-video"></i> Today's Sessions</h2>
+                        <a href="#sessions" class="view-all">View All →</a>
+                    </div>
+                    
+                    <div class="sessions-list">
+                        <div class="session-card">
+                            <div class="session-info">
+                                <div class="student-avatar">
+                                    <img src="ASSETS/Alex_Twino_small.webp" alt="Daniel">
+                                </div>
+                                <div>
+                                    <h4>Daniel Chen</h4>
+                                    <p><i class="fas fa-code"></i> JavaScript Basics</p>
+                                    <span class="time">10:30 AM - 11:30 AM</span>
+                                </div>
+                            </div>
+                            <div class="session-actions">
+                                <button class="secondary-btn"><i class="fas fa-video"></i> Join</button>
+                                <button class="icon-btn"><i class="fas fa-ellipsis-v"></i></button>
+                            </div>
+                        </div>
+
+                        <div class="session-card">
+                            <div class="session-info">
+                                <div class="student-avatar">
+                                    <img src="ASSETS/gettyimages-1290562713.avif" alt="Maria">
+                                </div>
+                                <div>
+                                    <h4>Maria Rodriguez</h4>
+                                    <p><i class="fas fa-palette"></i> Advanced UI Design</p>
+                                    <span class="time">2:00 PM - 3:00 PM</span>
+                                </div>
+                            </div>
+                            <div class="session-actions">
+                                <button class="secondary-btn"><i class="fas fa-video"></i> Join</button>
+                                <button class="icon-btn"><i class="fas fa-ellipsis-v"></i></button>
+                            </div>
+                        </div>
+
+                        <div class="session-card">
+                            <div class="session-info">
+                                <div class="student-avatar">
+                                    <img src="ASSETS/alex-warren-112724-tout-8d1e59b9a8d3424a8abb2088313f4942.jpg" alt="Alex">
+                                </div>
+                                <div>
+                                    <h4>Alex Thompson</h4>
+                                    <p><i class="fas fa-database"></i> SQL & Databases</p>
+                                    <span class="time">4:00 PM - 5:00 PM</span>
+                                </div>
+                            </div>
+                            <div class="session-actions">
+                                <button class="secondary-btn"><i class="fas fa-video"></i> Join</button>
+                                <button class="icon-btn"><i class="fas fa-ellipsis-v"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Your Courses Section -->
+                <section id="courses" class="card-section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-book-open"></i> Your Courses</h2>
+                        <a href="#courses" class="view-all">View All →</a>
+                    </div>
+
+                    <div class="courses-grid">
+                        <div class="course-card">
+                            <div class="course-header">
+                                <div class="course-badge blue">Web Development</div>
+                                <button class="icon-btn"><i class="fas fa-ellipsis-h"></i></button>
+                            </div>
+                            <h3>Advanced UI Design Principles</h3>
+                            <p class="course-desc">Master modern design patterns and create stunning user interfaces.</p>
+                            <div class="course-stats">
+                                <span><i class="fas fa-users"></i> 45 Students</span>
+                                <span><i class="fas fa-clock"></i> 24 Hours</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 75%"></div>
+                            </div>
+                            <p class="progress-text">75% Complete</p>
+                            <button class="secondary-btn full-width">Edit Course</button>
+                        </div>
+
+                        <div class="course-card">
+                            <div class="course-header">
+                                <div class="course-badge green">Backend</div>
+                                <button class="icon-btn"><i class="fas fa-ellipsis-h"></i></button>
+                            </div>
+                            <h3>Node.js & Express Mastery</h3>
+                            <p class="course-desc">Build scalable backend applications with Node.js and Express.</p>
+                            <div class="course-stats">
+                                <span><i class="fas fa-users"></i> 32 Students</span>
+                                <span><i class="fas fa-clock"></i> 30 Hours</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 90%"></div>
+                            </div>
+                            <p class="progress-text">90% Complete</p>
+                            <button class="secondary-btn full-width">Edit Course</button>
+                        </div>
+
+                        <div class="course-card">
+                            <div class="course-header">
+                                <div class="course-badge purple">Database</div>
+                                <button class="icon-btn"><i class="fas fa-ellipsis-h"></i></button>
+                            </div>
+                            <h3>SQL & Data Management</h3>
+                            <p class="course-desc">Comprehensive SQL training for database design and optimization.</p>
+                            <div class="course-stats">
+                                <span><i class="fas fa-users"></i> 28 Students</span>
+                                <span><i class="fas fa-clock"></i> 20 Hours</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 60%"></div>
+                            </div>
+                            <p class="progress-text">60% Complete</p>
+                            <button class="secondary-btn full-width">Edit Course</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Recent Activity Section -->
+                <section class="card-section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-history"></i> Recent Activity</h2>
+                    </div>
+
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <div class="activity-icon green">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h4>Session Completed</h4>
+                                <p>Finished session with Daniel Chen - JavaScript Basics</p>
+                                <span class="time-ago">2 hours ago</span>
+                            </div>
+                        </div>
+
+                        <div class="activity-item">
+                            <div class="activity-icon blue">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h4>New Review Received</h4>
+                                <p>Maria Rodriguez gave you a 5-star review: "Excellent mentor, very helpful!"</p>
+                                <span class="time-ago">5 hours ago</span>
+                            </div>
+                        </div>
+
+                        <div class="activity-item">
+                            <div class="activity-icon purple">
+                                <i class="fas fa-user-plus"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h4>New Student Enrolled</h4>
+                                <p>James Wilson enrolled in your Advanced UI Design course</p>
+                                <span class="time-ago">1 day ago</span>
+                            </div>
+                        </div>
+
+                        <div class="activity-item">
+                            <div class="activity-icon orange">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h4>Achievement Unlocked</h4>
+                                <p>You've reached 400+ total mentoring hours!</p>
+                                <span class="time-ago">2 days ago</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <!-- ===================== PROFILE PAGE ===================== -->
+            <section id="profile" class="content-section page-section" style="display:none;">
+                <div class="page-header">
+                    <div><h1>My Profile</h1><p>Manage your public profile and account information</p></div>
+                    <button class="primary-btn"><i class="fas fa-save"></i> Save Changes</button>
+                </div>
+                <div class="profile-layout">
+                    <div class="profile-sidebar-card">
+                        <div class="profile-avatar-wrap">
+                            <div class="profile-avatar-circle"><span>TA</span></div>
+                            <button class="avatar-edit-btn"><i class="fas fa-camera"></i></button>
+                        </div>
+                        <h2 class="profile-name">Thankgod Albert</h2>
+                        <p class="profile-title">Senior Software Mentor</p>
+                        <div class="profile-badges">
+                            <span class="profile-badge-tag"><i class="fas fa-shield-alt"></i> Verified</span>
+                            <span class="profile-badge-tag gold"><i class="fas fa-trophy"></i> Top Mentor</span>
+                        </div>
+                        <div class="profile-quick-stats">
+                            <div class="pq-stat"><strong>87</strong><span>Reviews</span></div>
+                            <div class="pq-stat"><strong>4.9</strong><span>Rating</span></div>
+                            <div class="pq-stat"><strong>24</strong><span>Students</span></div>
+                        </div>
+                        <div class="profile-completion">
+                            <div class="completion-label"><span>Profile Completion</span><strong>82%</strong></div>
+                            <div class="progress-bar"><div class="progress" style="width:82%"></div></div>
+                        </div>
+                    </div>
+                    <div class="profile-forms">
+                        <div class="form-card">
+                            <h3><i class="fas fa-user"></i> Personal Information</h3>
+                            <div class="form-grid">
+                                <div class="form-group"><label>First Name</label><input type="text" value="Thankgod" class="form-input"></div>
+                                <div class="form-group"><label>Last Name</label><input type="text" value="Albert" class="form-input"></div>
+                                <div class="form-group"><label>Email Address</label><input type="email" value="john.doe@willtech.com" class="form-input"></div>
+                                <div class="form-group"><label>Phone Number</label><input type="tel" value="+234-816-8663-760" class="form-input"></div>
+                                <div class="form-group"><label>Location</label><input type="text" value="Port Harcourt, RS" class="form-input"></div>
+                                <div class="form-group"><label>Timezone</label><select class="form-input"><option selected>WAT — West African Time</option><option>EST — Eastern Standard Time</option><option>GMT — Greenwich Mean Time</option></select></div>
+                                <div class="form-group full-col"><label>Bio</label><textarea class="form-input" rows="4">Senior software engineer with 10+ years of experience in web development. Passionate about teaching JavaScript, React, and Node.js to aspiring developers.</textarea></div>
+                            </div>
+                        </div>
+                        <div class="form-card">
+                            <h3><i class="fas fa-briefcase"></i> Professional Details</h3>
+                            <div class="form-grid">
+                                <div class="form-group"><label>Job Title</label><input type="text" value="Senior Software Engineer" class="form-input"></div>
+                                <div class="form-group"><label>Company</label><input type="text" value="WILLTECH Inc." class="form-input"></div>
+                                <div class="form-group"><label>Years of Experience</label><input type="number" value="10" class="form-input"></div>
+                                <div class="form-group"><label>Hourly Rate ($)</label><input type="number" value="85" class="form-input"></div>
+                                <div class="form-group full-col"><label>Skills &amp; Expertise</label>
+                                    <div class="skills-tags">
+                                        <span class="skill-tag">JavaScript <i class="fas fa-times"></i></span>
+                                        <span class="skill-tag">React <i class="fas fa-times"></i></span>
+                                        <span class="skill-tag">Node.js <i class="fas fa-times"></i></span>
+                                        <span class="skill-tag">SQL <i class="fas fa-times"></i></span>
+                                        <span class="skill-tag">UI/UX Design <i class="fas fa-times"></i></span>
+                                        <button class="add-skill-btn"><i class="fas fa-plus"></i> Add Skill</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-card">
+                            <h3><i class="fas fa-link"></i> Social Links</h3>
+                            <div class="form-grid">
+                                <div class="form-group"><label><i class="fab fa-linkedin" style="color:#0077b5"></i> LinkedIn</label><input type="url" value="linkedin.com/in/ThankgodAlbert" class="form-input"></div>
+                                <div class="form-group"><label><i class="fab fa-github"></i> GitHub</label><input type="url" value="github.com/ThankgodAlbert" class="form-input"></div>
+                                <div class="form-group"><label><i class="fab fa-twitter" style="color:#1da1f2"></i> Twitter</label><input type="url" placeholder="twitter.com/ThankgodAlbert" class="form-input"></div>
+                                <div class="form-group"><label><i class="fas fa-globe" style="color:var(--primary-color)"></i> Website</label><input type="url" value="ThankgodAlbert.dev" class="form-input"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===================== MY COURSES PAGE ===================== -->
+            <section id="my-courses" class="content-section page-section" style="display:none;">
+                <div class="page-header">
+                    <div><h1>My Courses</h1><p>Manage and track all your created courses</p></div>
+                    <button class="primary-btn"><i class="fas fa-plus"></i> Create New Course</button>
+                </div>
+                <div class="filter-bar">
+                    <div class="filter-tabs">
+                        <button class="filter-tab active">All Courses (6)</button>
+                        <button class="filter-tab">Published (4)</button>
+                        <button class="filter-tab">Draft (1)</button>
+                        <button class="filter-tab">Archived (1)</button>
+                    </div>
+                    <select class="filter-select"><option>Sort by: Latest</option><option>Sort by: Students</option><option>Sort by: Revenue</option></select>
+                </div>
+                <div class="card-section" style="padding:0">
+                    <div class="courses-table-wrap">
+                        <table class="courses-table">
+                            <thead><tr><th>Course</th><th>Category</th><th>Students</th><th>Revenue</th><th>Progress</th><th>Status</th><th>Actions</th></tr></thead>
+                            <tbody>
+                                <tr><td><div class="course-row-info"><div class="course-row-icon blue"><i class="fas fa-palette"></i></div><div><strong>Advanced UI Design Principles</strong><p>24 hours · Updated 3 days ago</p></div></div></td><td><span class="course-badge blue">Web Dev</span></td><td>45</td><td>$1,890</td><td><div style="display:flex;align-items:center;gap:8px"><div class="mini-progress"><div class="mini-fill" style="width:75%"></div></div><span>75%</span></div></td><td><span class="status-pill green">Published</span></td><td><div class="row-actions"><button class="icon-btn"><i class="fas fa-edit"></i></button><button class="icon-btn"><i class="fas fa-chart-bar"></i></button><button class="icon-btn"><i class="fas fa-ellipsis-v"></i></button></div></td></tr>
+                                <tr><td><div class="course-row-info"><div class="course-row-icon green"><i class="fas fa-server"></i></div><div><strong>Node.js &amp; Express Mastery</strong><p>30 hours · Updated 1 week ago</p></div></div></td><td><span class="course-badge green">Backend</span></td><td>32</td><td>$1,340</td><td><div style="display:flex;align-items:center;gap:8px"><div class="mini-progress"><div class="mini-fill" style="width:90%"></div></div><span>90%</span></div></td><td><span class="status-pill green">Published</span></td><td><div class="row-actions"><button class="icon-btn"><i class="fas fa-edit"></i></button><button class="icon-btn"><i class="fas fa-chart-bar"></i></button><button class="icon-btn"><i class="fas fa-ellipsis-v"></i></button></div></td></tr>
+                                <tr><td><div class="course-row-info"><div class="course-row-icon purple"><i class="fas fa-database"></i></div><div><strong>SQL &amp; Data Management</strong><p>20 hours · Updated 2 weeks ago</p></div></div></td><td><span class="course-badge purple">Database</span></td><td>28</td><td>$1,120</td><td><div style="display:flex;align-items:center;gap:8px"><div class="mini-progress"><div class="mini-fill" style="width:60%"></div></div><span>60%</span></div></td><td><span class="status-pill green">Published</span></td><td><div class="row-actions"><button class="icon-btn"><i class="fas fa-edit"></i></button><button class="icon-btn"><i class="fas fa-chart-bar"></i></button><button class="icon-btn"><i class="fas fa-ellipsis-v"></i></button></div></td></tr>
+                                <tr><td><div class="course-row-info"><div class="course-row-icon orange"><i class="fab fa-js-square"></i></div><div><strong>JavaScript Basics for Beginners</strong><p>15 hours · Updated 1 month ago</p></div></div></td><td><span class="course-badge blue">Web Dev</span></td><td>61</td><td>$2,440</td><td><div style="display:flex;align-items:center;gap:8px"><div class="mini-progress"><div class="mini-fill" style="width:100%"></div></div><span>100%</span></div></td><td><span class="status-pill green">Published</span></td><td><div class="row-actions"><button class="icon-btn"><i class="fas fa-edit"></i></button><button class="icon-btn"><i class="fas fa-chart-bar"></i></button><button class="icon-btn"><i class="fas fa-ellipsis-v"></i></button></div></td></tr>
+                                <tr><td><div class="course-row-info"><div class="course-row-icon gray"><i class="fab fa-react"></i></div><div><strong>React &amp; Redux Deep Dive</strong><p>28 hours · Last edited today</p></div></div></td><td><span class="course-badge blue">Frontend</span></td><td>0</td><td>—</td><td><div style="display:flex;align-items:center;gap:8px"><div class="mini-progress"><div class="mini-fill" style="width:40%"></div></div><span>40%</span></div></td><td><span class="status-pill yellow">Draft</span></td><td><div class="row-actions"><button class="icon-btn"><i class="fas fa-edit"></i></button><button class="icon-btn"><i class="fas fa-chart-bar"></i></button><button class="icon-btn"><i class="fas fa-ellipsis-v"></i></button></div></td></tr>
+                                <tr><td><div class="course-row-info"><div class="course-row-icon gray"><i class="fas fa-code-branch"></i></div><div><strong>Git &amp; Version Control</strong><p>10 hours · Archived 2 months ago</p></div></div></td><td><span class="course-badge" style="background:#94a3b8">DevOps</span></td><td>18</td><td>$450</td><td><div style="display:flex;align-items:center;gap:8px"><div class="mini-progress"><div class="mini-fill" style="width:100%"></div></div><span>100%</span></div></td><td><span class="status-pill gray">Archived</span></td><td><div class="row-actions"><button class="icon-btn"><i class="fas fa-edit"></i></button><button class="icon-btn"><i class="fas fa-chart-bar"></i></button><button class="icon-btn"><i class="fas fa-ellipsis-v"></i></button></div></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===================== STUDENTS PAGE ===================== -->
+            <section id="students" class="content-section page-section" style="display:none;">
+                <div class="page-header">
+                    <div><h1>Students</h1><p>Track and manage all your enrolled students</p></div>
+                    <button class="primary-btn"><i class="fas fa-user-plus"></i> Invite Student</button>
+                </div>
+                <div class="stats-grid" style="margin-bottom:28px">
+                    <div class="stat-card blue-gradient"><div class="stat-icon"><i class="fas fa-users"></i></div><div class="stat-content"><h3>Total Students</h3><p class="stat-number">184</p><span class="stat-change positive">+12 this month</span></div></div>
+                    <div class="stat-card green-gradient"><div class="stat-icon"><i class="fas fa-user-check"></i></div><div class="stat-content"><h3>Active This Week</h3><p class="stat-number">24</p><span class="stat-change positive">82% engagement</span></div></div>
+                    <div class="stat-card purple-gradient"><div class="stat-icon"><i class="fas fa-graduation-cap"></i></div><div class="stat-content"><h3>Completed Courses</h3><p class="stat-number">67</p><span class="stat-change positive">+8 this month</span></div></div>
+                    <div class="stat-card orange-gradient"><div class="stat-icon"><i class="fas fa-clock"></i></div><div class="stat-content"><h3>Avg. Sessions/Student</h3><p class="stat-number">5.2</p><span class="stat-change">Per month</span></div></div>
+                </div>
+                <div class="card-section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-users"></i> All Students</h2>
+                        <div class="search-container" style="flex:0 0 260px;padding:8px 14px;"><i class="fas fa-search"></i><input type="search" placeholder="Search students..."></div>
+                    </div>
+                    <div class="students-grid">
+                        <div class="student-card"><div class="student-card-top"><div class="student-av" style="background:linear-gradient(135deg,#6366f1,#8b5cf6)"><span>DC</span></div><div class="student-status-dot active"></div></div><h4>Daniel Chen</h4><p>JavaScript Basics</p><div class="student-progress"><div class="progress-bar"><div class="progress" style="width:68%"></div></div><span>68%</span></div><div class="student-meta"><span><i class="fas fa-video"></i> 8 sessions</span><span><i class="fas fa-star" style="color:#f59e0b"></i> Active</span></div><button class="secondary-btn full-width" style="margin-top:12px">View Profile</button></div>
+                        <div class="student-card"><div class="student-card-top"><div class="student-av" style="background:linear-gradient(135deg,#10b981,#059669)"><span>MR</span></div><div class="student-status-dot active"></div></div><h4>Maria Rodriguez</h4><p>Advanced UI Design</p><div class="student-progress"><div class="progress-bar"><div class="progress" style="width:91%"></div></div><span>91%</span></div><div class="student-meta"><span><i class="fas fa-video"></i> 12 sessions</span><span><i class="fas fa-star" style="color:#f59e0b"></i> Top Student</span></div><button class="secondary-btn full-width" style="margin-top:12px">View Profile</button></div>
+                        <div class="student-card"><div class="student-card-top"><div class="student-av" style="background:linear-gradient(135deg,#f59e0b,#ef4444)"><span>AT</span></div><div class="student-status-dot"></div></div><h4>Alex Thompson</h4><p>SQL &amp; Databases</p><div class="student-progress"><div class="progress-bar"><div class="progress" style="width:45%"></div></div><span>45%</span></div><div class="student-meta"><span><i class="fas fa-video"></i> 5 sessions</span><span><i class="fas fa-clock" style="color:#94a3b8"></i> Inactive</span></div><button class="secondary-btn full-width" style="margin-top:12px">View Profile</button></div>
+                        <div class="student-card"><div class="student-card-top"><div class="student-av" style="background:linear-gradient(135deg,#3b82f6,#6366f1)"><span>JW</span></div><div class="student-status-dot active"></div></div><h4>James Wilson</h4><p>Advanced UI Design</p><div class="student-progress"><div class="progress-bar"><div class="progress" style="width:22%"></div></div><span>22%</span></div><div class="student-meta"><span><i class="fas fa-video"></i> 2 sessions</span><span><i class="fas fa-star" style="color:#f59e0b"></i> New</span></div><button class="secondary-btn full-width" style="margin-top:12px">View Profile</button></div>
+                        <div class="student-card"><div class="student-card-top"><div class="student-av" style="background:linear-gradient(135deg,#ec4899,#8b5cf6)"><span>SL</span></div><div class="student-status-dot active"></div></div><h4>Sophie Lee</h4><p>Node.js &amp; Express</p><div class="student-progress"><div class="progress-bar"><div class="progress" style="width:77%"></div></div><span>77%</span></div><div class="student-meta"><span><i class="fas fa-video"></i> 9 sessions</span><span><i class="fas fa-star" style="color:#f59e0b"></i> Active</span></div><button class="secondary-btn full-width" style="margin-top:12px">View Profile</button></div>
+                        <div class="student-card"><div class="student-card-top"><div class="student-av" style="background:linear-gradient(135deg,#14b8a6,#0ea5e9)"><span>RK</span></div><div class="student-status-dot"></div></div><h4>Raj Kumar</h4><p>JavaScript Basics</p><div class="student-progress"><div class="progress-bar"><div class="progress" style="width:55%"></div></div><span>55%</span></div><div class="student-meta"><span><i class="fas fa-video"></i> 6 sessions</span><span><i class="fas fa-clock" style="color:#94a3b8"></i> Inactive</span></div><button class="secondary-btn full-width" style="margin-top:12px">View Profile</button></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===================== SESSIONS PAGE ===================== -->
+            <section id="all-sessions" class="content-section page-section" style="display:none;">
+                <div class="page-header">
+                    <div><h1>Sessions</h1><p>Schedule and manage all your mentoring sessions</p></div>
+                    <button class="primary-btn"><i class="fas fa-plus"></i> Schedule Session</button>
+                </div>
+                <div class="calendar-strip card-section" style="padding:20px 24px">
+                    <div class="cal-header">
+                        <button class="icon-btn"><i class="fas fa-chevron-left"></i></button>
+                        <h3>April 2025</h3>
+                        <button class="icon-btn"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                    <div class="cal-days">
+                        <div class="cal-day"><span>Mon</span><strong>7</strong></div>
+                        <div class="cal-day"><span>Tue</span><strong>8</strong></div>
+                        <div class="cal-day"><span>Wed</span><strong>9</strong></div>
+                        <div class="cal-day has-event"><span>Thu</span><strong>10</strong><div class="cal-dot"></div></div>
+                        <div class="cal-day active"><span>Fri</span><strong>11</strong><div class="cal-dot"></div></div>
+                        <div class="cal-day has-event"><span>Sat</span><strong>12</strong><div class="cal-dot"></div></div>
+                        <div class="cal-day"><span>Sun</span><strong>13</strong></div>
+                    </div>
+                </div>
+                <div class="card-section">
+                    <div class="section-header"><h2><i class="fas fa-calendar-day"></i> Today — Friday, April 11</h2></div>
+                    <div class="sessions-list">
+                        <div class="session-card"><div class="session-time-block"><span class="session-hour">10:30</span><span class="session-ampm">AM</span><span class="session-dur">60 min</span></div><div class="session-info" style="flex:1"><div class="student-avatar"><div class="student-av sm" style="background:linear-gradient(135deg,#6366f1,#8b5cf6)"><span>DC</span></div></div><div><h4>Daniel Chen</h4><p><i class="fas fa-code"></i> JavaScript Basics · Module 4</p><span class="time">10:30 AM – 11:30 AM</span></div></div><div style="display:flex;flex-direction:column;gap:6px;align-items:flex-end"><span class="status-pill green">Upcoming</span><div class="session-actions"><button class="secondary-btn"><i class="fas fa-video"></i> Join</button><button class="icon-btn"><i class="fas fa-ellipsis-v"></i></button></div></div></div>
+                        <div class="session-card"><div class="session-time-block"><span class="session-hour">2:00</span><span class="session-ampm">PM</span><span class="session-dur">60 min</span></div><div class="session-info" style="flex:1"><div class="student-avatar"><div class="student-av sm" style="background:linear-gradient(135deg,#10b981,#059669)"><span>MR</span></div></div><div><h4>Maria Rodriguez</h4><p><i class="fas fa-palette"></i> Advanced UI Design · Module 7</p><span class="time">2:00 PM – 3:00 PM</span></div></div><div style="display:flex;flex-direction:column;gap:6px;align-items:flex-end"><span class="status-pill yellow">Scheduled</span><div class="session-actions"><button class="secondary-btn"><i class="fas fa-video"></i> Join</button><button class="icon-btn"><i class="fas fa-ellipsis-v"></i></button></div></div></div>
+                        <div class="session-card"><div class="session-time-block"><span class="session-hour">4:00</span><span class="session-ampm">PM</span><span class="session-dur">60 min</span></div><div class="session-info" style="flex:1"><div class="student-avatar"><div class="student-av sm" style="background:linear-gradient(135deg,#f59e0b,#ef4444)"><span>AT</span></div></div><div><h4>Alex Thompson</h4><p><i class="fas fa-database"></i> SQL &amp; Databases · Module 2</p><span class="time">4:00 PM – 5:00 PM</span></div></div><div style="display:flex;flex-direction:column;gap:6px;align-items:flex-end"><span class="status-pill yellow">Scheduled</span><div class="session-actions"><button class="secondary-btn"><i class="fas fa-video"></i> Join</button><button class="icon-btn"><i class="fas fa-ellipsis-v"></i></button></div></div></div>
+                    </div>
+                </div>
+                <div class="card-section">
+                    <div class="section-header"><h2><i class="fas fa-history"></i> Past Sessions</h2></div>
+                    <div class="sessions-list">
+                        <div class="session-card session-past"><div class="session-time-block"><span class="session-hour">10:00</span><span class="session-ampm">AM</span><span class="session-dur">Apr 10</span></div><div class="session-info" style="flex:1"><div class="student-avatar"><div class="student-av sm" style="background:linear-gradient(135deg,#6366f1,#8b5cf6)"><span>DC</span></div></div><div><h4>Daniel Chen</h4><p><i class="fas fa-code"></i> JavaScript Basics · Module 3</p><span class="time">Duration: 58 min</span></div></div><div style="display:flex;flex-direction:column;gap:6px;align-items:flex-end"><span class="status-pill gray">Completed</span><div class="session-actions"><button class="secondary-btn"><i class="fas fa-file-alt"></i> Notes</button></div></div></div>
+                        <div class="session-card session-past"><div class="session-time-block"><span class="session-hour">3:00</span><span class="session-ampm">PM</span><span class="session-dur">Apr 9</span></div><div class="session-info" style="flex:1"><div class="student-avatar"><div class="student-av sm" style="background:linear-gradient(135deg,#ec4899,#8b5cf6)"><span>SL</span></div></div><div><h4>Sophie Lee</h4><p><i class="fas fa-server"></i> Node.js &amp; Express · Module 6</p><span class="time">Duration: 62 min</span></div></div><div style="display:flex;flex-direction:column;gap:6px;align-items:flex-end"><span class="status-pill gray">Completed</span><div class="session-actions"><button class="secondary-btn"><i class="fas fa-file-alt"></i> Notes</button></div></div></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===================== ASSIGNMENTS PAGE ===================== -->
+            <section id="assignments" class="content-section page-section" style="display:none;">
+                <div class="page-header">
+                    <div><h1>Student Assignments</h1><p>Track and grade student submissions</p></div>
+                </div>
+                <div class="filter-bar">
+                    <div class="filter-tabs">
+                        <button class="filter-tab active">All (12)</button>
+                        <button class="filter-tab">Pending (3)</button>
+                        <button class="filter-tab">Submitted (6)</button>
+                        <button class="filter-tab">Graded (3)</button>
+                    </div>
+                </div>
+                <div class="card-section" style="padding:0">
+                    <div class="courses-table-wrap">
+                        <table class="courses-table">
+                            <thead><tr><th>Assignment</th><th>Student</th><th>Course</th><th>Due Date</th><th>Status</th><th>Score</th><th>Actions</th></tr></thead>
+                            <tbody>
+                                <tr><td><div class="course-row-info"><div class="course-row-icon blue"><i class="fas fa-code"></i></div><div><strong>Todo App Project</strong><p>Build a functional todo application</p></div></div></td><td><div class="student-av xs" style="background:linear-gradient(135deg,#6366f1,#8b5cf6)"><span>DC</span></div> Daniel Chen</td><td>JavaScript Basics</td><td>Apr 20, 2026</td><td><span class="status-pill green">Submitted</span></td><td><strong style="color:#10b981">95%</strong></td><td><div class="row-actions"><button class="icon-btn"><i class="fas fa-eye"></i></button><button class="icon-btn"><i class="fas fa-check-circle"></i></button><button class="icon-btn"><i class="fas fa-comment"></i></button></div></td></tr>
+                                <tr><td><div class="course-row-info"><div class="course-row-icon blue"><i class="fas fa-code"></i></div><div><strong>Todo App Project</strong><p>Build a functional todo application</p></div></div></td><td><div class="student-av xs" style="background:linear-gradient(135deg,#10b981,#059669)"><span>MR</span></div> Maria Rodriguez</td><td>JavaScript Basics</td><td>Apr 20, 2026</td><td><span class="status-pill green">Submitted</span></td><td><strong style="color:#10b981">92%</strong></td><td><div class="row-actions"><button class="icon-btn"><i class="fas fa-eye"></i></button><button class="icon-btn"><i class="fas fa-check-circle"></i></button><button class="icon-btn"><i class="fas fa-comment"></i></button></div></td></tr>
+                                <tr><td><div class="course-row-info"><div class="course-row-icon green"><i class="fas fa-server"></i></div><div><strong>REST API Development</strong><p>Create a RESTful API with Node.js</p></div></div></td><td><div class="student-av xs" style="background:linear-gradient(135deg,#ec4899,#8b5cf6)"><span>SL</span></div> Sophie Lee</td><td>Node.js & Express</td><td>Apr 25, 2026</td><td><span class="status-pill yellow">Pending</span></td><td>—</td><td><div class="row-actions"><button class="icon-btn"><i class="fas fa-bell"></i></button><button class="icon-btn"><i class="fas fa-ellipsis-v"></i></button></div></td></tr>
+                                <tr><td><div class="course-row-info"><div class="course-row-icon green"><i class="fas fa-server"></i></div><div><strong>REST API Development</strong><p>Create a RESTful API with Node.js</p></div></div></td><td><div class="student-av xs" style="background:linear-gradient(135deg,#3b82f6,#6366f1)"><span>JW</span></div> James Wilson</td><td>Node.js & Express</td><td>Apr 25, 2026</td><td><span class="status-pill green">Submitted</span></td><td><strong style="color:#10b981">88%</strong></td><td><div class="row-actions"><button class="icon-btn"><i class="fas fa-eye"></i></button><button class="icon-btn"><i class="fas fa-check-circle"></i></button><button class="icon-btn"><i class="fas fa-comment"></i></button></div></td></tr>
+                                <tr><td><div class="course-row-info"><div class="course-row-icon purple"><i class="fas fa-palette"></i></div><div><strong>Wireframing Exercise</strong><p>Create wireframes for an e-commerce site</p></div></div></td><td><div class="student-av xs" style="background:linear-gradient(135deg,#f59e0b,#ef4444)"><span>AT</span></div> Alex Thompson</td><td>Advanced UI Design</td><td>Apr 18, 2026</td><td><span class="status-pill green">Graded</span></td><td><strong style="color:#10b981">87%</strong></td><td><div class="row-actions"><button class="icon-btn"><i class="fas fa-eye"></i></button><button class="icon-btn"><i class="fas fa-redo"></i></button></div></td></tr>
+                                <tr><td><div class="course-row-info"><div class="course-row-icon gray"><i class="fas fa-check-circle"></i></div><div><strong>Design System Project</strong><p>Build a comprehensive design system</p></div></div></td><td><div class="student-av xs" style="background:linear-gradient(135deg,#14b8a6,#0ea5e9)"><span>RK</span></div> Raj Kumar</td><td>Advanced UI Design</td><td>Apr 22, 2026</td><td><span class="status-pill yellow">Pending</span></td><td>—</td><td><div class="row-actions"><button class="icon-btn"><i class="fas fa-bell"></i></button><button class="icon-btn"><i class="fas fa-ellipsis-v"></i></button></div></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===================== EARNINGS PAGE ===================== -->
+            <section id="earnings" class="content-section page-section" style="display:none;">
+                <div class="page-header">
+                    <div><h1>Earnings</h1><p>Track your revenue and payment history</p></div>
+                    <button class="primary-btn"><i class="fas fa-download"></i> Export Report</button>
+                </div>
+                <div class="stats-grid" style="margin-bottom:28px">
+                    <div class="stat-card green-gradient"><div class="stat-icon"><i class="fas fa-dollar-sign"></i></div><div class="stat-content"><h3>Total Earnings</h3><p class="stat-number">$5,240</p><span class="stat-change positive">+12% this month</span></div></div>
+                    <div class="stat-card blue-gradient"><div class="stat-icon"><i class="fas fa-calendar-check"></i></div><div class="stat-content"><h3>This Month</h3><p class="stat-number">$980</p><span class="stat-change positive">14 sessions</span></div></div>
+                    <div class="stat-card purple-gradient"><div class="stat-icon"><i class="fas fa-clock"></i></div><div class="stat-content"><h3>Pending Payout</h3><p class="stat-number">$340</p><span class="stat-change">Processing</span></div></div>
+                    <div class="stat-card orange-gradient"><div class="stat-icon"><i class="fas fa-chart-line"></i></div><div class="stat-content"><h3>Avg. per Session</h3><p class="stat-number">$85</p><span class="stat-change positive">Your hourly rate</span></div></div>
+                </div>
+                <div class="card-section">
+                    <div class="section-header"><h2><i class="fas fa-chart-bar"></i> Monthly Revenue</h2>
+                        <div class="filter-tabs" style="margin:0"><button class="filter-tab active">6 Months</button><button class="filter-tab">1 Year</button></div>
+                    </div>
+                    <div class="earnings-chart">
+                        <div class="chart-bars">
+                            <div class="chart-bar-wrap"><div class="chart-bar" style="height:55%"><span class="bar-tip">$680</span></div><span class="bar-label">Nov</span></div>
+                            <div class="chart-bar-wrap"><div class="chart-bar" style="height:72%"><span class="bar-tip">$890</span></div><span class="bar-label">Dec</span></div>
+                            <div class="chart-bar-wrap"><div class="chart-bar" style="height:60%"><span class="bar-tip">$740</span></div><span class="bar-label">Jan</span></div>
+                            <div class="chart-bar-wrap"><div class="chart-bar" style="height:80%"><span class="bar-tip">$990</span></div><span class="bar-label">Feb</span></div>
+                            <div class="chart-bar-wrap"><div class="chart-bar" style="height:68%"><span class="bar-tip">$840</span></div><span class="bar-label">Mar</span></div>
+                            <div class="chart-bar-wrap"><div class="chart-bar active-bar" style="height:79%"><span class="bar-tip">$980</span></div><span class="bar-label">Apr</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-section">
+                    <div class="section-header"><h2><i class="fas fa-receipt"></i> Transaction History</h2></div>
+                    <div class="courses-table-wrap">
+                        <table class="courses-table">
+                            <thead><tr><th>Student</th><th>Course / Session</th><th>Date</th><th>Amount</th><th>Status</th></tr></thead>
+                            <tbody>
+                                <tr><td><div class="course-row-info"><div class="student-av xs" style="background:linear-gradient(135deg,#10b981,#059669)"><span>MR</span></div><strong>Maria Rodriguez</strong></div></td><td>Advanced UI Design — Session 12</td><td>Apr 10, 2025</td><td class="amount-green">+$85</td><td><span class="status-pill green">Paid</span></td></tr>
+                                <tr><td><div class="course-row-info"><div class="student-av xs" style="background:linear-gradient(135deg,#6366f1,#8b5cf6)"><span>DC</span></div><strong>Daniel Chen</strong></div></td><td>JavaScript Basics — Session 8</td><td>Apr 10, 2025</td><td class="amount-green">+$85</td><td><span class="status-pill green">Paid</span></td></tr>
+                                <tr><td><div class="course-row-info"><div class="student-av xs" style="background:linear-gradient(135deg,#ec4899,#8b5cf6)"><span>SL</span></div><strong>Sophie Lee</strong></div></td><td>Node.js &amp; Express — Session 9</td><td>Apr 9, 2025</td><td class="amount-green">+$85</td><td><span class="status-pill green">Paid</span></td></tr>
+                                <tr><td><div class="course-row-info"><div class="student-av xs" style="background:linear-gradient(135deg,#3b82f6,#6366f1)"><span>JW</span></div><strong>James Wilson</strong></div></td><td>Advanced UI Design — Session 2</td><td>Apr 8, 2025</td><td class="amount-pending">+$85</td><td><span class="status-pill yellow">Pending</span></td></tr>
+                                <tr><td><div class="course-row-info"><div class="student-av xs" style="background:linear-gradient(135deg,#f59e0b,#ef4444)"><span>AT</span></div><strong>Alex Thompson</strong></div></td><td>SQL &amp; Databases — Session 5</td><td>Apr 7, 2025</td><td class="amount-pending">+$85</td><td><span class="status-pill yellow">Pending</span></td></tr>
+                                <tr><td><div class="course-row-info"><div class="student-av xs" style="background:linear-gradient(135deg,#14b8a6,#0ea5e9)"><span>RK</span></div><strong>Raj Kumar</strong></div></td><td>JavaScript Basics — Session 6</td><td>Apr 5, 2025</td><td class="amount-green">+$85</td><td><span class="status-pill green">Paid</span></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===================== MESSAGES PAGE ===================== -->
+            <section id="messages" class="content-section page-section" style="display:none;padding:0">
+                <div class="messages-layout">
+                    <div class="messages-sidebar">
+                        <div class="messages-sidebar-header"><h2>Messages</h2><button class="icon-btn"><i class="fas fa-edit"></i></button></div>
+                        <div class="search-container" style="margin:0 16px 16px;padding:8px 14px"><i class="fas fa-search"></i><input type="search" placeholder="Search messages..."></div>
+                        <div class="conversations-list">
+                            <div class="conversation-item active"><div class="student-av sm" style="background:linear-gradient(135deg,#10b981,#059669)"><span>MR</span></div><div class="conv-info"><div class="conv-top"><strong>Maria Rodriguez</strong><span class="conv-time">2m ago</span></div><p>Thanks for the session, it was really helpful!</p></div><div class="conv-badge">2</div></div>
+                            <div class="conversation-item"><div class="student-av sm" style="background:linear-gradient(135deg,#6366f1,#8b5cf6)"><span>DC</span></div><div class="conv-info"><div class="conv-top"><strong>Daniel Chen</strong><span class="conv-time">1h ago</span></div><p>I'm having trouble with async/await in...</p></div></div>
+                            <div class="conversation-item"><div class="student-av sm" style="background:linear-gradient(135deg,#ec4899,#8b5cf6)"><span>SL</span></div><div class="conv-info"><div class="conv-top"><strong>Sophie Lee</strong><span class="conv-time">3h ago</span></div><p>Can we reschedule tomorrow's session?</p></div><div class="conv-badge">1</div></div>
+                            <div class="conversation-item"><div class="student-av sm" style="background:linear-gradient(135deg,#3b82f6,#6366f1)"><span>JW</span></div><div class="conv-info"><div class="conv-top"><strong>James Wilson</strong><span class="conv-time">Yesterday</span></div><p>Just enrolled! Really excited to start.</p></div></div>
+                            <div class="conversation-item"><div class="student-av sm" style="background:linear-gradient(135deg,#f59e0b,#ef4444)"><span>AT</span></div><div class="conv-info"><div class="conv-top"><strong>Alex Thompson</strong><span class="conv-time">2d ago</span></div><p>I've finished the SQL exercises you...</p></div></div>
+                        </div>
+                    </div>
+                    <div class="chat-window">
+                        <div class="chat-header">
+                            <div class="student-av sm" style="background:linear-gradient(135deg,#10b981,#059669)"><span>MR</span></div>
+                            <div><strong>Maria Rodriguez</strong><p><span class="online-dot"></span> Online · Advanced UI Design</p></div>
+                            <div style="margin-left:auto;display:flex;gap:8px"><button class="icon-btn"><i class="fas fa-video"></i></button><button class="icon-btn"><i class="fas fa-phone"></i></button><button class="icon-btn"><i class="fas fa-info-circle"></i></button></div>
+                        </div>
+                        <div class="chat-messages">
+                            <div class="msg-group"><div class="msg received"><p>Hi! I just finished watching the lecture on grid layouts. It was really clear!</p><span>2:15 PM</span></div><div class="msg received"><p>I had a question about the gap property — does it also work with flexbox?</p><span>2:16 PM</span></div></div>
+                            <div class="msg-group sent-group"><div class="msg sent"><p>Great question! Yes, gap works perfectly with flexbox too — it was added in CSS3.</p><span>2:20 PM</span></div></div>
+                            <div class="msg-group"><div class="msg received"><p>Amazing! I'll try that right away. Thanks for the session today, it was really helpful! 🙌</p><span>2:22 PM</span></div></div>
+                        </div>
+                        <div class="chat-input-bar">
+                            <button class="icon-btn"><i class="fas fa-paperclip"></i></button>
+                            <input type="text" class="chat-input" placeholder="Type a message...">
+                            <button class="primary-btn" style="padding:10px 16px"><i class="fas fa-paper-plane"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===================== REVIEWS PAGE ===================== -->
+            <section id="reviews" class="content-section page-section" style="display:none;">
+                <div class="page-header">
+                    <div><h1>Reviews</h1><p>What your students say about your mentoring</p></div>
+                </div>
+                <div class="reviews-summary card-section">
+                    <div class="rating-big"><span class="big-number">4.9</span><div class="big-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div><p>Based on 87 reviews</p></div>
+                    <div class="rating-bars">
+                        <div class="rating-bar-row"><span>5 ★</span><div class="progress-bar" style="flex:1"><div class="progress" style="width:78%"></div></div><span>68</span></div>
+                        <div class="rating-bar-row"><span>4 ★</span><div class="progress-bar" style="flex:1"><div class="progress" style="width:14%;background:#10b981"></div></div><span>12</span></div>
+                        <div class="rating-bar-row"><span>3 ★</span><div class="progress-bar" style="flex:1"><div class="progress" style="width:6%;background:#f59e0b"></div></div><span>5</span></div>
+                        <div class="rating-bar-row"><span>2 ★</span><div class="progress-bar" style="flex:1"><div class="progress" style="width:2%;background:#ef4444"></div></div><span>2</span></div>
+                        <div class="rating-bar-row"><span>1 ★</span><div class="progress-bar" style="flex:1"><div class="progress" style="width:0%"></div></div><span>0</span></div>
+                    </div>
+                    <div class="review-badges">
+                        <div class="review-badge-item"><i class="fas fa-trophy" style="color:#f59e0b"></i><strong>Top Mentor</strong><p>Top 5% this month</p></div>
+                        <div class="review-badge-item"><i class="fas fa-redo" style="color:#6366f1"></i><strong>92% Return Rate</strong><p>Students come back</p></div>
+                        <div class="review-badge-item"><i class="fas fa-thumbs-up" style="color:#10b981"></i><strong>100% Recommend</strong><p>Would recommend</p></div>
+                    </div>
+                </div>
+                <div class="card-section">
+                    <div class="section-header"><h2><i class="fas fa-comment-alt"></i> All Reviews</h2><select class="filter-select"><option>Most Recent</option><option>Highest Rated</option><option>Lowest Rated</option></select></div>
+                    <div class="reviews-list">
+                        <div class="review-card"><div class="review-top"><div class="student-av sm" style="background:linear-gradient(135deg,#10b981,#059669)"><span>MR</span></div><div><strong>Maria Rodriguez</strong><p>Advanced UI Design · April 10, 2025</p></div><div class="review-stars" style="margin-left:auto"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div><p class="review-text">Excellent mentor! John explains complex concepts in a very clear and engaging way. The sessions are well-structured and I always leave with practical takeaways. Highly recommended!</p><div class="review-reply"><i class="fas fa-reply" style="color:var(--primary-color)"></i><p>Thank you so much, Maria! It's been a pleasure working with you — you've made incredible progress!</p></div></div>
+                        <div class="review-card"><div class="review-top"><div class="student-av sm" style="background:linear-gradient(135deg,#6366f1,#8b5cf6)"><span>DC</span></div><div><strong>Daniel Chen</strong><p>JavaScript Basics · April 5, 2025</p></div><div class="review-stars" style="margin-left:auto"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div><p class="review-text">John is an incredible teacher. He is patient, knowledgeable, and adapts his teaching to my learning pace. The way he breaks down JavaScript concepts makes them easy to understand and remember.</p></div>
+                        <div class="review-card"><div class="review-top"><div class="student-av sm" style="background:linear-gradient(135deg,#ec4899,#8b5cf6)"><span>SL</span></div><div><strong>Sophie Lee</strong><p>Node.js &amp; Express · March 28, 2025</p></div><div class="review-stars" style="margin-left:auto"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div><p class="review-text">The Node.js course is comprehensive and well-paced. John provides real-world examples that make the content relatable. I've already started applying what I learned in my projects!</p></div>
+                        <div class="review-card"><div class="review-top"><div class="student-av sm" style="background:linear-gradient(135deg,#f59e0b,#ef4444)"><span>AT</span></div><div><strong>Alex Thompson</strong><p>SQL &amp; Data Management · March 15, 2025</p></div><div class="review-stars" style="margin-left:auto"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div></div><p class="review-text">Good sessions overall. The SQL content is solid. Would love a bit more hands-on exercises but the explanations are clear and the mentor is very responsive to questions.</p></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===================== SETTINGS PAGE ===================== -->
+            <section id="settings" class="content-section page-section" style="display:none;">
+                <div class="page-header">
+                    <div><h1>Settings</h1><p>Manage your account preferences and notifications</p></div>
+                    <button class="primary-btn"><i class="fas fa-save"></i> Save All Changes</button>
+                </div>
+                <div class="settings-layout">
+                    <div class="settings-nav card-section" style="padding:8px">
+                        <a href="#" class="settings-nav-item active"><i class="fas fa-bell"></i> Notifications</a>
+                        <a href="#" class="settings-nav-item"><i class="fas fa-lock"></i> Security &amp; Privacy</a>
+                        <a href="#" class="settings-nav-item"><i class="fas fa-credit-card"></i> Payment Methods</a>
+                        <a href="#" class="settings-nav-item"><i class="fas fa-calendar-alt"></i> Availability</a>
+                        <a href="#" class="settings-nav-item"><i class="fas fa-video"></i> Meeting Preferences</a>
+                        <a href="#" class="settings-nav-item"><i class="fas fa-palette"></i> Appearance</a>
+                    </div>
+                    <div class="settings-content">
+                        <div class="form-card">
+                            <h3><i class="fas fa-bell"></i> Notification Preferences</h3>
+                            <div class="settings-list">
+                                <div class="setting-row"><div><strong>Session Reminders</strong><p>Get notified 30 minutes before a session</p></div><label class="toggle"><input type="checkbox" checked><span class="toggle-slider"></span></label></div>
+                                <div class="setting-row"><div><strong>New Student Enrollment</strong><p>Notify when a student enrolls in your course</p></div><label class="toggle"><input type="checkbox" checked><span class="toggle-slider"></span></label></div>
+                                <div class="setting-row"><div><strong>New Reviews</strong><p>Get notified when a student leaves a review</p></div><label class="toggle"><input type="checkbox" checked><span class="toggle-slider"></span></label></div>
+                                <div class="setting-row"><div><strong>Payment Received</strong><p>Notify on successful payment processing</p></div><label class="toggle"><input type="checkbox" checked><span class="toggle-slider"></span></label></div>
+                                <div class="setting-row"><div><strong>Marketing Emails</strong><p>Product updates and platform news</p></div><label class="toggle"><input type="checkbox"><span class="toggle-slider"></span></label></div>
+                            </div>
+                        </div>
+                        <div class="form-card">
+                            <h3><i class="fas fa-lock"></i> Security</h3>
+                            <div class="form-grid">
+                                <div class="form-group full-col"><label>Current Password</label><input type="password" placeholder="Enter current password" class="form-input"></div>
+                                <div class="form-group"><label>New Password</label><input type="password" placeholder="New password" class="form-input"></div>
+                                <div class="form-group"><label>Confirm New Password</label><input type="password" placeholder="Confirm new password" class="form-input"></div>
+                            </div>
+                            <div class="settings-list" style="margin-top:20px">
+                                <div class="setting-row"><div><strong>Two-Factor Authentication</strong><p>Add an extra layer of security to your account</p></div><label class="toggle"><input type="checkbox"><span class="toggle-slider"></span></label></div>
+                                <div class="setting-row"><div><strong>Login Alerts</strong><p>Get notified of new sign-ins from unrecognized devices</p></div><label class="toggle"><input type="checkbox" checked><span class="toggle-slider"></span></label></div>
+                            </div>
+                            <button class="secondary-btn" style="margin-top:16px"><i class="fas fa-key"></i> Update Password</button>
+                        </div>
+                        <div class="form-card">
+                            <h3><i class="fas fa-calendar-alt"></i> Weekly Availability</h3>
+                            <div class="availability-grid">
+                                <div class="avail-row"><span class="avail-day">Monday</span><label class="toggle"><input type="checkbox" checked><span class="toggle-slider"></span></label><input type="time" value="09:00" class="form-input time-input"><span>to</span><input type="time" value="17:00" class="form-input time-input"></div>
+                                <div class="avail-row"><span class="avail-day">Tuesday</span><label class="toggle"><input type="checkbox" checked><span class="toggle-slider"></span></label><input type="time" value="09:00" class="form-input time-input"><span>to</span><input type="time" value="17:00" class="form-input time-input"></div>
+                                <div class="avail-row"><span class="avail-day">Wednesday</span><label class="toggle"><input type="checkbox" checked><span class="toggle-slider"></span></label><input type="time" value="09:00" class="form-input time-input"><span>to</span><input type="time" value="17:00" class="form-input time-input"></div>
+                                <div class="avail-row"><span class="avail-day">Thursday</span><label class="toggle"><input type="checkbox" checked><span class="toggle-slider"></span></label><input type="time" value="09:00" class="form-input time-input"><span>to</span><input type="time" value="17:00" class="form-input time-input"></div>
+                                <div class="avail-row"><span class="avail-day">Friday</span><label class="toggle"><input type="checkbox" checked><span class="toggle-slider"></span></label><input type="time" value="09:00" class="form-input time-input"><span>to</span><input type="time" value="15:00" class="form-input time-input"></div>
+                                <div class="avail-row"><span class="avail-day">Saturday</span><label class="toggle"><input type="checkbox"><span class="toggle-slider"></span></label><input type="time" value="10:00" class="form-input time-input" disabled><span>to</span><input type="time" value="14:00" class="form-input time-input" disabled></div>
+                                <div class="avail-row"><span class="avail-day">Sunday</span><label class="toggle"><input type="checkbox"><span class="toggle-slider"></span></label><input type="time" value="10:00" class="form-input time-input" disabled><span>to</span><input type="time" value="14:00" class="form-input time-input" disabled></div>
+                            </div>
+                        </div>
+                        <div class="form-card danger-card">
+                            <h3><i class="fas fa-exclamation-triangle" style="color:#ef4444"></i> Danger Zone</h3>
+                            <div class="setting-row"><div><strong>Deactivate Account</strong><p>Temporarily disable your mentor profile</p></div><button class="secondary-btn" style="border-color:#ef4444;color:#ef4444">Deactivate</button></div>
+                            <div class="setting-row"><div><strong>Delete Account</strong><p>Permanently delete your account and all data. This cannot be undone.</p></div><button class="secondary-btn" style="border-color:#ef4444;color:#ef4444;background:#fff1f2">Delete Account</button></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+<script>
+    const navLinks = document.querySelectorAll('.sidebar-nav a');
+    const pages = {
+        'overview': document.getElementById('overview'),
+        'profile': document.getElementById('profile'),
+        'courses': document.getElementById('my-courses'),
+        'students': document.getElementById('students'),
+        'sessions': document.getElementById('all-sessions'),
+        'assignments': document.getElementById('assignments'),
+        'earnings': document.getElementById('earnings'),
+        'messages': document.getElementById('messages'),
+        'reviews': document.getElementById('reviews'),
+        'settings': document.getElementById('settings'),
+        'logout': document.getElementById('logout'),
+    };
+
+    function showPage(id) {
+        Object.values(pages).forEach(p => { if(p) p.style.display = 'none'; });
+        const target = pages[id];
+        if (target) { target.style.display = 'block'; target.style.animation = 'fadeInUp 0.35s ease'; }
+    }
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            // Check if this is the logout button
+            if (this.classList.contains('logout-btn')) {
+                return; // Allow default navigation to login.html
+            }
+            
+            const href = this.getAttribute('href').replace('#','');
+            e.preventDefault();
+            navLinks.forEach(l => l.classList.remove('active'));
+            this.classList.add('active');
+            showPage(href);
+        });
+    });
+
+    document.querySelectorAll('.filter-tab').forEach(btn => {
+        btn.addEventListener('click', function() {
+            this.closest('.filter-tabs').querySelectorAll('.filter-tab').forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
+</script>
+</body>
+</html>

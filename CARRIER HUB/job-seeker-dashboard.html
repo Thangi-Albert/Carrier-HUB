@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Seeker Dashboard | WILLTECH</title>
+    <link rel="stylesheet" href="mentor-dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-rocket"></i>
+                    <span>WILLTECH</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="#dashboard" class="active"><i class="fas fa-chart-line"></i> Dashboard</a></li>
+                    <li><a href="#job-listings"><i class="fas fa-briefcase"></i> Job Listings</a></li>
+                    <li><a href="#applications"><i class="fas fa-file-alt"></i> Applications</a></li>
+                    <li><a href="#saved-jobs"><i class="fas fa-heart"></i> Saved Jobs</a></li>
+                    <li><a href="#my-profile"><i class="fas fa-user-circle"></i> My Profile</a></li>
+                    <li><a href="#resume"><i class="fas fa-file-pdf"></i> Resume/Portfolio</a></li>
+                    <li><a href="#skills"><i class="fas fa-award"></i> Skills & Endorsements</a></li>
+                    <li><a href="#messages"><i class="fas fa-envelope"></i> Messages</a></li>
+                    <li><a href="#interviews"><i class="fas fa-video"></i> Interviews</a></li>
+                    <li><a href="#notifications"><i class="fas fa-bell"></i> Notifications</a></li>
+                    <li><a href="#settings"><i class="fas fa-cog"></i> Settings</a></li>
+                    <li><a href="login.html" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Navigation Bar -->
+            <header class="top-bar">
+                <div class="search-container">
+                    <i class="fas fa-search"></i>
+                    <input type="search" placeholder="Search jobs, companies, or positions...">
+                </div>
+            </header>
+
+            <!-- ===================== DASHBOARD PAGE ===================== -->
+            <section id="dashboard" class="content-section">
+                <div class="welcome-header">
+                    <div>
+                        <h1>Welcome back, Professional! </h1>
+                        <p>Here's your job search overview and opportunities</p>
+                    </div>
+                    <button class="primary-btn"><i class="fas fa-search"></i> Find Jobs</button>
+                </div>
+
+                <!-- Stats Grid -->
+                <div class="stats-grid">
+                    <div class="stat-card blue-gradient">
+                        <div class="stat-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>Active Applications</h3>
+                            <p class="stat-number">7</p>
+                            <span class="stat-change positive">+2 this week</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card green-gradient">
+                        <div class="stat-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>Saved Jobs</h3>
+                            <p class="stat-number">24</p>
+                            <span class="stat-change positive">Perfect matches</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card purple-gradient">
+                        <div class="stat-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>Profile Strength</h3>
+                            <p class="stat-number">92%</p>
+                            <span class="stat-change positive">Very complete</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card orange-gradient">
+                        <div class="stat-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>Profile Views</h3>
+                            <p class="stat-number">128</p>
+                            <span class="stat-change positive">+32 this month</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recommended Jobs -->
+                <section id="recommended-jobs" class="card-section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-star"></i> Recommended For You</h2>
+                        <a href="#job-listings" class="view-all">View All →</a>
+                    </div>
+                    
+                    <div class="courses-grid">
+                        <div class="course-card">
+                            <div class="course-header">
+                                <div class="course-badge blue">Featured</div>
+                                <button class="icon-btn"><i class="fas fa-heart"></i></button>
+                            </div>
+                            <h3>Senior Full-Stack Developer</h3>
+                            <p class="course-desc">Join our dynamic team at TechCorp Inc. Building scalable applications with React and Node.js</p>
+                            <div class="course-stats">
+                                <span><i class="fas fa-building"></i> TechCorp Inc</span>
+                                <span><i class="fas fa-map-marker-alt"></i> San Francisco, CA</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 95%"></div>
+                            </div>
+                            <p class="progress-text">95% Match • $120K-$150K</p>
+                            <button class="secondary-btn full-width">View Details</button>
+                        </div>
+
+                        <div class="course-card">
+                            <div class="course-header">
+                                <div class="course-badge green">Hot</div>
+                                <button class="icon-btn"><i class="fas fa-heart"></i></button>
+                            </div>
+                            <h3>Product Designer - UX/UI</h3>
+                            <p class="course-desc">Looking for an experienced designer to lead our design system at InnovateTech</p>
+                            <div class="course-stats">
+                                <span><i class="fas fa-building"></i> InnovateTech</span>
+                                <span><i class="fas fa-map-marker-alt"></i> New York, NY</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 88%"></div>
+                            </div>
+                            <p class="progress-text">88% Match • $100K-$130K</p>
+                            <button class="secondary-btn full-width">View Details</button>
+                        </div>
+
+                        <div class="course-card">
+                            <div class="course-header">
+                                <div class="course-badge purple">Trending</div>
+                                <button class="icon-btn"><i class="fas fa-heart"></i></button>
+                            </div>
+                            <h3>DevOps Engineer</h3>
+                            <p class="course-desc">Help scale our infrastructure. Experience with AWS, Kubernetes, and CI/CD required</p>
+                            <div class="course-stats">
+                                <span><i class="fas fa-building"></i> CloudScale Systems</span>
+                                <span><i class="fas fa-map-marker-alt"></i> Remote</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 82%"></div>
+                            </div>
+                            <p class="progress-text">82% Match • $130K-$160K</p>
+                            <button class="secondary-btn full-width">View Details</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Application Status -->
+                <section id="app-status" class="card-section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-chart-bar"></i> Application Status</h2>
+                        <a href="#applications" class="view-all">View All →</a>
+                    </div>
+
+                    <div class="activities-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
+                        <div class="stat-card blue-gradient">
+                            <div class="stat-icon"><i class="fas fa-paper-plane"></i></div>
+                            <div class="stat-content">
+                                <h3>Applied</h3>
+                                <p class="stat-number">7</p>
+                                <span class="stat-change">Last 30 days</span>
+                            </div>
+                        </div>
+
+                        <div class="stat-card green-gradient">
+                            <div class="stat-icon"><i class="fas fa-eye"></i></div>
+                            <div class="stat-content">
+                                <h3>Viewed</h3>
+                                <p class="stat-number">5</p>
+                                <span class="stat-change positive">+2 this week</span>
+                            </div>
+                        </div>
+
+                        <div class="stat-card purple-gradient">
+                            <div class="stat-icon"><i class="fas fa-handshake"></i></div>
+                            <div class="stat-content">
+                                <h3>Interviews</h3>
+                                <p class="stat-number">2</p>
+                                <span class="stat-change positive">Scheduled</span>
+                            </div>
+                        </div>
+
+                        <div class="stat-card orange-gradient">
+                            <div class="stat-icon"><i class="fas fa-times"></i></div>
+                            <div class="stat-content">
+                                <h3>Rejected</h3>
+                                <p class="stat-number">1</p>
+                                <span class="stat-change">Keep trying!</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Recent Activity -->
+                <section class="card-section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-history"></i> Recent Activity</h2>
+                    </div>
+
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <div class="activity-icon green">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h4>Interview Scheduled</h4>
+                                <p>Your interview for Senior Full-Stack Developer at TechCorp is scheduled for Apr 22, 2026</p>
+                                <span class="time-ago">2 hours ago</span>
+                            </div>
+                        </div>
+
+                        <div class="activity-item">
+                            <div class="activity-icon blue">
+                                <i class="fas fa-paper-plane"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h4>Application Sent</h4>
+                                <p>You applied for DevOps Engineer position at CloudScale Systems</p>
+                                <span class="time-ago">5 hours ago</span>
+                            </div>
+                        </div>
+
+                        <div class="activity-item">
+                            <div class="activity-icon purple">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h4>Profile Viewed</h4>
+                                <p>Your profile was viewed by TechCorp Inc recruiter</p>
+                                <span class="time-ago">1 day ago</span>
+                            </div>
+                        </div>
+
+                        <div class="activity-item">
+                            <div class="activity-icon orange">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h4>Job Saved</h4>
+                                <p>You saved "Product Designer - UX/UI" at InnovateTech to your saved jobs</p>
+                                <span class="time-ago">2 days ago</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <!-- ===================== JOB LISTINGS PAGE ===================== -->
+            <section id="job-listings" class="content-section page-section" style="display:none;">
+                <div class="page-header">
+                    <div><h1>Job Listings</h1><p>Browse and apply for available positions</p></div>
+                    <button class="primary-btn"><i class="fas fa-filter"></i> Advanced Search</button>
+                </div>
+                <div class="filter-bar">
+                    <div class="filter-tabs">
+                        <button class="filter-tab active">All Jobs (156)</button>
+                        <button class="filter-tab">New (23)</button>
+                        <button class="filter-tab">Remote (45)</button>
+                        <button class="filter-tab">Entry Level (34)</button>
+                    </div>
+                </div>
+                <div class="card-section" style="padding:0">
+                    <div class="courses-table-wrap">
+                        <table class="courses-table">
+                            <thead><tr><th>Position</th><th>Company</th><th>Location</th><th>Salary Range</th><th>Match</th><th>Posted</th><th>Actions</th></tr></thead>
+                            <tbody>
+                                <tr><td><div class="course-row-info"><div class="course-row-icon blue"><i class="fas fa-code"></i></div><div><strong>Senior Full-Stack Developer</strong><p>React + Node.js + MongoDB</p></div></div></td><td>TechCorp Inc</td><td>San Francisco, CA</td><td>$120K - $150K</td><td><span class="status-pill green">95%</span></td><td>2 days ago</td><td><div class="row-actions"><button class="icon-btn"><i class="fas fa-eye"></i></button><button class="icon-btn"><i class="fas fa-heart"></i></button><button class="icon-btn"><i class="fas fa-paper-plane"></i></button></div></td></tr>
+                                <tr><td><div class="course-row-info"><div class="course-row-icon green"><i class="fas fa-palette"></i></div><div><strong>Product Designer - UX/UI</strong><p>Design System Lead</p></div></div></td><td>InnovateTech</td><td>New York, NY</td><td>$100K - $130K</td><td><span class="status-pill green">88%</span></td><td>3 days ago</td><td><div class="row-actions"><button class="icon-btn"><i class="fas fa-eye"></i></button><button class="icon-btn"><i class="fas fa-heart"></i></button><button class="icon-btn"><i class="fas fa-paper-plane"></i></button></div></td></tr>
+                                <tr><td><div class="course-row-info"><div class="course-row-icon purple"><i class="fas fa-server"></i></div><div><strong>DevOps Engineer</strong><p>AWS & Kubernetes Specialist</p></div></div></td><td>CloudScale Systems</td><td>Remote</td><td>$130K - $160K</td><td><span class="status-pill green">82%</span></td><td>1 day ago</td><td><div class="row-actions"><button class="icon-btn"><i class="fas fa-eye"></i></button><button class="icon-btn"><i class="fas fa-heart"></i></button><button class="icon-btn"><i class="fas fa-paper-plane"></i></button></div></td></tr>
+                                <tr><td><div class="course-row-info"><div class="course-row-icon orange"><i class="fas fa-chart-bar"></i></div><div><strong>Data Science Engineer</strong><p>ML & Analytics Lead</p></div></div></td><td>DataDriven Co</td><td>Boston, MA</td><td>$110K - $140K</td><td><span class="status-pill yellow">75%</span></td><td>4 days ago</td><td><div class="row-actions"><button class="icon-btn"><i class="fas fa-eye"></i></button><button class="icon-btn"><i class="fas fa-heart"></i></button></div></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===================== APPLICATIONS PAGE ===================== -->
+            <section id="applications" class="content-section page-section" style="display:none;">
+                <div class="page-header">
+                    <div><h1>My Applications</h1><p>Track the status of all your job applications</p></div>
+                </div>
+                <div class="filter-bar">
+                    <div class="filter-tabs">
+                        <button class="filter-tab active">All (7)</button>
+                        <button class="filter-tab">Pending (4)</button>
+                        <button class="filter-tab">Reviewed (2)</button>
+                        <button class="filter-tab">Interviews (1)</button>
+                    </div>
+                </div>
+                <div class="card-section" style="padding:0">
+                    <div class="courses-table-wrap">
+                        <table class="courses-table">
+                            <thead><tr><th>Position</th><th>Company</th><th>Applied Date</th><th>Status</th><th>Last Update</th><th>Actions</th></tr></thead>
+                            <tbody>
+                                <tr><td><div class="course-row-info"><div class="course-row-icon blue"><i class="fas fa-code"></i></div><div><strong>Senior Full-Stack Developer</strong><p>React + Node.js</p></div></div></td><td>TechCorp Inc</td><td>Apr 13, 2026</td><td><span class="status-pill green">Shortlisted</span></td><td>Interview scheduled for Apr 22</td><td><div class="row-actions"><button class="icon-btn"><i class="fas fa-eye"></i></button><button class="icon-btn"><i class="fas fa-calendar"></i></button></div></td></tr>
+                                <tr><td><div class="course-row-info"><div class="course-row-icon green"><i class="fas fa-palette"></i></div><div><strong>Product Designer - UX/UI</strong><p>Design System Lead</p></div></div></td><td>InnovateTech</td><td>Apr 11, 2026</td><td><span class="status-pill blue">Under Review</span></td><td>Team reviewing portfolio</td><td><div class="row-actions"><button class="icon-btn"><i class="fas fa-eye"></i></button></div></td></tr>
+                                <tr><td><div class="course-row-info"><div class="course-row-icon purple"><i class="fas fa-server"></i></div><div><strong>DevOps Engineer</strong><p>AWS & Kubernetes</p></div></div></td><td>CloudScale Systems</td><td>Apr 15, 2026</td><td><span class="status-pill yellow">Applied</span></td><td>Waiting for company review</td><td><div class="row-actions"><button class="icon-btn"><i class="fas fa-eye"></i></button></div></td></tr>
+                                <tr><td><div class="course-row-info"><div class="course-row-icon orange"><i class="fas fa-chart-bar"></i></div><div><strong>Backend Engineer</strong><p>Python & PostgreSQL</p></div></div></td><td>StartupXYZ</td><td>Apr 8, 2026</td><td><span class="status-pill gray">Not Selected</span></td><td>Position filled</td><td><div class="row-actions"><button class="icon-btn"><i class="fas fa-eye"></i></button><button class="icon-btn"><i class="fas fa-redo"></i></button></div></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===================== SAVED JOBS PAGE ===================== -->
+            <section id="saved-jobs" class="content-section page-section" style="display:none;">
+                <div class="page-header">
+                    <div><h1>Saved Jobs</h1><p>Your collection of jobs to apply for later</p></div>
+                </div>
+                <div class="card-section">
+                    <div class="section-header"><h2><i class="fas fa-heart"></i> Saved Opportunities (24)</h2></div>
+                    <div class="courses-grid">
+                        <div class="course-card">
+                            <div class="course-header">
+                                <div class="course-badge blue">Featured</div>
+                                <button class="icon-btn"><i class="fas fa-heart" style="color:#ef4444"></i></button>
+                            </div>
+                            <h3>Senior Full-Stack Developer</h3>
+                            <p class="course-desc">TechCorp Inc - Building scalable applications with React and Node.js</p>
+                            <div class="course-stats">
+                                <span><i class="fas fa-map-marker-alt"></i> San Francisco, CA</span>
+                                <span><i class="fas fa-dollar-sign"></i> $120K-$150K</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 95%"></div>
+                            </div>
+                            <p class="progress-text">95% Match</p>
+                            <button class="secondary-btn full-width">Apply Now</button>
+                        </div>
+
+                        <div class="course-card">
+                            <div class="course-header">
+                                <div class="course-badge green">Hot</div>
+                                <button class="icon-btn"><i class="fas fa-heart" style="color:#ef4444"></i></button>
+                            </div>
+                            <h3>Product Designer - UX/UI</h3>
+                            <p class="course-desc">InnovateTech - Design System Lead role in NYC</p>
+                            <div class="course-stats">
+                                <span><i class="fas fa-map-marker-alt"></i> New York, NY</span>
+                                <span><i class="fas fa-dollar-sign"></i> $100K-$130K</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 88%"></div>
+                            </div>
+                            <p class="progress-text">88% Match</p>
+                            <button class="secondary-btn full-width">Apply Now</button>
+                        </div>
+
+                        <div class="course-card">
+                            <div class="course-header">
+                                <div class="course-badge purple">Trending</div>
+                                <button class="icon-btn"><i class="fas fa-heart" style="color:#ef4444"></i></button>
+                            </div>
+                            <h3>DevOps Engineer</h3>
+                            <p class="course-desc">CloudScale Systems - AWS & Kubernetes Expert needed</p>
+                            <div class="course-stats">
+                                <span><i class="fas fa-map-marker-alt"></i> Remote</span>
+                                <span><i class="fas fa-dollar-sign"></i> $130K-$160K</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 82%"></div>
+                            </div>
+                            <p class="progress-text">82% Match</p>
+                            <button class="secondary-btn full-width">Apply Now</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===================== PROFILE PAGE ===================== -->
+            <section id="my-profile" class="content-section page-section" style="display:none;">
+                <div class="page-header">
+                    <div><h1>My Profile</h1><p>Manage your professional information and visibility</p></div>
+                    <button class="primary-btn"><i class="fas fa-save"></i> Save Changes</button>
+                </div>
+                <div class="profile-layout">
+                    <div class="profile-sidebar-card">
+                        <div class="profile-avatar-wrap">
+                            <div class="profile-avatar-circle"><span>JS</span></div>
+                            <button class="avatar-edit-btn"><i class="fas fa-camera"></i></button>
+                        </div>
+                        <h2 class="profile-name">John Smith</h2>
+                        <p class="profile-title">Full-Stack Developer</p>
+                        <div class="profile-badges">
+                            <span class="profile-badge-tag"><i class="fas fa-shield-alt"></i> Verified</span>
+                            <span class="profile-badge-tag gold"><i class="fas fa-star"></i> Top Rated</span>
+                        </div>
+                        <div class="profile-quick-stats">
+                            <div class="pq-stat"><strong>5+</strong><span>Years Exp</span></div>
+                            <div class="pq-stat"><strong>4.8</strong><span>Rating</span></div>
+                            <div class="pq-stat"><strong>128</strong><span>Profile Views</span></div>
+                        </div>
+                        <div class="profile-completion">
+                            <div class="completion-label"><span>Profile Strength</span><strong>92%</strong></div>
+                            <div class="progress-bar"><div class="progress" style="width:92%"></div></div>
+                        </div>
+                    </div>
+                    <div class="profile-forms">
+                        <div class="form-card">
+                            <h3><i class="fas fa-user"></i> Personal Information</h3>
+                            <div class="form-grid">
+                                <div class="form-group"><label>First Name</label><input type="text" value="John" class="form-input"></div>
+                                <div class="form-group"><label>Last Name</label><input type="text" value="Smith" class="form-input"></div>
+                                <div class="form-group"><label>Email Address</label><input type="email" value="john.smith@example.com" class="form-input"></div>
+                                <div class="form-group"><label>Phone Number</label><input type="tel" value="+1 (555) 123-4567" class="form-input"></div>
+                                <div class="form-group"><label>Location</label><input type="text" value="San Francisco, CA" class="form-input"></div>
+                                <div class="form-group"><label>Timezone</label><select class="form-input"><option selected>PST — Pacific Standard Time</option><option>EST — Eastern Standard Time</option><option>CST — Central Standard Time</option></select></div>
+                                <div class="form-group full-col"><label>Professional Summary</label><textarea class="form-input" rows="4">Experienced Full-Stack Developer with 5+ years building scalable web applications. Proficient in React, Node.js, Python, and cloud technologies. Passionate about clean code and mentoring junior developers.</textarea></div>
+                            </div>
+                        </div>
+                        <div class="form-card">
+                            <h3><i class="fas fa-briefcase"></i> Professional Details</h3>
+                            <div class="form-grid">
+                                <div class="form-group"><label>Current Job Title</label><input type="text" value="Senior Full-Stack Developer" class="form-input"></div>
+                                <div class="form-group"><label>Current Company</label><input type="text" value="TechFlow Solutions" class="form-input"></div>
+                                <div class="form-group"><label>Years of Experience</label><input type="number" value="5" class="form-input"></div>
+                                <div class="form-group"><label>Expected Salary ($)</label><input type="number" value="150000" class="form-input"></div>
+                                <div class="form-group full-col"><label>Skills &amp; Expertise</label>
+                                    <div class="skills-tags">
+                                        <span class="skill-tag">JavaScript <i class="fas fa-times"></i></span>
+                                        <span class="skill-tag">React <i class="fas fa-times"></i></span>
+                                        <span class="skill-tag">Node.js <i class="fas fa-times"></i></span>
+                                        <span class="skill-tag">Python <i class="fas fa-times"></i></span>
+                                        <span class="skill-tag">AWS <i class="fas fa-times"></i></span>
+                                        <button class="add-skill-btn"><i class="fas fa-plus"></i> Add Skill</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===================== RESUME/PORTFOLIO PAGE ===================== -->
+            <section id="resume" class="content-section page-section" style="display:none;">
+                <div class="page-header">
+                    <div><h1>Resume & Portfolio</h1><p>Upload and manage your resume and portfolio</p></div>
+                    <button class="primary-btn"><i class="fas fa-upload"></i> Upload New Resume</button>
+                </div>
+                <div class="card-section">
+                    <div class="section-header"><h2><i class="fas fa-file"></i> Your Documents</h2></div>
+                    <div class="courses-grid">
+                        <div class="course-card">
+                            <div class="course-header">
+                                <div class="course-badge green">Active</div>
+                                <button class="icon-btn"><i class="fas fa-ellipsis-h"></i></button>
+                            </div>
+                            <div style="text-align:center;padding:20px;margin:20px 0">
+                                <i class="fas fa-file-pdf" style="font-size:48px;color:#f59e0b"></i>
+                            </div>
+                            <h3>John_Smith_Resume</h3>
+                            <p class="course-desc">Updated 1 week ago • PDF Format</p>
+                            <div class="course-stats">
+                                <span><i class="fas fa-calendar"></i> Apr 8, 2026</span>
+                                <span><i class="fas fa-download"></i> 32 downloads</span>
+                            </div>
+                            <button class="secondary-btn full-width">Download</button>
+                        </div>
+
+                        <div class="course-card">
+                            <div class="course-header">
+                                <div class="course-badge blue">Portfolio</div>
+                                <button class="icon-btn"><i class="fas fa-ellipsis-h"></i></button>
+                            </div>
+                            <div style="text-align:center;padding:20px;margin:20px 0">
+                                <i class="fas fa-globe" style="font-size:48px;color:#6366f1"></i>
+                            </div>
+                            <h3>Portfolio Website</h3>
+                            <p class="course-desc">Professional portfolio showcasing projects</p>
+                            <div class="course-stats">
+                                <span><i class="fas fa-link"></i> johnsmith-portfolio.dev</span>
+                                <span><i class="fas fa-eye"></i> 156 views this month</span>
+                            </div>
+                            <button class="secondary-btn full-width">Visit Portfolio</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===================== SKILLS PAGE ===================== -->
+            <section id="skills" class="content-section page-section" style="display:none;">
+                <div class="page-header">
+                    <div><h1>Skills & Endorsements</h1><p>Manage your skills and receive endorsements from professionals</p></div>
+                    <button class="primary-btn"><i class="fas fa-plus"></i> Add Skill</button>
+                </div>
+                <div class="card-section">
+                    <div class="section-header"><h2><i class="fas fa-award"></i> Your Skills (12)</h2></div>
+                    <div class="courses-grid">
+                        <div class="course-card">
+                            <div class="course-header">
+                                <button class="icon-btn"><i class="fas fa-star" style="color:#f59e0b"></i></button>
+                            </div>
+                            <h3>JavaScript/ES6+</h3>
+                            <p class="course-desc">Advanced proficiency in modern JavaScript</p>
+                            <div class="course-stats">
+                                <span><i class="fas fa-thumbs-up"></i> 24 Endorsements</span>
+                                <span><i class="fas fa-eye"></i> Expert Level</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 100%"></div>
+                            </div>
+                        </div>
+
+                        <div class="course-card">
+                            <div class="course-header">
+                                <button class="icon-btn"><i class="fas fa-star" style="color:#f59e0b"></i></button>
+                            </div>
+                            <h3>React.js</h3>
+                            <p class="course-desc">Expert in building modern UIs with React</p>
+                            <div class="course-stats">
+                                <span><i class="fas fa-thumbs-up"></i> 21 Endorsements</span>
+                                <span><i class="fas fa-eye"></i> Expert Level</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 95%"></div>
+                            </div>
+                        </div>
+
+                        <div class="course-card">
+                            <div class="course-header">
+                                <button class="icon-btn"><i class="fas fa-star" style="color:#f59e0b"></i></button>
+                            </div>
+                            <h3>Node.js</h3>
+                            <p class="course-desc">Backend development with Node.js and Express</p>
+                            <div class="course-stats">
+                                <span><i class="fas fa-thumbs-up"></i> 18 Endorsements</span>
+                                <span><i class="fas fa-eye"></i> Advanced Level</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===================== MESSAGES PAGE ===================== -->
+            <section id="messages" class="content-section page-section" style="display:none;padding:0">
+                <div class="messages-layout">
+                    <div class="messages-sidebar">
+                        <div class="messages-sidebar-header"><h2>Messages</h2><button class="icon-btn"><i class="fas fa-edit"></i></button></div>
+                        <div class="search-container" style="margin:0 16px 16px;padding:8px 14px"><i class="fas fa-search"></i><input type="search" placeholder="Search conversations..."></div>
+                        <div class="conversations-list">
+                            <div class="conversation-item active"><div class="student-av sm" style="background:linear-gradient(135deg,#6366f1,#8b5cf6)"><span>TC</span></div><div class="conv-info"><div class="conv-top"><strong>TechCorp Inc</strong><span class="conv-time">1h ago</span></div><p>Your interview is scheduled for Apr 22 at 10 AM</p></div><div class="conv-badge">2</div></div>
+                            <div class="conversation-item"><div class="student-av sm" style="background:linear-gradient(135deg,#10b981,#059669)"><span>IT</span></div><div class="conv-info"><div class="conv-top"><strong>InnovateTech HR</strong><span class="conv-time">5h ago</span></div><p>We are reviewing your application...</p></div></div>
+                            <div class="conversation-item"><div class="student-av sm" style="background:linear-gradient(135deg,#f59e0b,#ef4444)"><span>CS</span></div><div class="conv-info"><div class="conv-top"><strong>CloudScale Systems</strong><span class="conv-time">2d ago</span></div><p>Thank you for your application!</p></div></div>
+                        </div>
+                    </div>
+                    <div class="chat-window">
+                        <div class="chat-header">
+                            <div class="student-av sm" style="background:linear-gradient(135deg,#6366f1,#8b5cf6)"><span>TC</span></div>
+                            <div><strong>TechCorp Inc</strong><p><span class="online-dot"></span> Online · Hiring Team</p></div>
+                            <div style="margin-left:auto;display:flex;gap:8px"><button class="icon-btn"><i class="fas fa-video"></i></button><button class="icon-btn"><i class="fas fa-phone"></i></button><button class="icon-btn"><i class="fas fa-info-circle"></i></button></div>
+                        </div>
+                        <div class="chat-messages">
+                            <div class="msg-group"><div class="msg received"><p>Hi John! We're impressed with your application</p><span>3:15 PM</span></div><div class="msg received"><p>We'd like to schedule an interview with you</p><span>3:16 PM</span></div></div>
+                            <div class="msg-group sent-group"><div class="msg sent"><p>Thank you so much! I'm very interested in the position</p><span>3:20 PM</span></div><div class="msg sent"><p>When would be a good time for an interview?</p><span>3:21 PM</span></div></div>
+                            <div class="msg-group"><div class="msg received"><p>Perfect! How about April 22nd at 10 AM PST? 🎉</p><span>3:25 PM</span></div></div>
+                        </div>
+                        <div class="chat-input-bar">
+                            <button class="icon-btn"><i class="fas fa-paperclip"></i></button>
+                            <input type="text" class="chat-input" placeholder="Type a message...">
+                            <button class="primary-btn" style="padding:10px 16px"><i class="fas fa-paper-plane"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===================== INTERVIEWS PAGE ===================== -->
+            <section id="interviews" class="content-section page-section" style="display:none;">
+                <div class="page-header">
+                    <div><h1>Scheduled Interviews</h1><p>Manage your interview schedule</p></div>
+                </div>
+                <div class="card-section">
+                    <div class="section-header"><h2><i class="fas fa-video"></i> Upcoming Interviews</h2></div>
+                    <div class="sessions-list">
+                        <div class="session-card">
+                            <div class="session-time-block">
+                                <span class="session-hour">10:00</span>
+                                <span class="session-ampm">AM</span>
+                                <span class="session-dur">60 min</span>
+                            </div>
+                            <div class="session-info" style="flex:1">
+                                <div class="student-avatar">
+                                    <div class="student-av sm" style="background:linear-gradient(135deg,#6366f1,#8b5cf6)"><span>TC</span></div>
+                                </div>
+                                <div>
+                                    <h4>TechCorp Inc Interview</h4>
+                                    <p><i class="fas fa-briefcase"></i> Senior Full-Stack Developer</p>
+                                    <span class="time">April 22, 2026 at 10:00 AM PST</span>
+                                </div>
+                            </div>
+                            <div style="display:flex;flex-direction:column;gap:6px;align-items:flex-end">
+                                <span class="status-pill green">Confirmed</span>
+                                <div class="session-actions">
+                                    <button class="secondary-btn"><i class="fas fa-video"></i> Join</button>
+                                    <button class="icon-btn"><i class="fas fa-ellipsis-v"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===================== NOTIFICATIONS PAGE ===================== -->
+            <section id="notifications" class="content-section page-section" style="display:none;">
+                <div class="page-header">
+                    <div><h1>Notifications</h1><p>Stay updated on your job search progress</p></div>
+                </div>
+                <div class="card-section">
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <div class="activity-icon green">
+                                <i class="fas fa-calendar-check"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h4>Interview Scheduled</h4>
+                                <p>TechCorp Inc scheduled an interview for you on April 22, 2026</p>
+                                <span class="time-ago">2 hours ago</span>
+                            </div>
+                        </div>
+
+                        <div class="activity-item">
+                            <div class="activity-icon blue">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h4>Profile Viewed</h4>
+                                <p>Your profile was viewed by recruiter at InnovateTech</p>
+                                <span class="time-ago">5 hours ago</span>
+                            </div>
+                        </div>
+
+                        <div class="activity-item">
+                            <div class="activity-icon purple">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h4>Skill Endorsed</h4>
+                                <p>Alex Johnson endorsed your React.js skill</p>
+                                <span class="time-ago">1 day ago</span>
+                            </div>
+                        </div>
+
+                        <div class="activity-item">
+                            <div class="activity-icon orange">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h4>New Job Recommended</h4>
+                                <p>DevOps Engineer role matches your skills perfectly at CloudScale</p>
+                                <span class="time-ago">2 days ago</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===================== SETTINGS PAGE ===================== -->
+            <section id="settings" class="content-section page-section" style="display:none;">
+                <div class="page-header">
+                    <div><h1>Settings</h1><p>Manage your account and privacy preferences</p></div>
+                    <button class="primary-btn"><i class="fas fa-save"></i> Save Changes</button>
+                </div>
+                <div class="settings-layout">
+                    <div class="settings-nav card-section" style="padding:8px">
+                        <a href="#" class="settings-nav-item active"><i class="fas fa-bell"></i> Notifications</a>
+                        <a href="#" class="settings-nav-item"><i class="fas fa-lock"></i> Privacy & Security</a>
+                        <a href="#" class="settings-nav-item"><i class="fas fa-eye"></i> Job Preferences</a>
+                        <a href="#" class="settings-nav-item"><i class="fas fa-palette"></i> Appearance</a>
+                    </div>
+                    <div class="settings-content">
+                        <div class="form-card">
+                            <h3><i class="fas fa-bell"></i> Notification Preferences</h3>
+                            <div class="settings-list">
+                                <div class="setting-row"><div><strong>Job Recommendations</strong><p>Get notified about new job matches</p></div><label class="toggle"><input type="checkbox" checked><span class="toggle-slider"></span></label></div>
+                                <div class="setting-row"><div><strong>Application Updates</strong><p>Status updates on your applications</p></div><label class="toggle"><input type="checkbox" checked><span class="toggle-slider"></span></label></div>
+                                <div class="setting-row"><div><strong>Recruiter Messages</strong><p>Messages from recruiters and companies</p></div><label class="toggle"><input type="checkbox" checked><span class="toggle-slider"></span></label></div>
+                                <div class="setting-row"><div><strong>Interview Reminders</strong><p>Reminders for scheduled interviews</p></div><label class="toggle"><input type="checkbox" checked><span class="toggle-slider"></span></label></div>
+                                <div class="setting-row"><div><strong>News & Tips</strong><p>Career tips and platform updates</p></div><label class="toggle"><input type="checkbox"><span class="toggle-slider"></span></label></div>
+                            </div>
+                        </div>
+                        <div class="form-card">
+                            <h3><i class="fas fa-lock"></i> Security</h3>
+                            <div class="form-grid">
+                                <div class="form-group full-col"><label>Current Password</label><input type="password" placeholder="Enter current password" class="form-input"></div>
+                                <div class="form-group"><label>New Password</label><input type="password" placeholder="New password" class="form-input"></div>
+                                <div class="form-group"><label>Confirm New Password</label><input type="password" placeholder="Confirm new password" class="form-input"></div>
+                            </div>
+                            <button class="secondary-btn" style="margin-top:16px"><i class="fas fa-key"></i> Update Password</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+<script>
+    const navLinks = document.querySelectorAll('.sidebar-nav a');
+    const pages = {
+        'dashboard': document.getElementById('dashboard'),
+        'job-listings': document.getElementById('job-listings'),
+        'applications': document.getElementById('applications'),
+        'saved-jobs': document.getElementById('saved-jobs'),
+        'my-profile': document.getElementById('my-profile'),
+        'resume': document.getElementById('resume'),
+        'skills': document.getElementById('skills'),
+        'messages': document.getElementById('messages'),
+        'interviews': document.getElementById('interviews'),
+        'notifications': document.getElementById('notifications'),
+        'settings': document.getElementById('settings'),
+    };
+
+    function showPage(id) {
+        Object.values(pages).forEach(p => { if(p) p.style.display = 'none'; });
+        const target = pages[id];
+        if (target) { target.style.display = 'block'; target.style.animation = 'fadeInUp 0.35s ease'; }
+    }
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            // Check if this is the logout button
+            if (this.classList.contains('logout-btn')) {
+                return; // Allow default navigation to login.html
+            }
+            
+            const href = this.getAttribute('href').replace('#','');
+            e.preventDefault();
+            navLinks.forEach(l => l.classList.remove('active'));
+            this.classList.add('active');
+            showPage(href);
+        });
+    });
+
+    document.querySelectorAll('.filter-tab').forEach(btn => {
+        btn.addEventListener('click', function() {
+            this.closest('.filter-tabs').querySelectorAll('.filter-tab').forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
+</script>
+</body>
+</html>
