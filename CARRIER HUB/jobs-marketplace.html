@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jobs Marketplace | WILLTECH</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="marketplace.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- Logo -->
+            <div class="logo">
+                <a href="index.html">
+                    <span class="logo-text">WILLTECH</span>
+                </a>
+            </div>
+
+            <!-- Hamburger Menu -->
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <!-- Nav Links -->
+            <ul class="nav-links" id="navLinks">
+                <li><a href="mentors-marketplace.html">Find Mentors</a></li>
+                <li><a href="jobs-marketplace.html" class="active">Browse Jobs</a></li>
+                <li><a href="index.html">Home</a></li>
+            </ul>
+
+            <!-- User Profile -->
+            <div class="user-profile" id="userProfile">
+                <button class="profile-btn" title="View Profile">
+                    <i class="fas fa-user-circle"></i>
+                </button>
+                <div class="profile-dropdown" id="profileDropdown">
+                    <a href="job-seeker-dashboard.html" class="dropdown-item"><i class="fas fa-chart-line"></i> Dashboard</a>
+                    <a href="#my-profile" class="dropdown-item"><i class="fas fa-user"></i> My Profile</a>
+                    <a href="#applications" class="dropdown-item"><i class="fas fa-briefcase"></i> My Applications</a>
+                    <a href="#saved-jobs" class="dropdown-item"><i class="fas fa-bookmark"></i> Saved Jobs</a>
+                    <hr style="margin: 8px 0; border: none; border-top: 1px solid #e5e7eb;">
+                    <a href="login.html" class="dropdown-item logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="jobs-container">
+        <!-- Sidebar Filters -->
+        <aside class="filters-sidebar">
+            <div class="filter-section">
+                <h3>Search Jobs</h3>
+                <input type="text" id="jobSearch" placeholder="Job title, company...">
+            </div>
+
+            <div class="filter-section">
+                <h3>Job Type</h3>
+                <div class="filter-options">
+                    <label><input type="checkbox" value="full-time"> Full Time</label>
+                    <label><input type="checkbox" value="part-time"> Part Time</label>
+                    <label><input type="checkbox" value="contract"> Contract</label>
+                    <label><input type="checkbox" value="freelance"> Freelance</label>
+                </div>
+            </div>
+
+            <div class="filter-section">
+                <h3>Experience Level</h3>
+                <div class="filter-options">
+                    <label><input type="checkbox" value="entry"> Entry Level</label>
+                    <label><input type="checkbox" value="mid"> Mid Level</label>
+                    <label><input type="checkbox" value="senior"> Senior</label>
+                </div>
+            </div>
+
+            <div class="filter-section">
+                <h3>Salary Range</h3>
+                <div class="salary-inputs">
+                    <input type="number" placeholder="Min" min="0">
+                    <input type="number" placeholder="Max" min="0">
+                </div>
+            </div>
+
+            <div class="filter-section">
+                <h3>Industry</h3>
+                <div class="filter-options">
+                    <label><input type="checkbox" value="tech"> Technology</label>
+                    <label><input type="checkbox" value="finance"> Finance</label>
+                    <label><input type="checkbox" value="healthcare"> Healthcare</label>
+                    <label><input type="checkbox" value="education"> Education</label>
+                    <label><input type="checkbox" value="other"> Other</label>
+                </div>
+            </div>
+
+            <button class="reset-filters">Reset Filters</button>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="jobs-main">
+            <!-- Header Section -->
+            <section class="jobs-header">
+                <h1>Explore Job Opportunities</h1>
+                <p>Find the perfect position that matches your skills and career goals</p>
+                <div class="sort-section">
+                    <label for="sort">Sort by:</label>
+                    <select id="sort">
+                        <option>Most Recent</option>
+                        <option>Most Relevant</option>
+                        <option>Salary (High to Low)</option>
+                        <option>Salary (Low to High)</option>
+                    </select>
+                </div>
+            </section>
+
+            <!-- Jobs Grid -->
+            <section class="jobs-grid">
+                <!-- Job Card 1 -->
+                <div class="job-card">
+                    <div class="job-header">
+                        <div class="company-info">
+                            <div class="company-logo">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <div>
+                                <h3>Senior Frontend Developer</h3>
+                                <p class="company-name">Tech Innovations Inc.</p>
+                            </div>
+                        </div>
+                        <button class="save-job" title="Save job"><i class="fas fa-heart"></i></button>
+                    </div>
+
+                    <div class="job-meta">
+                        <span class="job-type">Full Time</span>
+                        <span class="experience">Senior</span>
+                        <span class="location"><i class="fas fa-map-marker-alt"></i> San Francisco, CA</span>
+                    </div>
+
+                    <p class="job-description">
+                        We're looking for an experienced Frontend Developer to join our growing team. 
+                        You'll work on modern web applications using React and TypeScript.
+                    </p>
+
+                    <div class="job-skills">
+                        <span>React</span>
+                        <span>TypeScript</span>
+                        <span>CSS</span>
+                        <span>REST APIs</span>
+                    </div>
+
+                    <div class="job-footer">
+                        <div class="salary">
+                            <span class="salary-range">$120K - $180K</span>
+                            <span class="salary-period">/year</span>
+                        </div>
+                        <button class="apply-btn">Apply Now</button>
+                    </div>
+                </div>
+
+                <!-- Job Card 2 -->
+                <div class="job-card">
+                    <div class="job-header">
+                        <div class="company-info">
+                            <div class="company-logo">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <div>
+                                <h3>Full Stack Developer</h3>
+                                <p class="company-name">Digital Solutions Ltd.</p>
+                            </div>
+                        </div>
+                        <button class="save-job" title="Save job"><i class="fas fa-heart"></i></button>
+                    </div>
+
+                    <div class="job-meta">
+                        <span class="job-type">Full Time</span>
+                        <span class="experience">Mid</span>
+                        <span class="location"><i class="fas fa-map-marker-alt"></i> New York, NY</span>
+                    </div>
+
+                    <p class="job-description">
+                        Build scalable web applications with our talented team. Experience with both 
+                        frontend and backend technologies is essential.
+                    </p>
+
+                    <div class="job-skills">
+                        <span>Node.js</span>
+                        <span>MongoDB</span>
+                        <span>Vue.js</span>
+                        <span>AWS</span>
+                    </div>
+
+                    <div class="job-footer">
+                        <div class="salary">
+                            <span class="salary-range">$90K - $140K</span>
+                            <span class="salary-period">/year</span>
+                        </div>
+                        <button class="apply-btn">Apply Now</button>
+                    </div>
+                </div>
+
+                <!-- Job Card 3 -->
+                <div class="job-card">
+                    <div class="job-header">
+                        <div class="company-info">
+                            <div class="company-logo">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <div>
+                                <h3>Data Scientist</h3>
+                                <p class="company-name">Analytics Pro Corp.</p>
+                            </div>
+                        </div>
+                        <button class="save-job" title="Save job"><i class="fas fa-heart"></i></button>
+                    </div>
+
+                    <div class="job-meta">
+                        <span class="job-type">Full Time</span>
+                        <span class="experience">Senior</span>
+                        <span class="location"><i class="fas fa-map-marker-alt"></i> Austin, TX</span>
+                    </div>
+
+                    <p class="job-description">
+                        Join our data team to analyze complex datasets and build predictive models 
+                        that drive business decisions.
+                    </p>
+
+                    <div class="job-skills">
+                        <span>Python</span>
+                        <span>Machine Learning</span>
+                        <span>SQL</span>
+                        <span>Tableau</span>
+                    </div>
+
+                    <div class="job-footer">
+                        <div class="salary">
+                            <span class="salary-range">$130K - $190K</span>
+                            <span class="salary-period">/year</span>
+                        </div>
+                        <button class="apply-btn">Apply Now</button>
+                    </div>
+                </div>
+
+                <!-- Job Card 4 -->
+                <div class="job-card">
+                    <div class="job-header">
+                        <div class="company-info">
+                            <div class="company-logo">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div>
+                                <h3>Security Engineer</h3>
+                                <p class="company-name">SecureNet Systems</p>
+                            </div>
+                        </div>
+                        <button class="save-job" title="Save job"><i class="fas fa-heart"></i></button>
+                    </div>
+
+                    <div class="job-meta">
+                        <span class="job-type">Full Time</span>
+                        <span class="experience">Senior</span>
+                        <span class="location"><i class="fas fa-map-marker-alt"></i> Seattle, WA</span>
+                    </div>
+
+                    <p class="job-description">
+                        Protect our infrastructure and user data. We're looking for experienced security 
+                        professionals to strengthen our security posture.
+                    </p>
+
+                    <div class="job-skills">
+                        <span>Linux</span>
+                        <span>Network Security</span>
+                        <span>Penetration Testing</span>
+                        <span>Compliance</span>
+                    </div>
+
+                    <div class="job-footer">
+                        <div class="salary">
+                            <span class="salary-range">$140K - $200K</span>
+                            <span class="salary-period">/year</span>
+                        </div>
+                        <button class="apply-btn">Apply Now</button>
+                    </div>
+                </div>
+
+                <!-- Job Card 5 -->
+                <div class="job-card">
+                    <div class="job-header">
+                        <div class="company-info">
+                            <div class="company-logo">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <div>
+                                <h3>Mobile App Developer</h3>
+                                <p class="company-name">Mobile Innovations</p>
+                            </div>
+                        </div>
+                        <button class="save-job" title="Save job"><i class="fas fa-heart"></i></button>
+                    </div>
+
+                    <div class="job-meta">
+                        <span class="job-type">Full Time</span>
+                        <span class="experience">Mid</span>
+                        <span class="location"><i class="fas fa-map-marker-alt"></i> Boston, MA</span>
+                    </div>
+
+                    <p class="job-description">
+                        Develop cutting-edge mobile applications for iOS and Android platforms. 
+                        Join a team passionate about mobile technology.
+                    </p>
+
+                    <div class="job-skills">
+                        <span>React Native</span>
+                        <span>Swift</span>
+                        <span>Kotlin</span>
+                        <span>Firebase</span>
+                    </div>
+
+                    <div class="job-footer">
+                        <div class="salary">
+                            <span class="salary-range">$100K - $150K</span>
+                            <span class="salary-period">/year</span>
+                        </div>
+                        <button class="apply-btn">Apply Now</button>
+                    </div>
+                </div>
+
+                <!-- Job Card 6 -->
+                <div class="job-card">
+                    <div class="job-header">
+                        <div class="company-info">
+                            <div class="company-logo">
+                                <i class="fas fa-pencil-alt"></i>
+                            </div>
+                            <div>
+                                <h3>Content Writer</h3>
+                                <p class="company-name">Creative Studios</p>
+                            </div>
+                        </div>
+                        <button class="save-job" title="Save job"><i class="fas fa-heart"></i></button>
+                    </div>
+
+                    <div class="job-meta">
+                        <span class="job-type">Part Time</span>
+                        <span class="experience">Entry</span>
+                        <span class="location"><i class="fas fa-map-marker-alt"></i> Remote</span>
+                    </div>
+
+                    <p class="job-description">
+                        Create engaging content for our blog and social media platforms. 
+                        We're looking for creative writers with a passion for storytelling.
+                    </p>
+
+                    <div class="job-skills">
+                        <span>Writing</span>
+                        <span>SEO</span>
+                        <span>Social Media</span>
+                        <span>Research</span>
+                    </div>
+
+                    <div class="job-footer">
+                        <div class="salary">
+                            <span class="salary-range">$35K - $55K</span>
+                            <span class="salary-period">/year</span>
+                        </div>
+                        <button class="apply-btn">Apply Now</button>
+                    </div>
+                </div>
+
+                <!-- Job Card 7 -->
+                <div class="job-card">
+                    <div class="job-header">
+                        <div class="company-info">
+                            <div class="company-logo">
+                                <i class="fas fa-vial"></i>
+                            </div>
+                            <div>
+                                <h3>QA Automation Engineer</h3>
+                                <p class="company-name">Testing Labs Co.</p>
+                            </div>
+                        </div>
+                        <button class="save-job" title="Save job"><i class="fas fa-heart"></i></button>
+                    </div>
+
+                    <div class="job-meta">
+                        <span class="job-type">Full Time</span>
+                        <span class="experience">Mid</span>
+                        <span class="location"><i class="fas fa-map-marker-alt"></i> Toronto, ON</span>
+                    </div>
+
+                    <p class="job-description">
+                        Help us ensure quality excellence by building and automating test frameworks for our web and mobile applications.
+                    </p>
+
+                    <div class="job-skills">
+                        <span>Selenium</span>
+                        <span>Python</span>
+                        <span>Jest</span>
+                        <span>CI/CD</span>
+                    </div>
+
+                    <div class="job-footer">
+                        <div class="salary">
+                            <span class="salary-range">$80K - $130K</span>
+                            <span class="salary-period">/year</span>
+                        </div>
+                        <button class="apply-btn">Apply Now</button>
+                    </div>
+                </div>
+
+                <!-- Job Card 8 -->
+                <div class="job-card">
+                    <div class="job-header">
+                        <div class="company-info">
+                            <div class="company-logo">
+                                <i class="fas fa-chart-pie"></i>
+                            </div>
+                            <div>
+                                <h3>Product Manager</h3>
+                                <p class="company-name">Growth Dynamics</p>
+                            </div>
+                        </div>
+                        <button class="save-job" title="Save job"><i class="fas fa-heart"></i></button>
+                    </div>
+
+                    <div class="job-meta">
+                        <span class="job-type">Full Time</span>
+                        <span class="experience">Senior</span>
+                        <span class="location"><i class="fas fa-map-marker-alt"></i> San Jose, CA</span>
+                    </div>
+
+                    <p class="job-description">
+                        Lead product strategy and vision for our flagship SaaS platform. Work with engineering, design, and marketing to launch impactful features.
+                    </p>
+
+                    <div class="job-skills">
+                        <span>Product Strategy</span>
+                        <span>Analytics</span>
+                        <span>Leadership</span>
+                        <span>Agile</span>
+                    </div>
+
+                    <div class="job-footer">
+                        <div class="salary">
+                            <span class="salary-range">$140K - $220K</span>
+                            <span class="salary-period">/year</span>
+                        </div>
+                        <button class="apply-btn">Apply Now</button>
+                    </div>
+                </div>
+
+                <!-- Job Card 9 -->
+                <div class="job-card">
+                    <div class="job-header">
+                        <div class="company-info">
+                            <div class="company-logo">
+                                <i class="fas fa-palette"></i>
+                            </div>
+                            <div>
+                                <h3>Graphic Designer</h3>
+                                <p class="company-name">Creative Studio Pro</p>
+                            </div>
+                        </div>
+                        <button class="save-job" title="Save job"><i class="fas fa-heart"></i></button>
+                    </div>
+
+                    <div class="job-meta">
+                        <span class="job-type">Full Time</span>
+                        <span class="experience">Mid</span>
+                        <span class="location"><i class="fas fa-map-marker-alt"></i> Los Angeles, CA</span>
+                    </div>
+
+                    <p class="job-description">
+                        Create stunning visual designs for digital and print media. Collaborate with creative teams to bring ideas to life.
+                    </p>
+
+                    <div class="job-skills">
+                        <span>Adobe Creative Suite</span>
+                        <span>UI Design</span>
+                        <span>Typography</span>
+                        <span>Branding</span>
+                    </div>
+
+                    <div class="job-footer">
+                        <div class="salary">
+                            <span class="salary-range">$60K - $90K</span>
+                            <span class="salary-period">/year</span>
+                        </div>
+                        <button class="apply-btn">Apply Now</button>
+                    </div>
+                </div>
+
+                <!-- Job Card 10 -->
+                <div class="job-card">
+                    <div class="job-header">
+                        <div class="company-info">
+                            <div class="company-logo">
+                                <i class="fas fa-cloud"></i>
+                            </div>
+                            <div>
+                                <h3>Cloud Architect</h3>
+                                <p class="company-name">CloudScale Industries</p>
+                            </div>
+                        </div>
+                        <button class="save-job" title="Save job"><i class="fas fa-heart"></i></button>
+                    </div>
+
+                    <div class="job-meta">
+                        <span class="job-type">Full Time</span>
+                        <span class="experience">Senior</span>
+                        <span class="location"><i class="fas fa-map-marker-alt"></i> Vancouver, BC</span>
+                    </div>
+
+                    <p class="job-description">
+                        Design and implement scalable cloud infrastructure solutions. Lead architecture decisions for enterprise-level deployments.
+                    </p>
+
+                    <div class="job-skills">
+                        <span>AWS</span>
+                        <span>GCP</span>
+                        <span>Azure</span>
+                        <span>Terraform</span>
+                    </div>
+
+                    <div class="job-footer">
+                        <div class="salary">
+                            <span class="salary-range">$150K - $210K</span>
+                            <span class="salary-period">/year</span>
+                        </div>
+                        <button class="apply-btn">Apply Now</button>
+                    </div>
+                </div>
+
+                <!-- Job Card 11 -->
+                <div class="job-card">
+                    <div class="job-header">
+                        <div class="company-info">
+                            <div class="company-logo">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <div>
+                                <h3>AI/ML Engineer</h3>
+                                <p class="company-name">AI Innovations Labs</p>
+                            </div>
+                        </div>
+                        <button class="save-job" title="Save job"><i class="fas fa-heart"></i></button>
+                    </div>
+
+                    <div class="job-meta">
+                        <span class="job-type">Full Time</span>
+                        <span class="experience">Senior</span>
+                        <span class="location"><i class="fas fa-map-marker-alt"></i> Mountain View, CA</span>
+                    </div>
+
+                    <p class="job-description">
+                        Develop cutting-edge AI and machine learning models for autonomous systems. Work with state-of-the-art technologies.
+                    </p>
+
+                    <div class="job-skills">
+                        <span>Python</span>
+                        <span>TensorFlow</span>
+                        <span>PyTorch</span>
+                        <span>NLP</span>
+                    </div>
+
+                    <div class="job-footer">
+                        <div class="salary">
+                            <span class="salary-range">$160K - $240K</span>
+                            <span class="salary-period">/year</span>
+                        </div>
+                        <button class="apply-btn">Apply Now</button>
+                    </div>
+                </div>
+
+                <!-- Job Card 12 -->
+                <div class="job-card">
+                    <div class="job-header">
+                        <div class="company-info">
+                            <div class="company-logo">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div>
+                                <h3>HR Manager</h3>
+                                <p class="company-name">People First Corp</p>
+                            </div>
+                        </div>
+                        <button class="save-job" title="Save job"><i class="fas fa-heart"></i></button>
+                    </div>
+
+                    <div class="job-meta">
+                        <span class="job-type">Full Time</span>
+                        <span class="experience">Senior</span>
+                        <span class="location"><i class="fas fa-map-marker-alt"></i> Chicago, IL</span>
+                    </div>
+
+                    <p class="job-description">
+                        Lead our HR initiatives and build great company culture. Responsible for recruitment, employee development, and workplace policies.
+                    </p>
+
+                    <div class="job-skills">
+                        <span>Recruitment</span>
+                        <span>HRIS</span>
+                        <span>Payroll</span>
+                        <span>Compliance</span>
+                    </div>
+
+                    <div class="job-footer">
+                        <div class="salary">
+                            <span class="salary-range">$75K - $115K</span>
+                            <span class="salary-period">/year</span>
+                        </div>
+                        <button class="apply-btn">Apply Now</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Load More Button -->
+            <div class="load-more-section">
+                <button class="load-more-btn">Load More Jobs</button>
+            </div>
+        </main>
+    </div>
+
+
+
+    <script src="marketplace.js"></script>
+</body>
+</html>

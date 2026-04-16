@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentors Marketplace | WILLTECH</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="marketplace.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- Logo -->
+            <div class="logo">
+                <a href="index.html">
+                    <span class="logo-text">WILLTECH</span>
+                </a>
+            </div>
+
+            <!-- Hamburger Menu -->
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <!-- Nav Links -->
+            <ul class="nav-links" id="navLinks">
+                <li><a href="mentors-marketplace.html" class="active">Find Mentors</a></li>
+                <li><a href="jobs-marketplace.html">Browse Jobs</a></li>
+                <li><a href="index.html">Home</a></li>
+            </ul>
+
+            <!-- User Profile -->
+            <div class="user-profile" id="userProfile">
+                <button class="profile-btn" title="View Profile">
+                    <i class="fas fa-user-circle"></i>
+                </button>
+                <div class="profile-dropdown" id="profileDropdown">
+                    <a href="student-dashboard.html" class="dropdown-item"><i class="fas fa-chart-line"></i> Dashboard</a>
+                    <a href="#my-profile" class="dropdown-item"><i class="fas fa-user"></i> My Profile</a>
+                    <a href="#my-courses" class="dropdown-item"><i class="fas fa-book-open"></i> My Courses</a>
+                    <a href="#my-mentors" class="dropdown-item"><i class="fas fa-chalkboard-user"></i> My Mentors</a>
+                    <hr style="margin: 8px 0; border: none; border-top: 1px solid #e5e7eb;">
+                    <a href="login.html" class="dropdown-item logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="mentors-container">
+        <!-- Sidebar Filters -->
+        <aside class="filters-sidebar">
+            <div class="filter-section">
+                <h3>Search Mentors</h3>
+                <input type="text" id="mentorSearch" placeholder="Mentor name, skill...">
+            </div>
+
+            <div class="filter-section">
+                <h3>Specialization</h3>
+                <div class="filter-options">
+                    <label><input type="checkbox" value="web-dev"> Web Development</label>
+                    <label><input type="checkbox" value="mobile"> Mobile Development</label>
+                    <label><input type="checkbox" value="data-science"> Data Science</label>
+                    <label><input type="checkbox" value="design"> UI/UX Design</label>
+                    <label><input type="checkbox" value="devops"> DevOps</label>
+                </div>
+            </div>
+
+            <div class="filter-section">
+                <h3>Experience Level</h3>
+                <div class="filter-options">
+                    <label><input type="checkbox" value="junior"> Junior (0-2 years)</label>
+                    <label><input type="checkbox" value="mid"> Mid (2-5 years)</label>
+                    <label><input type="checkbox" value="senior"> Senior (5+ years)</label>
+                </div>
+            </div>
+
+            <div class="filter-section">
+                <h3>Price Range</h3>
+                <div class="salary-inputs">
+                    <input type="number" placeholder="Min" min="0">
+                    <input type="number" placeholder="Max" min="0">
+                </div>
+            </div>
+
+            <div class="filter-section">
+                <h3>Rating</h3>
+                <div class="filter-options">
+                    <label><input type="checkbox" value="5"> ⭐⭐⭐⭐⭐ 5 Stars</label>
+                    <label><input type="checkbox" value="4"> ⭐⭐⭐⭐ 4+ Stars</label>
+                    <label><input type="checkbox" value="3"> ⭐⭐⭐ 3+ Stars</label>
+                </div>
+            </div>
+
+            <button class="reset-filters">Reset Filters</button>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="mentors-main">
+            <!-- Header Section -->
+            <section class="mentors-header">
+                <h1>Find Your Perfect Mentor</h1>
+                <p>Learn from experienced professionals and accelerate your career growth</p>
+                <div class="sort-section">
+                    <label for="sort">Sort by:</label>
+                    <select id="sort">
+                        <option>Most Popular</option>
+                        <option>Highest Rated</option>
+                        <option>Price (Low to High)</option>
+                        <option>Price (High to Low)</option>
+                    </select>
+                </div>
+            </section>
+
+            <!-- Mentors Grid -->
+            <section class="mentors-grid">
+                <!-- Mentor Card 1 -->
+                <div class="mentor-card">
+                    <div class="mentor-image">
+                        <img src="ASSETS/gettyimages-1290562713.avif" alt="Mentor Profile">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.9</span>
+                            <small>(128 reviews)</small>
+                        </div>
+                    </div>
+
+                    <div class="mentor-info">
+                        <h3>Sarah Johnson</h3>
+                        <p class="title">Senior Full Stack Developer</p>
+                        <p class="company">Google</p>
+                        
+                        <p class="bio">10+ years of experience in web development. 
+                            Passionate about mentoring and helping others grow.</p>
+
+                        <div class="expertise">
+                            <span class="skill">React</span>
+                            <span class="skill">Node.js</span>
+                            <span class="skill">AWS</span>
+                            <span class="skill">System Design</span>
+                        </div>
+                    </div>
+
+                    <div class="mentor-footer">
+                        <div class="pricing-section">
+                            <div class="price">
+                                <span class="amount">$80</span>
+                                <span>/hour</span>
+                            </div>
+                            <div class="course-count">
+                                <i class="fas fa-book"></i>
+                                <span>5 courses</span>
+                            </div>
+                        </div>
+                        <div class="action-buttons">
+                            <button class="view-courses-btn">View Courses</button>
+                            <button class="book-session-btn">Book Session</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mentor Card 2 -->
+                <div class="mentor-card">
+                    <div class="mentor-image">
+                        <img src="ASSETS/1686666364030.jfif" alt="Mentor Profile">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.8</span>
+                            <small>(95 reviews)</small>
+                        </div>
+                    </div>
+
+                    <div class="mentor-info">
+                        <h3>Michael Chen</h3>
+                        <p class="title">Data Science Lead</p>
+                        <p class="company">Meta</p>
+                        
+                        <p class="bio">8+ years in data science and machine learning. 
+                            Expert in helping students transition into the field.</p>
+
+                        <div class="expertise">
+                            <span class="skill">Python</span>
+                            <span class="skill">Machine Learning</span>
+                            <span class="skill">TensorFlow</span>
+                            <span class="skill">Statistics</span>
+                        </div>
+                    </div>
+
+                    <div class="mentor-footer">
+                        <div class="pricing-section">
+                            <div class="price">
+                                <span class="amount">$75</span>
+                                <span>/hour</span>
+                            </div>
+                            <div class="course-count">
+                                <i class="fas fa-book"></i>
+                                <span>7 courses</span>
+                            </div>
+                        </div>
+                        <div class="action-buttons">
+                            <button class="view-courses-btn">View Courses</button>
+                            <button class="book-session-btn">Book Session</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mentor Card 3 -->
+                <div class="mentor-card">
+                    <div class="mentor-image">
+                        <img src="ASSETS/gettyimages-1290562713.avif" alt="Mentor Profile">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <span>5.0</span>
+                            <small>(156 reviews)</small>
+                        </div>
+                    </div>
+
+                    <div class="mentor-info">
+                        <h3>Emily Rodriguez</h3>
+                        <p class="title">Product Designer</p>
+                        <p class="company">Apple</p>
+                        
+                        <p class="bio">12+ years in UX/UI design. Specializing in helping 
+                            designers build beautiful and functional products.</p>
+
+                        <div class="expertise">
+                            <span class="skill">Figma</span>
+                            <span class="skill">UX Design</span>
+                            <span class="skill">Prototyping</span>
+                            <span class="skill">User Research</span>
+                        </div>
+                    </div>
+
+                    <div class="mentor-footer">
+                        <div class="pricing-section">
+                            <div class="price">
+                                <span class="amount">$90</span>
+                                <span>/hour</span>
+                            </div>
+                            <div class="course-count">
+                                <i class="fas fa-book"></i>
+                                <span>6 courses</span>
+                            </div>
+                        </div>
+                        <div class="action-buttons">
+                            <button class="view-courses-btn">View Courses</button>
+                            <button class="book-session-btn">Book Session</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mentor Card 4 -->
+                <div class="mentor-card">
+                    <div class="mentor-image">
+                        <img src="ASSETS/1686666364030.jfif" alt="Mentor Profile">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.7</span>
+                            <small>(112 reviews)</small>
+                        </div>
+                    </div>
+
+                    <div class="mentor-info">
+                        <h3>James Wilson</h3>
+                        <p class="title">DevOps Engineer</p>
+                        <p class="company">Amazon</p>
+                        
+                        <p class="bio">9+ years in cloud infrastructure and DevOps. 
+                            Helping engineers master modern deployment practices.</p>
+
+                        <div class="expertise">
+                            <span class="skill">Kubernetes</span>
+                            <span class="skill">Docker</span>
+                            <span class="skill">CI/CD</span>
+                            <span class="skill">AWS</span>
+                        </div>
+                    </div>
+
+                    <div class="mentor-footer">
+                        <div class="pricing-section">
+                            <div class="price">
+                                <span class="amount">$95</span>
+                                <span>/hour</span>
+                            </div>
+                            <div class="course-count">
+                                <i class="fas fa-book"></i>
+                                <span>8 courses</span>
+                            </div>
+                        </div>
+                        <div class="action-buttons">
+                            <button class="view-courses-btn">View Courses</button>
+                            <button class="book-session-btn">Book Session</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mentor Card 5 -->
+                <div class="mentor-card">
+                    <div class="mentor-image">
+                        <img src="ASSETS/gettyimages-1290562713.avif" alt="Mentor Profile">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.9</span>
+                            <small>(143 reviews)</small>
+                        </div>
+                    </div>
+
+                    <div class="mentor-info">
+                        <h3>Lisa Thompson</h3>
+                        <p class="title">Mobile Developer</p>
+                        <p class="company">Microsoft</p>
+                        
+                        <p class="bio">7+ years in mobile app development. Expert in React Native 
+                            and native iOS/Android development.</p>
+
+                        <div class="expertise">
+                            <span class="skill">React Native</span>
+                            <span class="skill">Swift</span>
+                            <span class="skill">Kotlin</span>
+                            <span class="skill">Firebase</span>
+                        </div>
+                    </div>
+
+                    <div class="mentor-footer">
+                        <div class="pricing-section">
+                            <div class="price">
+                                <span class="amount">$85</span>
+                                <span>/hour</span>
+                            </div>
+                            <div class="course-count">
+                                <i class="fas fa-book"></i>
+                                <span>4 courses</span>
+                            </div>
+                        </div>
+                        <div class="action-buttons">
+                            <button class="view-courses-btn">View Courses</button>
+                            <button class="book-session-btn">Book Session</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mentor Card 6 -->
+                <div class="mentor-card">
+                    <div class="mentor-image">
+                        <img src="ASSETS/1686666364030.jfif" alt="Mentor Profile">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.8</span>
+                            <small>(87 reviews)</small>
+                        </div>
+                    </div>
+
+                    <div class="mentor-info">
+                        <h3>David Park</h3>
+                        <p class="title">Business Analyst</p>
+                        <p class="company">McKinsey</p>
+                        
+                        <p class="bio">11+ years in product and business. Helping professionals 
+                            transition and advance their careers.</p>
+
+                        <div class="expertise">
+                            <span class="skill">Product Strategy</span>
+                            <span class="skill">Analytics</span>
+                            <span class="skill">Leadership</span>
+                            <span class="skill">Agile</span>
+                        </div>
+                    </div>
+
+                    <div class="mentor-footer">
+                        <div class="pricing-section">
+                            <div class="price">
+                                <span class="amount">$100</span>
+                                <span>/hour</span>
+                            </div>
+                            <div class="course-count">
+                                <i class="fas fa-book"></i>
+                                <span>3 courses</span>
+                            </div>
+                        </div>
+                        <div class="action-buttons">
+                            <button class="view-courses-btn">View Courses</button>
+                            <button class="book-session-btn">Book Session</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mentor Card 7 -->
+                <div class="mentor-card">
+                    <div class="mentor-image">
+                        <img src="ASSETS/gettyimages-1290562713.avif" alt="Mentor Profile">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.9</span>
+                            <small>(134 reviews)</small>
+                        </div>
+                    </div>
+
+                    <div class="mentor-info">
+                        <h3>Rebecca Anderson</h3>
+                        <p class="title">Cloud Security Expert</p>
+                        <p class="company">Netflix</p>
+                        
+                        <p class="bio">9+ years in cloud security and infrastructure. Expert in 
+                            secure cloud deployments at scale.</p>
+
+                        <div class="expertise">
+                            <span class="skill">AWS Security</span>
+                            <span class="skill">Zero Trust</span>
+                            <span class="skill">Compliance</span>
+                            <span class="skill">Threat Analysis</span>
+                        </div>
+                    </div>
+
+                    <div class="mentor-footer">
+                        <div class="pricing-section">
+                            <div class="price">
+                                <span class="amount">$110</span>
+                                <span>/hour</span>
+                            </div>
+                            <div class="course-count">
+                                <i class="fas fa-book"></i>
+                                <span>5 courses</span>
+                            </div>
+                        </div>
+                        <div class="action-buttons">
+                            <button class="view-courses-btn">View Courses</button>
+                            <button class="book-session-btn">Book Session</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mentor Card 8 -->
+                <div class="mentor-card">
+                    <div class="mentor-image">
+                        <img src="ASSETS/1686666364030.jfif" alt="Mentor Profile">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.8</span>
+                            <small>(167 reviews)</small>
+                        </div>
+                    </div>
+
+                    <div class="mentor-info">
+                        <h3>Marcus Johnson</h3>
+                        <p class="title">Growth Product Manager</p>
+                        <p class="company">Spotify</p>
+                        
+                        <p class="bio">12+ years in product management and growth. Helped scale 
+                            products from 0 to millions of users.</p>
+
+                        <div class="expertise">
+                            <span class="skill">Product Management</span>
+                            <span class="skill">Growth Strategies</span>
+                            <span class="skill">Analytics</span>
+                            <span class="skill">Metrics</span>
+                        </div>
+                    </div>
+
+                    <div class="mentor-footer">
+                        <div class="pricing-section">
+                            <div class="price">
+                                <span class="amount">$120</span>
+                                <span>/hour</span>
+                            </div>
+                            <div class="course-count">
+                                <i class="fas fa-book"></i>
+                                <span>4 courses</span>
+                            </div>
+                        </div>
+                        <div class="action-buttons">
+                            <button class="view-courses-btn">View Courses</button>
+                            <button class="book-session-btn">Book Session</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mentor Card 9 -->
+                <div class="mentor-card">
+                    <div class="mentor-image">
+                        <img src="ASSETS/gettyimages-1290562713.avif" alt="Mentor Profile">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.7</span>
+                            <small>(98 reviews)</small>
+                        </div>
+                    </div>
+
+                    <div class="mentor-info">
+                        <h3>Nina Patel</h3>
+                        <p class="title">Graphic & Motion Designer</p>
+                        <p class="company">Adobe</p>
+                        
+                        <p class="bio">8+ years in graphic and motion design. Passionate about 
+                            teaching creative design fundamentals.</p>
+
+                        <div class="expertise">
+                            <span class="skill">Adobe Suite</span>
+                            <span class="skill">Motion Design</span>
+                            <span class="skill">Branding</span>
+                            <span class="skill">Animation</span>
+                        </div>
+                    </div>
+
+                    <div class="mentor-footer">
+                        <div class="pricing-section">
+                            <div class="price">
+                                <span class="amount">$70</span>
+                                <span>/hour</span>
+                            </div>
+                            <div class="course-count">
+                                <i class="fas fa-book"></i>
+                                <span>6 courses</span>
+                            </div>
+                        </div>
+                        <div class="action-buttons">
+                            <button class="view-courses-btn">View Courses</button>
+                            <button class="book-session-btn">Book Session</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mentor Card 10 -->
+                <div class="mentor-card">
+                    <div class="mentor-image">
+                        <img src="ASSETS/1686666364030.jfif" alt="Mentor Profile">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.9</span>
+                            <small>(176 reviews)</small>
+                        </div>
+                    </div>
+
+                    <div class="mentor-info">
+                        <h3>Christopher Lee</h3>
+                        <p class="title">Backend Systems Architect</p>
+                        <p class="company">Discord</p>
+                        
+                        <p class="bio">13+ years building scalable backend systems handling 
+                            millions of concurrent users.</p>
+
+                        <div class="expertise">
+                            <span class="skill">Go</span>
+                            <span class="skill">Rust</span>
+                            <span class="skill">Microservices</span>
+                            <span class="skill">Scaling</span>
+                        </div>
+                    </div>
+
+                    <div class="mentor-footer">
+                        <div class="pricing-section">
+                            <div class="price">
+                                <span class="amount">$125</span>
+                                <span>/hour</span>
+                            </div>
+                            <div class="course-count">
+                                <i class="fas fa-book"></i>
+                                <span>5 courses</span>
+                            </div>
+                        </div>
+                        <div class="action-buttons">
+                            <button class="view-courses-btn">View Courses</button>
+                            <button class="book-session-btn">Book Session</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mentor Card 11 -->
+                <div class="mentor-card">
+                    <div class="mentor-image">
+                        <img src="ASSETS/gettyimages-1290562713.avif" alt="Mentor Profile">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <span>5.0</span>
+                            <small>(142 reviews)</small>
+                        </div>
+                    </div>
+
+                    <div class="mentor-info">
+                        <h3>Aisha Kumar</h3>
+                        <p class="title">AI/ML Researcher</p>
+                        <p class="company">DeepMind</p>
+                        
+                        <p class="bio">10+ years in AI and machine learning research. Focus on 
+                            making ML accessible to everyone.</p>
+
+                        <div class="expertise">
+                            <span class="skill">Deep Learning</span>
+                            <span class="skill">NLP</span>
+                            <span class="skill">Computer Vision</span>
+                            <span class="skill">Research</span>
+                        </div>
+                    </div>
+
+                    <div class="mentor-footer">
+                        <div class="pricing-section">
+                            <div class="price">
+                                <span class="amount">$130</span>
+                                <span>/hour</span>
+                            </div>
+                            <div class="course-count">
+                                <i class="fas fa-book"></i>
+                                <span>7 courses</span>
+                            </div>
+                        </div>
+                        <div class="action-buttons">
+                            <button class="view-courses-btn">View Courses</button>
+                            <button class="book-session-btn">Book Session</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mentor Card 12 -->
+                <div class="mentor-card">
+                    <div class="mentor-image">
+                        <img src="ASSETS/1686666364030.jfif" alt="Mentor Profile">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.8</span>
+                            <small>(119 reviews)</small>
+                        </div>
+                    </div>
+
+                    <div class="mentor-info">
+                        <h3>Thomas Bradley</h3>
+                        <p class="title">QA & Testing Lead</p>
+                        <p class="company">Shopify</p>
+                        
+                        <p class="bio">11+ years in QA automation and testing strategy. Expert in 
+                            building robust test frameworks.</p>
+
+                        <div class="expertise">
+                            <span class="skill">Test Automation</span>
+                            <span class="skill">Selenium</span>
+                            <span class="skill">CI/CD</span>
+                            <span class="skill">Performance Testing</span>
+                        </div>
+                    </div>
+
+                    <div class="mentor-footer">
+                        <div class="pricing-section">
+                            <div class="price">
+                                <span class="amount">$85</span>
+                                <span>/hour</span>
+                            </div>
+                            <div class="course-count">
+                                <i class="fas fa-book"></i>
+                                <span>5 courses</span>
+                            </div>
+                        </div>
+                        <div class="action-buttons">
+                            <button class="view-courses-btn">View Courses</button>
+                            <button class="book-session-btn">Book Session</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Load More Button -->
+            <div class="load-more-section">
+                <button class="load-more-btn">Load More Mentors</button>
+            </div>
+        </main>
+    </div>
+
+    <!-- Courses Modal -->
+    <div id="coursesModal" class="modal">
+        <div class="modal-content courses-modal">
+            <div class="modal-header">
+                <h2>Courses by <span id="mentorName"></span></h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="courses-list" id="coursesList">
+                <!-- Courses will be populated here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="marketplace.js"></script>
+</body>
+</html>
