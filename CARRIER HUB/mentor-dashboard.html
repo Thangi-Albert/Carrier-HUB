@@ -8,9 +8,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    
     <div class="dashboard-container">
         <!-- Sidebar Navigation -->
-        <aside class="sidebar">
+        <aside class="sidebar" id="sidebar">
             <div class="sidebar-header">
                 <div class="logo">
                     <i class="fas fa-graduation-cap"></i>
@@ -22,14 +24,14 @@
                 <ul>
                     <li><a href="#overview" class="active"><i class="fas fa-chart-line"></i> Dashboard</a></li>
                     <li><a href="#profile"><i class="fas fa-user-circle"></i> Profile</a></li>
-                    <li><a href="#courses"><i class="fas fa-book-open"></i> My Courses</a></li>
+                    <li><a href="#my-courses"><i class="fas fa-book-open"></i> My Courses</a></li>
                     <li><a href="#students"><i class="fas fa-users"></i> Students</a></li>
-                    <li><a href="#sessions"><i class="fas fa-video"></i> Sessions</a></li>
+                    <li><a href="#all-sessions"><i class="fas fa-video"></i> Sessions</a></li>
                     <li><a href="#assignments"><i class="fas fa-tasks"></i> Assignments</a></li>
                     <li><a href="#earnings"><i class="fas fa-wallet"></i> Earnings</a></li>
                     <li><a href="#messages"><i class="fas fa-envelope"></i> Messages</a></li>
                     <li><a href="#reviews"><i class="fas fa-star"></i> Reviews</a></li>
-                    <li><a href="mentors-marketplace.html"><i class="fas fa-graduation-cap"></i> Mentors Directory</a></li>
+
                     <li><a href="#settings"><i class="fas fa-cog"></i> Settings</a></li>
                     <li><a href="login.html" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
                 </ul>
@@ -40,6 +42,9 @@
         <main class="main-content">
             <!-- Top Navigation Bar -->
             <header class="top-bar">
+                <button class="hamburger-menu" id="hamburgerMenu">
+                    <i class="fas fa-bars"></i>
+                </button>
                 <div class="search-container">
                     <i class="fas fa-search"></i>
                     <input type="search" placeholder="Search students, courses, or resources...">
@@ -374,18 +379,132 @@
                     <select class="filter-select"><option>Sort by: Latest</option><option>Sort by: Students</option><option>Sort by: Revenue</option></select>
                 </div>
                 <div class="card-section" style="padding:0">
-                    <div class="courses-table-wrap">
-                        <table class="courses-table">
-                            <thead><tr><th>Course</th><th>Category</th><th>Students</th><th>Revenue</th><th>Progress</th><th>Status</th><th>Actions</th></tr></thead>
-                            <tbody>
-                                <tr><td><div class="course-row-info"><div class="course-row-icon blue"><i class="fas fa-palette"></i></div><div><strong>Advanced UI Design Principles</strong><p>24 hours · Updated 3 days ago</p></div></div></td><td><span class="course-badge blue">Web Dev</span></td><td>45</td><td>$1,890</td><td><div style="display:flex;align-items:center;gap:8px"><div class="mini-progress"><div class="mini-fill" style="width:75%"></div></div><span>75%</span></div></td><td><span class="status-pill green">Published</span></td><td><div class="row-actions"><button class="icon-btn"><i class="fas fa-edit"></i></button><button class="icon-btn"><i class="fas fa-chart-bar"></i></button><button class="icon-btn"><i class="fas fa-ellipsis-v"></i></button></div></td></tr>
-                                <tr><td><div class="course-row-info"><div class="course-row-icon green"><i class="fas fa-server"></i></div><div><strong>Node.js &amp; Express Mastery</strong><p>30 hours · Updated 1 week ago</p></div></div></td><td><span class="course-badge green">Backend</span></td><td>32</td><td>$1,340</td><td><div style="display:flex;align-items:center;gap:8px"><div class="mini-progress"><div class="mini-fill" style="width:90%"></div></div><span>90%</span></div></td><td><span class="status-pill green">Published</span></td><td><div class="row-actions"><button class="icon-btn"><i class="fas fa-edit"></i></button><button class="icon-btn"><i class="fas fa-chart-bar"></i></button><button class="icon-btn"><i class="fas fa-ellipsis-v"></i></button></div></td></tr>
-                                <tr><td><div class="course-row-info"><div class="course-row-icon purple"><i class="fas fa-database"></i></div><div><strong>SQL &amp; Data Management</strong><p>20 hours · Updated 2 weeks ago</p></div></div></td><td><span class="course-badge purple">Database</span></td><td>28</td><td>$1,120</td><td><div style="display:flex;align-items:center;gap:8px"><div class="mini-progress"><div class="mini-fill" style="width:60%"></div></div><span>60%</span></div></td><td><span class="status-pill green">Published</span></td><td><div class="row-actions"><button class="icon-btn"><i class="fas fa-edit"></i></button><button class="icon-btn"><i class="fas fa-chart-bar"></i></button><button class="icon-btn"><i class="fas fa-ellipsis-v"></i></button></div></td></tr>
-                                <tr><td><div class="course-row-info"><div class="course-row-icon orange"><i class="fab fa-js-square"></i></div><div><strong>JavaScript Basics for Beginners</strong><p>15 hours · Updated 1 month ago</p></div></div></td><td><span class="course-badge blue">Web Dev</span></td><td>61</td><td>$2,440</td><td><div style="display:flex;align-items:center;gap:8px"><div class="mini-progress"><div class="mini-fill" style="width:100%"></div></div><span>100%</span></div></td><td><span class="status-pill green">Published</span></td><td><div class="row-actions"><button class="icon-btn"><i class="fas fa-edit"></i></button><button class="icon-btn"><i class="fas fa-chart-bar"></i></button><button class="icon-btn"><i class="fas fa-ellipsis-v"></i></button></div></td></tr>
-                                <tr><td><div class="course-row-info"><div class="course-row-icon gray"><i class="fab fa-react"></i></div><div><strong>React &amp; Redux Deep Dive</strong><p>28 hours · Last edited today</p></div></div></td><td><span class="course-badge blue">Frontend</span></td><td>0</td><td>—</td><td><div style="display:flex;align-items:center;gap:8px"><div class="mini-progress"><div class="mini-fill" style="width:40%"></div></div><span>40%</span></div></td><td><span class="status-pill yellow">Draft</span></td><td><div class="row-actions"><button class="icon-btn"><i class="fas fa-edit"></i></button><button class="icon-btn"><i class="fas fa-chart-bar"></i></button><button class="icon-btn"><i class="fas fa-ellipsis-v"></i></button></div></td></tr>
-                                <tr><td><div class="course-row-info"><div class="course-row-icon gray"><i class="fas fa-code-branch"></i></div><div><strong>Git &amp; Version Control</strong><p>10 hours · Archived 2 months ago</p></div></div></td><td><span class="course-badge" style="background:#94a3b8">DevOps</span></td><td>18</td><td>$450</td><td><div style="display:flex;align-items:center;gap:8px"><div class="mini-progress"><div class="mini-fill" style="width:100%"></div></div><span>100%</span></div></td><td><span class="status-pill gray">Archived</span></td><td><div class="row-actions"><button class="icon-btn"><i class="fas fa-edit"></i></button><button class="icon-btn"><i class="fas fa-chart-bar"></i></button><button class="icon-btn"><i class="fas fa-ellipsis-v"></i></button></div></td></tr>
-                            </tbody>
-                        </table>
+                    <div class="courses-grid">
+                        <div class="course-card-item">
+                            <div class="course-card-header">
+                                <div class="course-card-icon blue"><i class="fas fa-palette"></i></div>
+                                <span class="status-pill green">Published</span>
+                            </div>
+                            <h3>Advanced UI Design Principles</h3>
+                            <div class="course-meta"><span class="course-badge blue">Web Dev</span><span>24 hours</span></div>
+                            <p class="course-desc">Updated 3 days ago</p>
+                            <div class="course-stats">
+                                <div class="stat-item"><span class="stat-label">Students</span><span class="stat-value">45</span></div>
+                                <div class="stat-item"><span class="stat-label">Revenue</span><span class="stat-value">$1,890</span></div>
+                                <div class="stat-item"><span class="stat-label">Progress</span><span class="stat-value">75%</span></div>
+                            </div>
+                            <div class="progress-bar-sm"><div class="progress-fill" style="width:75%"></div></div>
+                            <div class="course-actions">
+                                <button class="icon-btn"><i class="fas fa-edit"></i> Edit</button>
+                                <button class="icon-btn"><i class="fas fa-chart-bar"></i> Analytics</button>
+                                <button class="icon-btn"><i class="fas fa-ellipsis-v"></i></button>
+                            </div>
+                        </div>
+
+                        <div class="course-card-item">
+                            <div class="course-card-header">
+                                <div class="course-card-icon green"><i class="fas fa-server"></i></div>
+                                <span class="status-pill green">Published</span>
+                            </div>
+                            <h3>Node.js &amp; Express Mastery</h3>
+                            <div class="course-meta"><span class="course-badge green">Backend</span><span>30 hours</span></div>
+                            <p class="course-desc">Updated 1 week ago</p>
+                            <div class="course-stats">
+                                <div class="stat-item"><span class="stat-label">Students</span><span class="stat-value">32</span></div>
+                                <div class="stat-item"><span class="stat-label">Revenue</span><span class="stat-value">$1,340</span></div>
+                                <div class="stat-item"><span class="stat-label">Progress</span><span class="stat-value">90%</span></div>
+                            </div>
+                            <div class="progress-bar-sm"><div class="progress-fill" style="width:90%"></div></div>
+                            <div class="course-actions">
+                                <button class="icon-btn"><i class="fas fa-edit"></i> Edit</button>
+                                <button class="icon-btn"><i class="fas fa-chart-bar"></i> Analytics</button>
+                                <button class="icon-btn"><i class="fas fa-ellipsis-v"></i></button>
+                            </div>
+                        </div>
+
+                        <div class="course-card-item">
+                            <div class="course-card-header">
+                                <div class="course-card-icon purple"><i class="fas fa-database"></i></div>
+                                <span class="status-pill green">Published</span>
+                            </div>
+                            <h3>SQL &amp; Data Management</h3>
+                            <div class="course-meta"><span class="course-badge purple">Database</span><span>20 hours</span></div>
+                            <p class="course-desc">Updated 2 weeks ago</p>
+                            <div class="course-stats">
+                                <div class="stat-item"><span class="stat-label">Students</span><span class="stat-value">28</span></div>
+                                <div class="stat-item"><span class="stat-label">Revenue</span><span class="stat-value">$1,120</span></div>
+                                <div class="stat-item"><span class="stat-label">Progress</span><span class="stat-value">60%</span></div>
+                            </div>
+                            <div class="progress-bar-sm"><div class="progress-fill" style="width:60%"></div></div>
+                            <div class="course-actions">
+                                <button class="icon-btn"><i class="fas fa-edit"></i> Edit</button>
+                                <button class="icon-btn"><i class="fas fa-chart-bar"></i> Analytics</button>
+                                <button class="icon-btn"><i class="fas fa-ellipsis-v"></i></button>
+                            </div>
+                        </div>
+
+                        <div class="course-card-item">
+                            <div class="course-card-header">
+                                <div class="course-card-icon orange"><i class="fab fa-js-square"></i></div>
+                                <span class="status-pill green">Published</span>
+                            </div>
+                            <h3>JavaScript Basics for Beginners</h3>
+                            <div class="course-meta"><span class="course-badge blue">Web Dev</span><span>15 hours</span></div>
+                            <p class="course-desc">Updated 1 month ago</p>
+                            <div class="course-stats">
+                                <div class="stat-item"><span class="stat-label">Students</span><span class="stat-value">61</span></div>
+                                <div class="stat-item"><span class="stat-label">Revenue</span><span class="stat-value">$2,440</span></div>
+                                <div class="stat-item"><span class="stat-label">Progress</span><span class="stat-value">100%</span></div>
+                            </div>
+                            <div class="progress-bar-sm"><div class="progress-fill" style="width:100%"></div></div>
+                            <div class="course-actions">
+                                <button class="icon-btn"><i class="fas fa-edit"></i> Edit</button>
+                                <button class="icon-btn"><i class="fas fa-chart-bar"></i> Analytics</button>
+                                <button class="icon-btn"><i class="fas fa-ellipsis-v"></i></button>
+                            </div>
+                        </div>
+
+                        <div class="course-card-item">
+                            <div class="course-card-header">
+                                <div class="course-card-icon gray"><i class="fab fa-react"></i></div>
+                                <span class="status-pill yellow">Draft</span>
+                            </div>
+                            <h3>React &amp; Redux Deep Dive</h3>
+                            <div class="course-meta"><span class="course-badge blue">Frontend</span><span>28 hours</span></div>
+                            <p class="course-desc">Last edited today</p>
+                            <div class="course-stats">
+                                <div class="stat-item"><span class="stat-label">Students</span><span class="stat-value">0</span></div>
+                                <div class="stat-item"><span class="stat-label">Revenue</span><span class="stat-value">—</span></div>
+                                <div class="stat-item"><span class="stat-label">Progress</span><span class="stat-value">40%</span></div>
+                            </div>
+                            <div class="progress-bar-sm"><div class="progress-fill" style="width:40%"></div></div>
+                            <div class="course-actions">
+                                <button class="icon-btn"><i class="fas fa-edit"></i> Edit</button>
+                                <button class="icon-btn"><i class="fas fa-chart-bar"></i> Analytics</button>
+                                <button class="icon-btn"><i class="fas fa-ellipsis-v"></i></button>
+                            </div>
+                        </div>
+
+                        <div class="course-card-item">
+                            <div class="course-card-header">
+                                <div class="course-card-icon gray"><i class="fas fa-code-branch"></i></div>
+                                <span class="status-pill gray">Archived</span>
+                            </div>
+                            <h3>Git &amp; Version Control</h3>
+                            <div class="course-meta"><span class="course-badge" style="background:#94a3b8">DevOps</span><span>10 hours</span></div>
+                            <p class="course-desc">Archived 2 months ago</p>
+                            <div class="course-stats">
+                                <div class="stat-item"><span class="stat-label">Students</span><span class="stat-value">18</span></div>
+                                <div class="stat-item"><span class="stat-label">Revenue</span><span class="stat-value">$450</span></div>
+                                <div class="stat-item"><span class="stat-label">Progress</span><span class="stat-value">100%</span></div>
+                            </div>
+                            <div class="progress-bar-sm"><div class="progress-fill" style="width:100%"></div></div>
+                            <div class="course-actions">
+                                <button class="icon-btn"><i class="fas fa-edit"></i> Edit</button>
+                                <button class="icon-btn"><i class="fas fa-chart-bar"></i> Analytics</button>
+                                <button class="icon-btn"><i class="fas fa-ellipsis-v"></i></button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -471,18 +590,189 @@
                     </div>
                 </div>
                 <div class="card-section" style="padding:0">
-                    <div class="courses-table-wrap">
-                        <table class="courses-table">
-                            <thead><tr><th>Assignment</th><th>Student</th><th>Course</th><th>Due Date</th><th>Status</th><th>Score</th><th>Actions</th></tr></thead>
-                            <tbody>
-                                <tr><td><div class="course-row-info"><div class="course-row-icon blue"><i class="fas fa-code"></i></div><div><strong>Todo App Project</strong><p>Build a functional todo application</p></div></div></td><td><div class="student-av xs" style="background:linear-gradient(135deg,#6366f1,#8b5cf6)"><span>DC</span></div> Daniel Chen</td><td>JavaScript Basics</td><td>Apr 20, 2026</td><td><span class="status-pill green">Submitted</span></td><td><strong style="color:#10b981">95%</strong></td><td><div class="row-actions"><button class="icon-btn"><i class="fas fa-eye"></i></button><button class="icon-btn"><i class="fas fa-check-circle"></i></button><button class="icon-btn"><i class="fas fa-comment"></i></button></div></td></tr>
-                                <tr><td><div class="course-row-info"><div class="course-row-icon blue"><i class="fas fa-code"></i></div><div><strong>Todo App Project</strong><p>Build a functional todo application</p></div></div></td><td><div class="student-av xs" style="background:linear-gradient(135deg,#10b981,#059669)"><span>MR</span></div> Maria Rodriguez</td><td>JavaScript Basics</td><td>Apr 20, 2026</td><td><span class="status-pill green">Submitted</span></td><td><strong style="color:#10b981">92%</strong></td><td><div class="row-actions"><button class="icon-btn"><i class="fas fa-eye"></i></button><button class="icon-btn"><i class="fas fa-check-circle"></i></button><button class="icon-btn"><i class="fas fa-comment"></i></button></div></td></tr>
-                                <tr><td><div class="course-row-info"><div class="course-row-icon green"><i class="fas fa-server"></i></div><div><strong>REST API Development</strong><p>Create a RESTful API with Node.js</p></div></div></td><td><div class="student-av xs" style="background:linear-gradient(135deg,#ec4899,#8b5cf6)"><span>SL</span></div> Sophie Lee</td><td>Node.js & Express</td><td>Apr 25, 2026</td><td><span class="status-pill yellow">Pending</span></td><td>—</td><td><div class="row-actions"><button class="icon-btn"><i class="fas fa-bell"></i></button><button class="icon-btn"><i class="fas fa-ellipsis-v"></i></button></div></td></tr>
-                                <tr><td><div class="course-row-info"><div class="course-row-icon green"><i class="fas fa-server"></i></div><div><strong>REST API Development</strong><p>Create a RESTful API with Node.js</p></div></div></td><td><div class="student-av xs" style="background:linear-gradient(135deg,#3b82f6,#6366f1)"><span>JW</span></div> James Wilson</td><td>Node.js & Express</td><td>Apr 25, 2026</td><td><span class="status-pill green">Submitted</span></td><td><strong style="color:#10b981">88%</strong></td><td><div class="row-actions"><button class="icon-btn"><i class="fas fa-eye"></i></button><button class="icon-btn"><i class="fas fa-check-circle"></i></button><button class="icon-btn"><i class="fas fa-comment"></i></button></div></td></tr>
-                                <tr><td><div class="course-row-info"><div class="course-row-icon purple"><i class="fas fa-palette"></i></div><div><strong>Wireframing Exercise</strong><p>Create wireframes for an e-commerce site</p></div></div></td><td><div class="student-av xs" style="background:linear-gradient(135deg,#f59e0b,#ef4444)"><span>AT</span></div> Alex Thompson</td><td>Advanced UI Design</td><td>Apr 18, 2026</td><td><span class="status-pill green">Graded</span></td><td><strong style="color:#10b981">87%</strong></td><td><div class="row-actions"><button class="icon-btn"><i class="fas fa-eye"></i></button><button class="icon-btn"><i class="fas fa-redo"></i></button></div></td></tr>
-                                <tr><td><div class="course-row-info"><div class="course-row-icon gray"><i class="fas fa-check-circle"></i></div><div><strong>Design System Project</strong><p>Build a comprehensive design system</p></div></div></td><td><div class="student-av xs" style="background:linear-gradient(135deg,#14b8a6,#0ea5e9)"><span>RK</span></div> Raj Kumar</td><td>Advanced UI Design</td><td>Apr 22, 2026</td><td><span class="status-pill yellow">Pending</span></td><td>—</td><td><div class="row-actions"><button class="icon-btn"><i class="fas fa-bell"></i></button><button class="icon-btn"><i class="fas fa-ellipsis-v"></i></button></div></td></tr>
-                            </tbody>
-                        </table>
+                    <div class="assignments-grid">
+                        <div class="assignment-card">
+                            <div class="assignment-header">
+                                <div class="assignment-icon blue"><i class="fas fa-code"></i></div>
+                                <span class="status-pill green">Submitted</span>
+                            </div>
+                            <h3>Todo App Project</h3>
+                            <p class="assignment-desc">Build a functional todo application</p>
+                            <div class="assignment-meta">
+                                <div class="meta-item">
+                                    <span class="meta-label">Student</span>
+                                    <div style="display:flex;align-items:center;gap:8px;margin-top:4px">
+                                        <div class="student-av xs" style="background:linear-gradient(135deg,#6366f1,#8b5cf6)"><span>DC</span></div>
+                                        <span>Daniel Chen</span>
+                                    </div>
+                                </div>
+                                <div class="meta-item">
+                                    <span class="meta-label">Course</span>
+                                    <span style="font-weight:500">JavaScript Basics</span>
+                                </div>
+                            </div>
+                            <div class="assignment-details">
+                                <div class="detail-item"><span>Due Date</span><strong>Apr 20, 2026</strong></div>
+                                <div class="detail-item"><span>Score</span><strong style="color:#10b981">95%</strong></div>
+                            </div>
+                            <div class="assignment-actions">
+                                <button class="icon-btn"><i class="fas fa-eye"></i> View</button>
+                                <button class="icon-btn"><i class="fas fa-check-circle"></i> Grade</button>
+                                <button class="icon-btn"><i class="fas fa-comment"></i> Feedback</button>
+                            </div>
+                        </div>
+
+                        <div class="assignment-card">
+                            <div class="assignment-header">
+                                <div class="assignment-icon blue"><i class="fas fa-code"></i></div>
+                                <span class="status-pill green">Submitted</span>
+                            </div>
+                            <h3>Todo App Project</h3>
+                            <p class="assignment-desc">Build a functional todo application</p>
+                            <div class="assignment-meta">
+                                <div class="meta-item">
+                                    <span class="meta-label">Student</span>
+                                    <div style="display:flex;align-items:center;gap:8px;margin-top:4px">
+                                        <div class="student-av xs" style="background:linear-gradient(135deg,#10b981,#059669)"><span>MR</span></div>
+                                        <span>Maria Rodriguez</span>
+                                    </div>
+                                </div>
+                                <div class="meta-item">
+                                    <span class="meta-label">Course</span>
+                                    <span style="font-weight:500">JavaScript Basics</span>
+                                </div>
+                            </div>
+                            <div class="assignment-details">
+                                <div class="detail-item"><span>Due Date</span><strong>Apr 20, 2026</strong></div>
+                                <div class="detail-item"><span>Score</span><strong style="color:#10b981">92%</strong></div>
+                            </div>
+                            <div class="assignment-actions">
+                                <button class="icon-btn"><i class="fas fa-eye"></i> View</button>
+                                <button class="icon-btn"><i class="fas fa-check-circle"></i> Grade</button>
+                                <button class="icon-btn"><i class="fas fa-comment"></i> Feedback</button>
+                            </div>
+                        </div>
+
+                        <div class="assignment-card">
+                            <div class="assignment-header">
+                                <div class="assignment-icon green"><i class="fas fa-server"></i></div>
+                                <span class="status-pill yellow">Pending</span>
+                            </div>
+                            <h3>REST API Development</h3>
+                            <p class="assignment-desc">Create a RESTful API with Node.js</p>
+                            <div class="assignment-meta">
+                                <div class="meta-item">
+                                    <span class="meta-label">Student</span>
+                                    <div style="display:flex;align-items:center;gap:8px;margin-top:4px">
+                                        <div class="student-av xs" style="background:linear-gradient(135deg,#ec4899,#8b5cf6)"><span>SL</span></div>
+                                        <span>Sophie Lee</span>
+                                    </div>
+                                </div>
+                                <div class="meta-item">
+                                    <span class="meta-label">Course</span>
+                                    <span style="font-weight:500">Node.js & Express</span>
+                                </div>
+                            </div>
+                            <div class="assignment-details">
+                                <div class="detail-item"><span>Due Date</span><strong>Apr 25, 2026</strong></div>
+                                <div class="detail-item"><span>Status</span><span style="color:#d97706">Awaiting Submission</span></div>
+                            </div>
+                            <div class="assignment-actions">
+                                <button class="icon-btn"><i class="fas fa-bell"></i> Remind</button>
+                                <button class="icon-btn"><i class="fas fa-ellipsis-v"></i> More</button>
+                            </div>
+                        </div>
+
+                        <div class="assignment-card">
+                            <div class="assignment-header">
+                                <div class="assignment-icon green"><i class="fas fa-server"></i></div>
+                                <span class="status-pill green">Submitted</span>
+                            </div>
+                            <h3>REST API Development</h3>
+                            <p class="assignment-desc">Create a RESTful API with Node.js</p>
+                            <div class="assignment-meta">
+                                <div class="meta-item">
+                                    <span class="meta-label">Student</span>
+                                    <div style="display:flex;align-items:center;gap:8px;margin-top:4px">
+                                        <div class="student-av xs" style="background:linear-gradient(135deg,#3b82f6,#6366f1)"><span>JW</span></div>
+                                        <span>James Wilson</span>
+                                    </div>
+                                </div>
+                                <div class="meta-item">
+                                    <span class="meta-label">Course</span>
+                                    <span style="font-weight:500">Node.js & Express</span>
+                                </div>
+                            </div>
+                            <div class="assignment-details">
+                                <div class="detail-item"><span>Due Date</span><strong>Apr 25, 2026</strong></div>
+                                <div class="detail-item"><span>Score</span><strong style="color:#10b981">88%</strong></div>
+                            </div>
+                            <div class="assignment-actions">
+                                <button class="icon-btn"><i class="fas fa-eye"></i> View</button>
+                                <button class="icon-btn"><i class="fas fa-check-circle"></i> Grade</button>
+                                <button class="icon-btn"><i class="fas fa-comment"></i> Feedback</button>
+                            </div>
+                        </div>
+
+                        <div class="assignment-card">
+                            <div class="assignment-header">
+                                <div class="assignment-icon purple"><i class="fas fa-palette"></i></div>
+                                <span class="status-pill green">Graded</span>
+                            </div>
+                            <h3>Wireframing Exercise</h3>
+                            <p class="assignment-desc">Create wireframes for an e-commerce site</p>
+                            <div class="assignment-meta">
+                                <div class="meta-item">
+                                    <span class="meta-label">Student</span>
+                                    <div style="display:flex;align-items:center;gap:8px;margin-top:4px">
+                                        <div class="student-av xs" style="background:linear-gradient(135deg,#f59e0b,#ef4444)"><span>AT</span></div>
+                                        <span>Alex Thompson</span>
+                                    </div>
+                                </div>
+                                <div class="meta-item">
+                                    <span class="meta-label">Course</span>
+                                    <span style="font-weight:500">Advanced UI Design</span>
+                                </div>
+                            </div>
+                            <div class="assignment-details">
+                                <div class="detail-item"><span>Due Date</span><strong>Apr 18, 2026</strong></div>
+                                <div class="detail-item"><span>Score</span><strong style="color:#10b981">87%</strong></div>
+                            </div>
+                            <div class="assignment-actions">
+                                <button class="icon-btn"><i class="fas fa-eye"></i> View</button>
+                                <button class="icon-btn"><i class="fas fa-redo"></i> Re-grade</button>
+                            </div>
+                        </div>
+
+                        <div class="assignment-card">
+                            <div class="assignment-header">
+                                <div class="assignment-icon gray"><i class="fas fa-check-circle"></i></div>
+                                <span class="status-pill yellow">Pending</span>
+                            </div>
+                            <h3>Design System Project</h3>
+                            <p class="assignment-desc">Build a comprehensive design system</p>
+                            <div class="assignment-meta">
+                                <div class="meta-item">
+                                    <span class="meta-label">Student</span>
+                                    <div style="display:flex;align-items:center;gap:8px;margin-top:4px">
+                                        <div class="student-av xs" style="background:linear-gradient(135deg,#14b8a6,#0ea5e9)"><span>RK</span></div>
+                                        <span>Raj Kumar</span>
+                                    </div>
+                                </div>
+                                <div class="meta-item">
+                                    <span class="meta-label">Course</span>
+                                    <span style="font-weight:500">Advanced UI Design</span>
+                                </div>
+                            </div>
+                            <div class="assignment-details">
+                                <div class="detail-item"><span>Due Date</span><strong>Apr 22, 2026</strong></div>
+                                <div class="detail-item"><span>Status</span><span style="color:#d97706">Awaiting Submission</span></div>
+                            </div>
+                            <div class="assignment-actions">
+                                <button class="icon-btn"><i class="fas fa-bell"></i> Remind</button>
+                                <button class="icon-btn"><i class="fas fa-ellipsis-v"></i> More</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -665,15 +955,14 @@
     const pages = {
         'overview': document.getElementById('overview'),
         'profile': document.getElementById('profile'),
-        'courses': document.getElementById('my-courses'),
+        'my-courses': document.getElementById('my-courses'),
         'students': document.getElementById('students'),
-        'sessions': document.getElementById('all-sessions'),
+        'all-sessions': document.getElementById('all-sessions'),
         'assignments': document.getElementById('assignments'),
         'earnings': document.getElementById('earnings'),
         'messages': document.getElementById('messages'),
         'reviews': document.getElementById('reviews'),
         'settings': document.getElementById('settings'),
-        'logout': document.getElementById('logout'),
     };
 
     function showPage(id) {
@@ -702,6 +991,44 @@
             this.closest('.filter-tabs').querySelectorAll('.filter-tab').forEach(b => b.classList.remove('active'));
             this.classList.add('active');
         });
+    });
+
+    // Hamburger Menu Toggle
+    const hamburgerMenu = document.getElementById('hamburgerMenu');
+    const sidebar = document.getElementById('sidebar');
+    const sidebarOverlay = document.getElementById('sidebarOverlay');
+
+    if (hamburgerMenu) {
+        hamburgerMenu.addEventListener('click', function() {
+            sidebar.classList.toggle('active');
+            sidebarOverlay.classList.toggle('active');
+        });
+    }
+
+    if (sidebarOverlay) {
+        sidebarOverlay.addEventListener('click', function() {
+            sidebar.classList.remove('active');
+            sidebarOverlay.classList.remove('active');
+        });
+    }
+
+    // Close sidebar when a link is clicked
+    document.querySelectorAll('.sidebar-nav a').forEach(link => {
+        link.addEventListener('click', function(e) {
+            // Don't close for external links
+            if (!this.href.includes('.html') || this.href.includes('#')) {
+                sidebar.classList.remove('active');
+                sidebarOverlay.classList.remove('active');
+            }
+        });
+    });
+
+    // Handle window resize
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 768) {
+            sidebar.classList.remove('active');
+            sidebarOverlay.classList.remove('active');
+        }
     });
 </script>
 </body>

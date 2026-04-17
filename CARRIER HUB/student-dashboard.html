@@ -8,9 +8,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <div class="page-loader" id="pageLoader">
+        <div class="loader-spinner">
+            <div class="spinner-ring"></div>
+            <div class="spinner-ring"></div>
+            <div class="spinner-ring"></div>
+            <p>Loading...</p>
+        </div>
+    </div>
+    
     <div class="dashboard-container">
         <!-- Sidebar Navigation -->
-        <aside class="sidebar">
+        <aside class="sidebar" id="sidebar">
             <div class="sidebar-header">
                 <div class="logo">
                     <i class="fas fa-graduation-cap"></i>
@@ -22,7 +32,7 @@
                 <ul>
                     <li><a href="#dashboard" class="active"><i class="fas fa-chart-line"></i> Dashboard</a></li>
                     <li><a href="#my-courses"><i class="fas fa-book-open"></i> My Courses</a></li>
-                    <li><a href="mentors-marketplace.html"><i class="fas fa-chalkboard-user"></i> Find Mentors</a></li>
+      
                     <li><a href="#sessions"><i class="fas fa-video"></i> Sessions</a></li>
                     <li><a href="#assignments"><i class="fas fa-tasks"></i> Assignments</a></li>
                     <li><a href="#progress"><i class="fas fa-chart-bar"></i> Progress</a></li>
@@ -38,6 +48,9 @@
         <main class="main-content">
             <!-- Top Navigation Bar -->
             <header class="top-bar">
+                <button class="hamburger-menu" id="hamburgerMenu">
+                    <i class="fas fa-bars"></i>
+                </button>
                 <div class="search-container">
                     <i class="fas fa-search"></i>
                     <input type="search" placeholder="Search courses, mentors, or assignments...">
@@ -386,17 +399,109 @@
                         <button class="filter-tab">Graded (2)</button>
                     </div>
                 </div>
-                <div class="card-section" style="padding:0">
-                    <div class="courses-table-wrap">
-                        <table class="courses-table">
-                            <thead><tr><th>Assignment</th><th>Course</th><th>Due Date</th><th>Status</th><th>Score</th><th>Actions</th></tr></thead>
-                            <tbody>
-                                <tr><td><div class="course-row-info"><div class="course-row-icon blue"><i class="fas fa-code"></i></div><div><strong>Todo App Project</strong><p>Build a functional todo application</p></div></div></td><td>JavaScript ES6+</td><td>Apr 20, 2026</td><td><span class="status-pill green">Submitted</span></td><td><strong style="color:#10b981">95%</strong></td><td><div class="row-actions"><button class="icon-btn"><i class="fas fa-eye"></i></button><button class="icon-btn"><i class="fas fa-download"></i></button></div></td></tr>
-                                <tr><td><div class="course-row-info"><div class="course-row-icon green"><i class="fas fa-server"></i></div><div><strong>REST API Development</strong><p>Create a RESTful API with Node.js</p></div></div></td><td>Node.js & Express</td><td>Apr 25, 2026</td><td><span class="status-pill yellow">Pending</span></td><td>—</td><td><div class="row-actions"><button class="icon-btn"><i class="fas fa-arrow-up"></i></button><button class="icon-btn"><i class="fas fa-ellipsis-v"></i></button></div></td></tr>
-                                <tr><td><div class="course-row-info"><div class="course-row-icon purple"><i class="fas fa-palette"></i></div><div><strong>Wireframing Exercise</strong><p>Create wireframes for an e-commerce site</p></div></div></td><td>UI/UX Design</td><td>Apr 18, 2026</td><td><span class="status-pill green">Submitted</span></td><td><strong style="color:#10b981">88%</strong></td><td><div class="row-actions"><button class="icon-btn"><i class="fas fa-eye"></i></button><button class="icon-btn"><i class="fas fa-download"></i></button></div></td></tr>
-                                <tr><td><div class="course-row-info"><div class="course-row-icon gray"><i class="fas fa-check-circle"></i></div><div><strong>Array Methods Quiz</strong><p>Multiple choice assessment on array methods</p></div></div></td><td>JavaScript ES6+</td><td>Apr 15, 2026</td><td><span class="status-pill green">Graded</span></td><td><strong style="color:#10b981">92%</strong></td><td><div class="row-actions"><button class="icon-btn"><i class="fas fa-eye"></i></button><button class="icon-btn"><i class="fas fa-download"></i></button></div></td></tr>
-                            </tbody>
-                        </table>
+                <div class="assignments-grid">
+                    <div class="assignment-card">
+                        <div class="assignment-header">
+                            <div class="assignment-icon blue"><i class="fas fa-code"></i></div>
+                            <span class="status-pill green">Submitted</span>
+                        </div>
+                        <h3>Todo App Project</h3>
+                        <p class="assignment-description">Build a functional todo application</p>
+                        <div class="assignment-meta">
+                            <div><strong>Course:</strong> JavaScript ES6+</div>
+                        </div>
+                        <div class="assignment-details">
+                            <div>
+                                <strong>Due Date</strong>
+                                <span>Apr 20, 2026</span>
+                            </div>
+                            <div>
+                                <strong>Score</strong>
+                                <span style="color:#10b981"><strong>95%</strong></span>
+                            </div>
+                        </div>
+                        <div class="assignment-actions">
+                            <button class="icon-btn"><i class="fas fa-eye"></i> View</button>
+                            <button class="icon-btn"><i class="fas fa-download"></i> Download</button>
+                        </div>
+                    </div>
+
+                    <div class="assignment-card">
+                        <div class="assignment-header">
+                            <div class="assignment-icon green"><i class="fas fa-server"></i></div>
+                            <span class="status-pill yellow">Pending</span>
+                        </div>
+                        <h3>REST API Development</h3>
+                        <p class="assignment-description">Create a RESTful API with Node.js</p>
+                        <div class="assignment-meta">
+                            <div><strong>Course:</strong> Node.js & Express</div>
+                        </div>
+                        <div class="assignment-details">
+                            <div>
+                                <strong>Due Date</strong>
+                                <span>Apr 25, 2026</span>
+                            </div>
+                            <div>
+                                <strong>Score</strong>
+                                <span>—</span>
+                            </div>
+                        </div>
+                        <div class="assignment-actions">
+                            <button class="icon-btn"><i class="fas fa-arrow-up"></i> Submit</button>
+                            <button class="icon-btn"><i class="fas fa-ellipsis-v"></i> More</button>
+                        </div>
+                    </div>
+
+                    <div class="assignment-card">
+                        <div class="assignment-header">
+                            <div class="assignment-icon purple"><i class="fas fa-palette"></i></div>
+                            <span class="status-pill green">Submitted</span>
+                        </div>
+                        <h3>Wireframing Exercise</h3>
+                        <p class="assignment-description">Create wireframes for an e-commerce site</p>
+                        <div class="assignment-meta">
+                            <div><strong>Course:</strong> UI/UX Design</div>
+                        </div>
+                        <div class="assignment-details">
+                            <div>
+                                <strong>Due Date</strong>
+                                <span>Apr 18, 2026</span>
+                            </div>
+                            <div>
+                                <strong>Score</strong>
+                                <span style="color:#10b981"><strong>88%</strong></span>
+                            </div>
+                        </div>
+                        <div class="assignment-actions">
+                            <button class="icon-btn"><i class="fas fa-eye"></i> View</button>
+                            <button class="icon-btn"><i class="fas fa-download"></i> Download</button>
+                        </div>
+                    </div>
+
+                    <div class="assignment-card">
+                        <div class="assignment-header">
+                            <div class="assignment-icon gray"><i class="fas fa-check-circle"></i></div>
+                            <span class="status-pill green">Graded</span>
+                        </div>
+                        <h3>Array Methods Quiz</h3>
+                        <p class="assignment-description">Multiple choice assessment on array methods</p>
+                        <div class="assignment-meta">
+                            <div><strong>Course:</strong> JavaScript ES6+</div>
+                        </div>
+                        <div class="assignment-details">
+                            <div>
+                                <strong>Due Date</strong>
+                                <span>Apr 15, 2026</span>
+                            </div>
+                            <div>
+                                <strong>Score</strong>
+                                <span style="color:#10b981"><strong>92%</strong></span>
+                            </div>
+                        </div>
+                        <div class="assignment-actions">
+                            <button class="icon-btn"><i class="fas fa-eye"></i> View</button>
+                            <button class="icon-btn"><i class="fas fa-download"></i> Download</button>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -584,6 +689,67 @@
             this.closest('.filter-tabs').querySelectorAll('.filter-tab').forEach(b => b.classList.remove('active'));
             this.classList.add('active');
         });
+    });
+
+    // Hamburger Menu Toggle
+    const hamburgerMenu = document.getElementById('hamburgerMenu');
+    const sidebar = document.getElementById('sidebar');
+    const sidebarOverlay = document.getElementById('sidebarOverlay');
+
+    if (hamburgerMenu) {
+        hamburgerMenu.addEventListener('click', function() {
+            sidebar.classList.toggle('active');
+            sidebarOverlay.classList.toggle('active');
+        });
+    }
+
+    if (sidebarOverlay) {
+        sidebarOverlay.addEventListener('click', function() {
+            sidebar.classList.remove('active');
+            sidebarOverlay.classList.remove('active');
+        });
+    }
+
+    // Close sidebar when a link is clicked
+    document.querySelectorAll('.sidebar-nav a').forEach(link => {
+        link.addEventListener('click', function(e) {
+            // Don't close for external links
+            if (!this.href.includes('.html') || this.href.includes('#')) {
+                sidebar.classList.remove('active');
+                sidebarOverlay.classList.remove('active');
+            }
+        });
+    });
+
+    // Handle window resize
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 768) {
+            sidebar.classList.remove('active');
+            sidebarOverlay.classList.remove('active');
+        }
+    });
+
+    // Page Loader functionality
+    const pageLoader = document.getElementById('pageLoader');
+    const navLinks = document.querySelectorAll('.sidebar-nav a');
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            // Show loader for external page navigation
+            if (this.href.includes('.html')) {
+                pageLoader.classList.add('active');
+            }
+        });
+    });
+
+    // Hide loader when page fully loads
+    window.addEventListener('load', function() {
+        pageLoader.classList.remove('active');
+    });
+
+    // Hide loader after a short delay for same-page navigation
+    document.addEventListener('DOMContentLoaded', function() {
+        pageLoader.classList.remove('active');
     });
 </script>
 </body>

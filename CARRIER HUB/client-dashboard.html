@@ -8,9 +8,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    
     <div class="dashboard-container">
         <!-- Sidebar Navigation -->
-        <aside class="sidebar">
+        <aside class="sidebar" id="sidebar">
             <div class="sidebar-header">
                 <div class="logo">
                     <i class="fas fa-briefcase"></i>
@@ -38,6 +40,9 @@
         <main class="main-content">
             <!-- Top Navigation Bar -->
             <header class="top-bar">
+                <button class="hamburger-menu" id="hamburgerMenu">
+                    <i class="fas fa-bars"></i>
+                </button>
                 <div class="search-container">
                     <i class="fas fa-search"></i>
                     <input type="search" placeholder="Search projects, talents, or candidates...">
@@ -296,18 +301,160 @@
                         <button class="filter-tab">Completed (3)</button>
                     </div>
                 </div>
-                <div class="card-section" style="padding:0">
-                    <div class="courses-table-wrap">
-                        <table class="courses-table">
-                            <thead><tr><th>Project Name</th><th>Status</th><th>Professionals</th><th>Budget</th><th>Progress</th><th>Due Date</th><th>Actions</th></tr></thead>
-                            <tbody>
-                                <tr><td><div class="course-row-info"><div class="course-row-icon blue"><i class="fas fa-code"></i></div><div><strong>E-Commerce Platform</strong><p>React + Node.js Full-Stack Build</p></div></div></td><td><span class="status-pill green">In Progress</span></td><td>4</td><td>$18,500</td><td><div style="display:flex;align-items:center;gap:8px"><div class="mini-progress"><div class="mini-fill" style="width:65%"></div></div><span>65%</span></div></td><td>May 15, 2026</td><td><div class="row-actions"><button class="icon-btn"><i class="fas fa-eye"></i></button><button class="icon-btn"><i class="fas fa-edit"></i></button></div></td></tr>
-                                <tr><td><div class="course-row-info"><div class="course-row-icon green"><i class="fas fa-palette"></i></div><div><strong>Mobile App Design</strong><p>iOS & Android UI/UX Prototype</p></div></div></td><td><span class="status-pill green">In Progress</span></td><td>2</td><td>$8,200</td><td><div style="display:flex;align-items:center;gap:8px"><div class="mini-progress"><div class="mini-fill" style="width:80%"></div></div><span>80%</span></div></td><td>Apr 30, 2026</td><td><div class="row-actions"><button class="icon-btn"><i class="fas fa-eye"></i></button><button class="icon-btn"><i class="fas fa-edit"></i></button></div></td></tr>
-                                <tr><td><div class="course-row-info"><div class="course-row-icon purple"><i class="fas fa-paint-brush"></i></div><div><strong>Brand Identity</strong><p>Logo & Guidelines Design</p></div></div></td><td><span class="status-pill yellow">Needs Review</span></td><td>1</td><td>$4,500</td><td><div style="display:flex;align-items:center;gap:8px"><div class="mini-progress"><div class="mini-fill" style="width:45%"></div></div><span>45%</span></div></td><td>Apr 28, 2026</td><td><div class="row-actions"><button class="icon-btn"><i class="fas fa-eye"></i></button><button class="icon-btn"><i class="fas fa-edit"></i></button></div></td></tr>
-                                <tr><td><div class="course-row-info"><div class="course-row-icon orange"><i class="fas fa-check-circle"></i></div><div><strong>Website Redesign</strong><p>Complete Website Overhaul</p></div></div></td><td><span class="status-pill green">Completed</span></td><td>3</td><td>$12,000</td><td><div style="display:flex;align-items:center;gap:8px"><div class="mini-progress"><div class="mini-fill" style="width:100%"></div></div><span>100%</span></div></td><td>Apr 10, 2026</td><td><div class="row-actions"><button class="icon-btn"><i class="fas fa-eye"></i></button><button class="icon-btn"><i class="fas fa-download"></i></button></div></td></tr>
-                                <tr><td><div class="course-row-info"><div class="course-row-icon gray"><i class="fas fa-database"></i></div><div><strong>Database Migration</strong><p>PostgreSQL Migration & Optimization</p></div></div></td><td><span class="status-pill green">Completed</span></td><td>2</td><td>$6,800</td><td><div style="display:flex;align-items:center;gap:8px"><div class="mini-progress"><div class="mini-fill" style="width:100%"></div></div><span>100%</span></div></td><td>Apr 5, 2026</td><td><div class="row-actions"><button class="icon-btn"><i class="fas fa-eye"></i></button><button class="icon-btn"><i class="fas fa-download"></i></button></div></td></tr>
-                            </tbody>
-                        </table>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-icon blue"><i class="fas fa-code"></i></div>
+                            <span class="status-pill green">In Progress</span>
+                        </div>
+                        <h3>E-Commerce Platform</h3>
+                        <p class="project-description">React + Node.js Full-Stack Build</p>
+                        <div class="project-meta">
+                            <div><strong>Budget:</strong> $18,500</div>
+                        </div>
+                        <div class="project-details">
+                            <div>
+                                <strong>Professionals</strong>
+                                <span>4</span>
+                            </div>
+                            <div>
+                                <strong>Due Date</strong>
+                                <span>May 15, 2026</span>
+                            </div>
+                        </div>
+                        <div class="progress-bar-sm"></div>
+                        <div style="display: flex; align-items: center; gap: 8px; margin: 12px 0 0 0; font-size: 12px;">
+                            <div class="progress-bar-sm" style="margin: 0; flex: 1;"><div style="width: 65%; height: 100%; background: linear-gradient(90deg, #3b82f6, #8b5cf6); border-radius: 3px;"></div></div>
+                            <span style="font-weight: 600;">65%</span>
+                        </div>
+                        <div class="project-actions">
+                            <button class="icon-btn"><i class="fas fa-eye"></i> View</button>
+                            <button class="icon-btn"><i class="fas fa-edit"></i> Edit</button>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-icon green"><i class="fas fa-palette"></i></div>
+                            <span class="status-pill green">In Progress</span>
+                        </div>
+                        <h3>Mobile App Design</h3>
+                        <p class="project-description">iOS & Android UI/UX Prototype</p>
+                        <div class="project-meta">
+                            <div><strong>Budget:</strong> $8,200</div>
+                        </div>
+                        <div class="project-details">
+                            <div>
+                                <strong>Professionals</strong>
+                                <span>2</span>
+                            </div>
+                            <div>
+                                <strong>Due Date</strong>
+                                <span>Apr 30, 2026</span>
+                            </div>
+                        </div>
+                        <div class="progress-bar-sm"></div>
+                        <div style="display: flex; align-items: center; gap: 8px; margin: 12px 0 0 0; font-size: 12px;">
+                            <div class="progress-bar-sm" style="margin: 0; flex: 1;"><div style="width: 80%; height: 100%; background: linear-gradient(90deg, #3b82f6, #8b5cf6); border-radius: 3px;"></div></div>
+                            <span style="font-weight: 600;">80%</span>
+                        </div>
+                        <div class="project-actions">
+                            <button class="icon-btn"><i class="fas fa-eye"></i> View</button>
+                            <button class="icon-btn"><i class="fas fa-edit"></i> Edit</button>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-icon purple"><i class="fas fa-paint-brush"></i></div>
+                            <span class="status-pill yellow">Needs Review</span>
+                        </div>
+                        <h3>Brand Identity</h3>
+                        <p class="project-description">Logo & Guidelines Design</p>
+                        <div class="project-meta">
+                            <div><strong>Budget:</strong> $4,500</div>
+                        </div>
+                        <div class="project-details">
+                            <div>
+                                <strong>Professionals</strong>
+                                <span>1</span>
+                            </div>
+                            <div>
+                                <strong>Due Date</strong>
+                                <span>Apr 28, 2026</span>
+                            </div>
+                        </div>
+                        <div class="progress-bar-sm"></div>
+                        <div style="display: flex; align-items: center; gap: 8px; margin: 12px 0 0 0; font-size: 12px;">
+                            <div class="progress-bar-sm" style="margin: 0; flex: 1;"><div style="width: 45%; height: 100%; background: linear-gradient(90deg, #3b82f6, #8b5cf6); border-radius: 3px;"></div></div>
+                            <span style="font-weight: 600;">45%</span>
+                        </div>
+                        <div class="project-actions">
+                            <button class="icon-btn"><i class="fas fa-eye"></i> View</button>
+                            <button class="icon-btn"><i class="fas fa-edit"></i> Edit</button>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-icon orange"><i class="fas fa-check-circle"></i></div>
+                            <span class="status-pill green">Completed</span>
+                        </div>
+                        <h3>Website Redesign</h3>
+                        <p class="project-description">Complete Website Overhaul</p>
+                        <div class="project-meta">
+                            <div><strong>Budget:</strong> $12,000</div>
+                        </div>
+                        <div class="project-details">
+                            <div>
+                                <strong>Professionals</strong>
+                                <span>3</span>
+                            </div>
+                            <div>
+                                <strong>Due Date</strong>
+                                <span>Apr 10, 2026</span>
+                            </div>
+                        </div>
+                        <div class="progress-bar-sm"></div>
+                        <div style="display: flex; align-items: center; gap: 8px; margin: 12px 0 0 0; font-size: 12px;">
+                            <div class="progress-bar-sm" style="margin: 0; flex: 1;"><div style="width: 100%; height: 100%; background: linear-gradient(90deg, #3b82f6, #8b5cf6); border-radius: 3px;"></div></div>
+                            <span style="font-weight: 600;">100%</span>
+                        </div>
+                        <div class="project-actions">
+                            <button class="icon-btn"><i class="fas fa-eye"></i> View</button>
+                            <button class="icon-btn"><i class="fas fa-download"></i> Download</button>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-icon gray"><i class="fas fa-database"></i></div>
+                            <span class="status-pill green">Completed</span>
+                        </div>
+                        <h3>Database Migration</h3>
+                        <p class="project-description">PostgreSQL Migration & Optimization</p>
+                        <div class="project-meta">
+                            <div><strong>Budget:</strong> $6,800</div>
+                        </div>
+                        <div class="project-details">
+                            <div>
+                                <strong>Professionals</strong>
+                                <span>2</span>
+                            </div>
+                            <div>
+                                <strong>Due Date</strong>
+                                <span>Apr 5, 2026</span>
+                            </div>
+                        </div>
+                        <div class="progress-bar-sm"></div>
+                        <div style="display: flex; align-items: center; gap: 8px; margin: 12px 0 0 0; font-size: 12px;">
+                            <div class="progress-bar-sm" style="margin: 0; flex: 1;"><div style="width: 100%; height: 100%; background: linear-gradient(90deg, #3b82f6, #8b5cf6); border-radius: 3px;"></div></div>
+                            <span style="font-weight: 600;">100%</span>
+                        </div>
+                        <div class="project-actions">
+                            <button class="icon-btn"><i class="fas fa-eye"></i> View</button>
+                            <button class="icon-btn"><i class="fas fa-download"></i> Download</button>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -363,17 +510,89 @@
                         <button class="filter-tab">Shortlisted (6)</button>
                     </div>
                 </div>
-                <div class="card-section" style="padding:0">
-                    <div class="courses-table-wrap">
-                        <table class="courses-table">
-                            <thead><tr><th>Candidate Name</th><th>Position</th><th>Experience</th><th>Status</th><th>Applied Date</th><th>Rating</th><th>Actions</th></tr></thead>
-                            <tbody>
-                                <tr><td><div class="course-row-info"><div class="student-av xs" style="background:linear-gradient(135deg,#6366f1,#8b5cf6)"><span>AJ</span></div><strong>Alex Johnson</strong></div></td><td>Senior Full-Stack Developer</td><td>5+ years</td><td><span class="status-pill green">Shortlisted</span></td><td>Apr 10, 2026</td><td><i class="fas fa-star" style="color:#f59e0b"></i> 4.9/5.0</td><td><div class="row-actions"><button class="icon-btn"><i class="fas fa-eye"></i></button><button class="icon-btn"><i class="fas fa-handshake"></i></button></div></td></tr>
-                                <tr><td><div class="course-row-info"><div class="student-av xs" style="background:linear-gradient(135deg,#10b981,#059669)"><span>SL</span></div><strong>Sarah Lee</strong></div></td><td>Senior UI/UX Designer</td><td>4+ years</td><td><span class="status-pill green">Shortlisted</span></td><td>Apr 9, 2026</td><td><i class="fas fa-star" style="color:#f59e0b"></i> 4.8/5.0</td><td><div class="row-actions"><button class="icon-btn"><i class="fas fa-eye"></i></button><button class="icon-btn"><i class="fas fa-handshake"></i></button></div></td></tr>
-                                <tr><td><div class="course-row-info"><div class="student-av xs" style="background:linear-gradient(135deg,#f59e0b,#ef4444)"><span>MC</span></div><strong>Michael Chen</strong></div></td><td>Backend Engineer</td><td>6+ years</td><td><span class="status-pill blue">Reviewed</span></td><td>Apr 8, 2026</td><td><i class="fas fa-star" style="color:#f59e0b"></i> 4.7/5.0</td><td><div class="row-actions"><button class="icon-btn"><i class="fas fa-eye"></i></button><button class="icon-btn"><i class="fas fa-times"></i></button></div></td></tr>
-                                <tr><td><div class="course-row-info"><div class="student-av xs" style="background:linear-gradient(135deg,#3b82f6,#6366f1)"><span>JP</span></div><strong>Jessica Parker</strong></div></td><td>Product Manager</td><td>3+ years</td><td><span class="status-pill yellow">New</span></td><td>Apr 15, 2026</td><td><i class="fas fa-star" style="color:#f59e0b"></i> 4.6/5.0</td><td><div class="row-actions"><button class="icon-btn"><i class="fas fa-eye"></i></button><button class="icon-btn"><i class="fas fa-check"></i></button></div></td></tr>
-                            </tbody>
-                        </table>
+                <div class="candidates-grid">
+                    <div class="candidate-card">
+                        <div class="candidate-header">
+                            <div class="student-av sm" style="background:linear-gradient(135deg,#6366f1,#8b5cf6)"><span>AJ</span></div>
+                            <span class="status-pill green">Shortlisted</span>
+                        </div>
+                        <h3>Alex Johnson</h3>
+                        <p class="candidate-position">Senior Full-Stack Developer</p>
+                        <div class="candidate-meta">
+                            <div><strong>Experience:</strong> 5+ years</div>
+                            <div><strong>Applied:</strong> Apr 10, 2026</div>
+                        </div>
+                        <div class="candidate-rating">
+                            <i class="fas fa-star" style="color:#f59e0b"></i>
+                            <span>4.9/5.0</span>
+                        </div>
+                        <div class="candidate-actions">
+                            <button class="icon-btn"><i class="fas fa-eye"></i> View</button>
+                            <button class="icon-btn"><i class="fas fa-handshake"></i> Offer</button>
+                        </div>
+                    </div>
+
+                    <div class="candidate-card">
+                        <div class="candidate-header">
+                            <div class="student-av sm" style="background:linear-gradient(135deg,#10b981,#059669)"><span>SL</span></div>
+                            <span class="status-pill green">Shortlisted</span>
+                        </div>
+                        <h3>Sarah Lee</h3>
+                        <p class="candidate-position">Senior UI/UX Designer</p>
+                        <div class="candidate-meta">
+                            <div><strong>Experience:</strong> 4+ years</div>
+                            <div><strong>Applied:</strong> Apr 9, 2026</div>
+                        </div>
+                        <div class="candidate-rating">
+                            <i class="fas fa-star" style="color:#f59e0b"></i>
+                            <span>4.8/5.0</span>
+                        </div>
+                        <div class="candidate-actions">
+                            <button class="icon-btn"><i class="fas fa-eye"></i> View</button>
+                            <button class="icon-btn"><i class="fas fa-handshake"></i> Offer</button>
+                        </div>
+                    </div>
+
+                    <div class="candidate-card">
+                        <div class="candidate-header">
+                            <div class="student-av sm" style="background:linear-gradient(135deg,#f59e0b,#ef4444)"><span>MC</span></div>
+                            <span class="status-pill blue">Reviewed</span>
+                        </div>
+                        <h3>Michael Chen</h3>
+                        <p class="candidate-position">Backend Engineer</p>
+                        <div class="candidate-meta">
+                            <div><strong>Experience:</strong> 6+ years</div>
+                            <div><strong>Applied:</strong> Apr 8, 2026</div>
+                        </div>
+                        <div class="candidate-rating">
+                            <i class="fas fa-star" style="color:#f59e0b"></i>
+                            <span>4.7/5.0</span>
+                        </div>
+                        <div class="candidate-actions">
+                            <button class="icon-btn"><i class="fas fa-eye"></i> View</button>
+                            <button class="icon-btn"><i class="fas fa-times"></i> Reject</button>
+                        </div>
+                    </div>
+
+                    <div class="candidate-card">
+                        <div class="candidate-header">
+                            <div class="student-av sm" style="background:linear-gradient(135deg,#3b82f6,#6366f1)"><span>JP</span></div>
+                            <span class="status-pill yellow">New</span>
+                        </div>
+                        <h3>Jessica Parker</h3>
+                        <p class="candidate-position">Product Manager</p>
+                        <div class="candidate-meta">
+                            <div><strong>Experience:</strong> 3+ years</div>
+                            <div><strong>Applied:</strong> Apr 15, 2026</div>
+                        </div>
+                        <div class="candidate-rating">
+                            <i class="fas fa-star" style="color:#f59e0b"></i>
+                            <span>4.6/5.0</span>
+                        </div>
+                        <div class="candidate-actions">
+                            <button class="icon-btn"><i class="fas fa-eye"></i> View</button>
+                            <button class="icon-btn"><i class="fas fa-check"></i> Approve</button>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -561,16 +780,57 @@
                     <div class="stat-card purple-gradient"><div class="stat-icon"><i class="fas fa-check-circle"></i></div><div class="stat-content"><h3>Paid This Month</h3><p class="stat-number">$6,200</p><span class="stat-change positive">12 transactions</span></div></div>
                     <div class="stat-card orange-gradient"><div class="stat-icon"><i class="fas fa-wallet"></i></div><div class="stat-content"><h3>Budget Remaining</h3><p class="stat-number">$15,420</p><span class="stat-change">Q2 Budget</span></div></div>
                 </div>
-                <div class="card-section" style="padding:0">
-                    <div class="courses-table-wrap">
-                        <table class="courses-table">
-                            <thead><tr><th>Professional</th><th>Project</th><th>Amount</th><th>Due Date</th><th>Status</th><th>Payment Method</th><th>Actions</th></tr></thead>
-                            <tbody>
-                                <tr><td><div class="course-row-info"><div class="student-av xs" style="background:linear-gradient(135deg,#6366f1,#8b5cf6)"><span>AJ</span></div><strong>Alex Johnson</strong></div></td><td>E-Commerce Platform</td><td>$5,200</td><td>Apr 20, 2026</td><td><span class="status-pill green">Paid</span></td><td>Bank Transfer</td><td><div class="row-actions"><button class="icon-btn"><i class="fas fa-receipt"></i></button></div></td></tr>
-                                <tr><td><div class="course-row-info"><div class="student-av xs" style="background:linear-gradient(135deg,#10b981,#059669)"><span>SL</span></div><strong>Sarah Lee</strong></div></td><td>Mobile App Design</td><td>$3,800</td><td>Apr 25, 2026</td><td><span class="status-pill yellow">Pending</span></td><td>Wire Transfer</td><td><div class="row-actions"><button class="icon-btn"><i class="fas fa-clock"></i></button><button class="icon-btn"><i class="fas fa-check"></i></button></div></td></tr>
-                                <tr><td><div class="course-row-info"><div class="student-av xs" style="background:linear-gradient(135deg,#f59e0b,#ef4444)"><span>MC</span></div><strong>Michael Chen</strong></div></td><td>E-Commerce Platform</td><td>$4,500</td><td>Apr 22, 2026</td><td><span class="status-pill green">Paid</span></td><td>Bank Transfer</td><td><div class="row-actions"><button class="icon-btn"><i class="fas fa-receipt"></i></button></div></td></tr>
-                            </tbody>
-                        </table>
+                <div class="payments-grid">
+                    <div class="payment-card">
+                        <div class="payment-header">
+                            <div class="student-av sm" style="background:linear-gradient(135deg,#6366f1,#8b5cf6)"><span>AJ</span></div>
+                            <span class="status-pill green">Paid</span>
+                        </div>
+                        <h3>Alex Johnson</h3>
+                        <p class="payment-project">E-Commerce Platform</p>
+                        <div class="payment-amount">$5,200</div>
+                        <div class="payment-meta">
+                            <div><strong>Due Date:</strong> Apr 20, 2026</div>
+                            <div><strong>Method:</strong> Bank Transfer</div>
+                        </div>
+                        <div class="payment-actions">
+                            <button class="icon-btn"><i class="fas fa-receipt"></i> Receipt</button>
+                        </div>
+                    </div>
+
+                    <div class="payment-card">
+                        <div class="payment-header">
+                            <div class="student-av sm" style="background:linear-gradient(135deg,#10b981,#059669)"><span>SL</span></div>
+                            <span class="status-pill yellow">Pending</span>
+                        </div>
+                        <h3>Sarah Lee</h3>
+                        <p class="payment-project">Mobile App Design</p>
+                        <div class="payment-amount">$3,800</div>
+                        <div class="payment-meta">
+                            <div><strong>Due Date:</strong> Apr 25, 2026</div>
+                            <div><strong>Method:</strong> Wire Transfer</div>
+                        </div>
+                        <div class="payment-actions">
+                            <button class="icon-btn"><i class="fas fa-clock"></i> Pending</button>
+                            <button class="icon-btn"><i class="fas fa-check"></i> Pay</button>
+                        </div>
+                    </div>
+
+                    <div class="payment-card">
+                        <div class="payment-header">
+                            <div class="student-av sm" style="background:linear-gradient(135deg,#f59e0b,#ef4444)"><span>MC</span></div>
+                            <span class="status-pill green">Paid</span>
+                        </div>
+                        <h3>Michael Chen</h3>
+                        <p class="payment-project">E-Commerce Platform</p>
+                        <div class="payment-amount">$4,500</div>
+                        <div class="payment-meta">
+                            <div><strong>Due Date:</strong> Apr 22, 2026</div>
+                            <div><strong>Method:</strong> Bank Transfer</div>
+                        </div>
+                        <div class="payment-actions">
+                            <button class="icon-btn"><i class="fas fa-receipt"></i> Receipt</button>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -581,16 +841,59 @@
                     <div><h1>Contracts</h1><p>Manage project contracts and agreements</p></div>
                     <button class="primary-btn"><i class="fas fa-file-contract"></i> Create Contract</button>
                 </div>
-                <div class="card-section" style="padding:0">
-                    <div class="courses-table-wrap">
-                        <table class="courses-table">
-                            <thead><tr><th>Contract ID</th><th>Professional</th><th>Project</th><th>Contract Value</th><th>Status</th><th>Signed Date</th><th>Actions</th></tr></thead>
-                            <tbody>
-                                <tr><td><strong>#CTR-2026-001</strong><p>Contract for services</p></td><td><div class="course-row-info"><div class="student-av xs" style="background:linear-gradient(135deg,#6366f1,#8b5cf6)"><span>AJ</span></div><strong>Alex Johnson</strong></div></td><td>E-Commerce Platform</td><td>$12,000</td><td><span class="status-pill green">Active</span></td><td>Apr 1, 2026</td><td><div class="row-actions"><button class="icon-btn"><i class="fas fa-download"></i></button><button class="icon-btn"><i class="fas fa-eye"></i></button></div></td></tr>
-                                <tr><td><strong>#CTR-2026-002</strong><p>Contract for services</p></td><td><div class="course-row-info"><div class="student-av xs" style="background:linear-gradient(135deg,#10b981,#059669)"><span>SL</span></div><strong>Sarah Lee</strong></div></td><td>Mobile App Design</td><td>$7,500</td><td><span class="status-pill green">Active</span></td><td>Apr 8, 2026</td><td><div class="row-actions"><button class="icon-btn"><i class="fas fa-download"></i></button><button class="icon-btn"><i class="fas fa-eye"></i></button></div></td></tr>
-                                <tr><td><strong>#CTR-2026-003</strong><p>Contract for services</p></td><td><div class="course-row-info"><div class="student-av xs" style="background:linear-gradient(135deg,#f59e0b,#ef4444)"><span>MC</span></div><strong>Michael Chen</strong></div></td><td>E-Commerce Platform</td><td>$9,800</td><td><span class="status-pill green">Active</span></td><td>Apr 5, 2026</td><td><div class="row-actions"><button class="icon-btn"><i class="fas fa-download"></i></button><button class="icon-btn"><i class="fas fa-eye"></i></button></div></td></tr>
-                            </tbody>
-                        </table>
+                <div class="contracts-grid">
+                    <div class="contract-card">
+                        <div class="contract-header">
+                            <div class="contract-id">#CTR-2026-001</div>
+                            <span class="status-pill green">Active</span>
+                        </div>
+                        <h3>Alex Johnson</h3>
+                        <p class="contract-project">E-Commerce Platform</p>
+                        <div class="contract-value">$12,000</div>
+                        <div class="contract-meta">
+                            <div><strong>Professional:</strong> Full-Stack Developer</div>
+                            <div><strong>Signed:</strong> Apr 1, 2026</div>
+                        </div>
+                        <div class="contract-actions">
+                            <button class="icon-btn"><i class="fas fa-download"></i> Download</button>
+                            <button class="icon-btn"><i class="fas fa-eye"></i> View</button>
+                        </div>
+                    </div>
+
+                    <div class="contract-card">
+                        <div class="contract-header">
+                            <div class="contract-id">#CTR-2026-002</div>
+                            <span class="status-pill green">Active</span>
+                        </div>
+                        <h3>Sarah Lee</h3>
+                        <p class="contract-project">Mobile App Design</p>
+                        <div class="contract-value">$7,500</div>
+                        <div class="contract-meta">
+                            <div><strong>Professional:</strong> UI/UX Designer</div>
+                            <div><strong>Signed:</strong> Apr 8, 2026</div>
+                        </div>
+                        <div class="contract-actions">
+                            <button class="icon-btn"><i class="fas fa-download"></i> Download</button>
+                            <button class="icon-btn"><i class="fas fa-eye"></i> View</button>
+                        </div>
+                    </div>
+
+                    <div class="contract-card">
+                        <div class="contract-header">
+                            <div class="contract-id">#CTR-2026-003</div>
+                            <span class="status-pill green">Active</span>
+                        </div>
+                        <h3>Michael Chen</h3>
+                        <p class="contract-project">E-Commerce Platform</p>
+                        <div class="contract-value">$9,800</div>
+                        <div class="contract-meta">
+                            <div><strong>Professional:</strong> Backend Engineer</div>
+                            <div><strong>Signed:</strong> Apr 5, 2026</div>
+                        </div>
+                        <div class="contract-actions">
+                            <button class="icon-btn"><i class="fas fa-download"></i> Download</button>
+                            <button class="icon-btn"><i class="fas fa-eye"></i> View</button>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -890,6 +1193,44 @@
         }
     `;
     document.head.appendChild(style);
+
+    // Hamburger Menu Toggle
+    const hamburgerMenu = document.getElementById('hamburgerMenu');
+    const sidebar = document.getElementById('sidebar');
+    const sidebarOverlay = document.getElementById('sidebarOverlay');
+
+    if (hamburgerMenu) {
+        hamburgerMenu.addEventListener('click', function() {
+            sidebar.classList.toggle('active');
+            sidebarOverlay.classList.toggle('active');
+        });
+    }
+
+    if (sidebarOverlay) {
+        sidebarOverlay.addEventListener('click', function() {
+            sidebar.classList.remove('active');
+            sidebarOverlay.classList.remove('active');
+        });
+    }
+
+    // Close sidebar when a link is clicked
+    document.querySelectorAll('.sidebar-nav a').forEach(link => {
+        link.addEventListener('click', function(e) {
+            // Don't close for external links
+            if (!this.href.includes('.html') || this.href.includes('#')) {
+                sidebar.classList.remove('active');
+                sidebarOverlay.classList.remove('active');
+            }
+        });
+    });
+
+    // Handle window resize
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 768) {
+            sidebar.classList.remove('active');
+            sidebarOverlay.classList.remove('active');
+        }
+    });
 </script>
 </body>
 </html>

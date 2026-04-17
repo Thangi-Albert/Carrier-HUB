@@ -8,9 +8,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <div class="page-loader" id="pageLoader">
+        <div class="loader-spinner">
+            <div class="spinner-ring"></div>
+            <div class="spinner-ring"></div>
+            <div class="spinner-ring"></div>
+            <p>Loading...</p>
+        </div>
+    </div>
+    
     <div class="dashboard-container">
         <!-- Sidebar Navigation -->
-        <aside class="sidebar">
+        <aside class="sidebar" id="sidebar">
             <div class="sidebar-header">
                 <div class="logo">
                     <i class="fas fa-rocket"></i>
@@ -21,7 +31,7 @@
             <nav class="sidebar-nav">
                 <ul>
                     <li><a href="#dashboard" class="active"><i class="fas fa-chart-line"></i> Dashboard</a></li>
-                    <li><a href="jobs-marketplace.html"><i class="fas fa-briefcase"></i> Browse Jobs</a></li>
+                   
                     <li><a href="#applications"><i class="fas fa-file-alt"></i> Applications</a></li>
                     <li><a href="#saved-jobs"><i class="fas fa-heart"></i> Saved Jobs</a></li>
                     <li><a href="#my-profile"><i class="fas fa-user-circle"></i> My Profile</a></li>
@@ -40,6 +50,9 @@
         <main class="main-content">
             <!-- Top Navigation Bar -->
             <header class="top-bar">
+                <button class="hamburger-menu" id="hamburgerMenu">
+                    <i class="fas fa-bars"></i>
+                </button>
                 <div class="search-container">
                     <i class="fas fa-search"></i>
                     <input type="search" placeholder="Search jobs, companies, or positions...">
@@ -309,17 +322,107 @@
                         <button class="filter-tab">Interviews (1)</button>
                     </div>
                 </div>
-                <div class="card-section" style="padding:0">
-                    <div class="courses-table-wrap">
-                        <table class="courses-table">
-                            <thead><tr><th>Position</th><th>Company</th><th>Applied Date</th><th>Status</th><th>Last Update</th><th>Actions</th></tr></thead>
-                            <tbody>
-                                <tr><td><div class="course-row-info"><div class="course-row-icon blue"><i class="fas fa-code"></i></div><div><strong>Senior Full-Stack Developer</strong><p>React + Node.js</p></div></div></td><td>TechCorp Inc</td><td>Apr 13, 2026</td><td><span class="status-pill green">Shortlisted</span></td><td>Interview scheduled for Apr 22</td><td><div class="row-actions"><button class="icon-btn"><i class="fas fa-eye"></i></button><button class="icon-btn"><i class="fas fa-calendar"></i></button></div></td></tr>
-                                <tr><td><div class="course-row-info"><div class="course-row-icon green"><i class="fas fa-palette"></i></div><div><strong>Product Designer - UX/UI</strong><p>Design System Lead</p></div></div></td><td>InnovateTech</td><td>Apr 11, 2026</td><td><span class="status-pill blue">Under Review</span></td><td>Team reviewing portfolio</td><td><div class="row-actions"><button class="icon-btn"><i class="fas fa-eye"></i></button></div></td></tr>
-                                <tr><td><div class="course-row-info"><div class="course-row-icon purple"><i class="fas fa-server"></i></div><div><strong>DevOps Engineer</strong><p>AWS & Kubernetes</p></div></div></td><td>CloudScale Systems</td><td>Apr 15, 2026</td><td><span class="status-pill yellow">Applied</span></td><td>Waiting for company review</td><td><div class="row-actions"><button class="icon-btn"><i class="fas fa-eye"></i></button></div></td></tr>
-                                <tr><td><div class="course-row-info"><div class="course-row-icon orange"><i class="fas fa-chart-bar"></i></div><div><strong>Backend Engineer</strong><p>Python & PostgreSQL</p></div></div></td><td>StartupXYZ</td><td>Apr 8, 2026</td><td><span class="status-pill gray">Not Selected</span></td><td>Position filled</td><td><div class="row-actions"><button class="icon-btn"><i class="fas fa-eye"></i></button><button class="icon-btn"><i class="fas fa-redo"></i></button></div></td></tr>
-                            </tbody>
-                        </table>
+                <div class="applications-grid">
+                    <div class="application-card">
+                        <div class="application-header">
+                            <div class="application-icon blue"><i class="fas fa-code"></i></div>
+                            <span class="status-pill green">Shortlisted</span>
+                        </div>
+                        <h3>Senior Full-Stack Developer</h3>
+                        <p class="application-description">React + Node.js</p>
+                        <div class="application-meta">
+                            <div><strong>Company:</strong> TechCorp Inc</div>
+                        </div>
+                        <div class="application-details">
+                            <div>
+                                <strong>Applied Date</strong>
+                                <span>Apr 13, 2026</span>
+                            </div>
+                            <div>
+                                <strong>Last Update</strong>
+                                <span>Interview scheduled for Apr 22</span>
+                            </div>
+                        </div>
+                        <div class="application-actions">
+                            <button class="icon-btn"><i class="fas fa-eye"></i> View</button>
+                            <button class="icon-btn"><i class="fas fa-calendar"></i> Schedule</button>
+                        </div>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-header">
+                            <div class="application-icon green"><i class="fas fa-palette"></i></div>
+                            <span class="status-pill blue">Under Review</span>
+                        </div>
+                        <h3>Product Designer - UX/UI</h3>
+                        <p class="application-description">Design System Lead</p>
+                        <div class="application-meta">
+                            <div><strong>Company:</strong> InnovateTech</div>
+                        </div>
+                        <div class="application-details">
+                            <div>
+                                <strong>Applied Date</strong>
+                                <span>Apr 11, 2026</span>
+                            </div>
+                            <div>
+                                <strong>Last Update</strong>
+                                <span>Team reviewing portfolio</span>
+                            </div>
+                        </div>
+                        <div class="application-actions">
+                            <button class="icon-btn"><i class="fas fa-eye"></i> View</button>
+                        </div>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-header">
+                            <div class="application-icon purple"><i class="fas fa-server"></i></div>
+                            <span class="status-pill yellow">Applied</span>
+                        </div>
+                        <h3>DevOps Engineer</h3>
+                        <p class="application-description">AWS & Kubernetes</p>
+                        <div class="application-meta">
+                            <div><strong>Company:</strong> CloudScale Systems</div>
+                        </div>
+                        <div class="application-details">
+                            <div>
+                                <strong>Applied Date</strong>
+                                <span>Apr 15, 2026</span>
+                            </div>
+                            <div>
+                                <strong>Last Update</strong>
+                                <span>Waiting for company review</span>
+                            </div>
+                        </div>
+                        <div class="application-actions">
+                            <button class="icon-btn"><i class="fas fa-eye"></i> View</button>
+                        </div>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-header">
+                            <div class="application-icon orange"><i class="fas fa-chart-bar"></i></div>
+                            <span class="status-pill gray">Not Selected</span>
+                        </div>
+                        <h3>Backend Engineer</h3>
+                        <p class="application-description">Python & PostgreSQL</p>
+                        <div class="application-meta">
+                            <div><strong>Company:</strong> StartupXYZ</div>
+                        </div>
+                        <div class="application-details">
+                            <div>
+                                <strong>Applied Date</strong>
+                                <span>Apr 8, 2026</span>
+                            </div>
+                            <div>
+                                <strong>Last Update</strong>
+                                <span>Position filled</span>
+                            </div>
+                        </div>
+                        <div class="application-actions">
+                            <button class="icon-btn"><i class="fas fa-eye"></i> View</button>
+                            <button class="icon-btn"><i class="fas fa-redo"></i> Reapply</button>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -589,10 +692,8 @@
             </section>
 
             <!-- ===================== INTERVIEWS PAGE ===================== -->
-            <section id="interviews" class="content-section page-section" style="display:none;">
-                <div class="page-header">
-                    <div><h1>Scheduled Interviews</h1><p>Manage your interview schedule</p></div>
-                </div>
+            <section id="interviews" class="content-section page-section" style="display:none; position: absolute; top:4em; padding: 20px;">
+                <h2 style="font-size: 16px; margin: 0 0 16px 0; color: var(--text-primary);">Scheduled Interviews</h2>
                 <div class="card-section">
                     <div class="section-header"><h2><i class="fas fa-video"></i> Upcoming Interviews</h2></div>
                     <div class="sessions-list">
@@ -625,10 +726,8 @@
             </section>
 
             <!-- ===================== NOTIFICATIONS PAGE ===================== -->
-            <section id="notifications" class="content-section page-section" style="display:none;">
-                <div class="page-header">
-                    <div><h1>Notifications</h1><p>Stay updated on your job search progress</p></div>
-                </div>
+            <section id="notifications" class="content-section page-section" style="display:none; position: absolute; top:4em; padding: 20px;">
+                <h2 style="font-size: 16px; margin: 0 0 16px 0; color: var(--text-primary);">Notifications</h2>
                 <div class="card-section">
                     <div class="activity-list">
                         <div class="activity-item">
@@ -760,6 +859,67 @@
             this.closest('.filter-tabs').querySelectorAll('.filter-tab').forEach(b => b.classList.remove('active'));
             this.classList.add('active');
         });
+    });
+
+    // Hamburger Menu Toggle
+    const hamburgerMenu = document.getElementById('hamburgerMenu');
+    const sidebar = document.getElementById('sidebar');
+    const sidebarOverlay = document.getElementById('sidebarOverlay');
+
+    if (hamburgerMenu) {
+        hamburgerMenu.addEventListener('click', function() {
+            sidebar.classList.toggle('active');
+            sidebarOverlay.classList.toggle('active');
+        });
+    }
+
+    if (sidebarOverlay) {
+        sidebarOverlay.addEventListener('click', function() {
+            sidebar.classList.remove('active');
+            sidebarOverlay.classList.remove('active');
+        });
+    }
+
+    // Close sidebar when a link is clicked
+    document.querySelectorAll('.sidebar-nav a').forEach(link => {
+        link.addEventListener('click', function(e) {
+            // Don't close for external links
+            if (!this.href.includes('.html') || this.href.includes('#')) {
+                sidebar.classList.remove('active');
+                sidebarOverlay.classList.remove('active');
+            }
+        });
+    });
+
+    // Handle window resize
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 768) {
+            sidebar.classList.remove('active');
+            sidebarOverlay.classList.remove('active');
+        }
+    });
+
+    // Page Loader functionality
+    const pageLoader = document.getElementById('pageLoader');
+    const navLinks = document.querySelectorAll('.sidebar-nav a');
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            // Show loader for external page navigation
+            if (this.href.includes('.html')) {
+                pageLoader.classList.add('active');
+            }
+        });
+    });
+
+    // Hide loader when page fully loads
+    window.addEventListener('load', function() {
+        pageLoader.classList.remove('active');
+    });
+
+    // Hide loader after a short delay for same-page navigation
+    document.addEventListener('DOMContentLoaded', function() {
+        pageLoader.classList.remove('active');
     });
 </script>
 </body>
