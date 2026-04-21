@@ -806,18 +806,144 @@
                 </div>
                 <div class="card-section">
                     <div class="section-header"><h2><i class="fas fa-receipt"></i> Transaction History</h2></div>
-                    <div class="courses-table-wrap">
-                        <table class="courses-table">
-                            <thead><tr><th>Student</th><th>Course / Session</th><th>Date</th><th>Amount</th><th>Status</th></tr></thead>
-                            <tbody>
-                                <tr><td><div class="course-row-info"><div class="student-av xs" style="background:linear-gradient(135deg,#10b981,#059669)"><span>MR</span></div><strong>Maria Rodriguez</strong></div></td><td>Advanced UI Design — Session 12</td><td>Apr 10, 2025</td><td class="amount-green">+$85</td><td><span class="status-pill green">Paid</span></td></tr>
-                                <tr><td><div class="course-row-info"><div class="student-av xs" style="background:linear-gradient(135deg,#6366f1,#8b5cf6)"><span>DC</span></div><strong>Daniel Chen</strong></div></td><td>JavaScript Basics — Session 8</td><td>Apr 10, 2025</td><td class="amount-green">+$85</td><td><span class="status-pill green">Paid</span></td></tr>
-                                <tr><td><div class="course-row-info"><div class="student-av xs" style="background:linear-gradient(135deg,#ec4899,#8b5cf6)"><span>SL</span></div><strong>Sophie Lee</strong></div></td><td>Node.js &amp; Express — Session 9</td><td>Apr 9, 2025</td><td class="amount-green">+$85</td><td><span class="status-pill green">Paid</span></td></tr>
-                                <tr><td><div class="course-row-info"><div class="student-av xs" style="background:linear-gradient(135deg,#3b82f6,#6366f1)"><span>JW</span></div><strong>James Wilson</strong></div></td><td>Advanced UI Design — Session 2</td><td>Apr 8, 2025</td><td class="amount-pending">+$85</td><td><span class="status-pill yellow">Pending</span></td></tr>
-                                <tr><td><div class="course-row-info"><div class="student-av xs" style="background:linear-gradient(135deg,#f59e0b,#ef4444)"><span>AT</span></div><strong>Alex Thompson</strong></div></td><td>SQL &amp; Databases — Session 5</td><td>Apr 7, 2025</td><td class="amount-pending">+$85</td><td><span class="status-pill yellow">Pending</span></td></tr>
-                                <tr><td><div class="course-row-info"><div class="student-av xs" style="background:linear-gradient(135deg,#14b8a6,#0ea5e9)"><span>RK</span></div><strong>Raj Kumar</strong></div></td><td>JavaScript Basics — Session 6</td><td>Apr 5, 2025</td><td class="amount-green">+$85</td><td><span class="status-pill green">Paid</span></td></tr>
-                            </tbody>
-                        </table>
+                    <div class="transactions-list">
+                        <div class="transaction-card">
+                            <div class="transaction-header">
+                                <div class="student-info">
+                                    <div class="student-av xs" style="background:linear-gradient(135deg,#10b981,#059669)"><span>MR</span></div>
+                                    <div>
+                                        <strong>Maria Rodriguez</strong>
+                                        <p>Advanced UI Design — Session 12</p>
+                                    </div>
+                                </div>
+                                <span class="status-pill green">Paid</span>
+                            </div>
+                            <div class="transaction-details">
+                                <div class="detail-item">
+                                    <span class="detail-label">Date</span>
+                                    <span class="detail-value">Apr 10, 2025</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Amount</span>
+                                    <span class="detail-value amount-green">+$85</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="transaction-card">
+                            <div class="transaction-header">
+                                <div class="student-info">
+                                    <div class="student-av xs" style="background:linear-gradient(135deg,#6366f1,#8b5cf6)"><span>DC</span></div>
+                                    <div>
+                                        <strong>Daniel Chen</strong>
+                                        <p>JavaScript Basics — Session 8</p>
+                                    </div>
+                                </div>
+                                <span class="status-pill green">Paid</span>
+                            </div>
+                            <div class="transaction-details">
+                                <div class="detail-item">
+                                    <span class="detail-label">Date</span>
+                                    <span class="detail-value">Apr 10, 2025</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Amount</span>
+                                    <span class="detail-value amount-green">+$85</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="transaction-card">
+                            <div class="transaction-header">
+                                <div class="student-info">
+                                    <div class="student-av xs" style="background:linear-gradient(135deg,#ec4899,#8b5cf6)"><span>SL</span></div>
+                                    <div>
+                                        <strong>Sophie Lee</strong>
+                                        <p>Node.js &amp; Express — Session 9</p>
+                                    </div>
+                                </div>
+                                <span class="status-pill green">Paid</span>
+                            </div>
+                            <div class="transaction-details">
+                                <div class="detail-item">
+                                    <span class="detail-label">Date</span>
+                                    <span class="detail-value">Apr 9, 2025</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Amount</span>
+                                    <span class="detail-value amount-green">+$85</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="transaction-card">
+                            <div class="transaction-header">
+                                <div class="student-info">
+                                    <div class="student-av xs" style="background:linear-gradient(135deg,#3b82f6,#6366f1)"><span>JW</span></div>
+                                    <div>
+                                        <strong>James Wilson</strong>
+                                        <p>Advanced UI Design — Session 2</p>
+                                    </div>
+                                </div>
+                                <span class="status-pill yellow">Pending</span>
+                            </div>
+                            <div class="transaction-details">
+                                <div class="detail-item">
+                                    <span class="detail-label">Date</span>
+                                    <span class="detail-value">Apr 8, 2025</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Amount</span>
+                                    <span class="detail-value amount-pending">+$85</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="transaction-card">
+                            <div class="transaction-header">
+                                <div class="student-info">
+                                    <div class="student-av xs" style="background:linear-gradient(135deg,#f59e0b,#ef4444)"><span>AT</span></div>
+                                    <div>
+                                        <strong>Alex Thompson</strong>
+                                        <p>SQL &amp; Databases — Session 5</p>
+                                    </div>
+                                </div>
+                                <span class="status-pill yellow">Pending</span>
+                            </div>
+                            <div class="transaction-details">
+                                <div class="detail-item">
+                                    <span class="detail-label">Date</span>
+                                    <span class="detail-value">Apr 7, 2025</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Amount</span>
+                                    <span class="detail-value amount-pending">+$85</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="transaction-card">
+                            <div class="transaction-header">
+                                <div class="student-info">
+                                    <div class="student-av xs" style="background:linear-gradient(135deg,#14b8a6,#0ea5e9)"><span>RK</span></div>
+                                    <div>
+                                        <strong>Raj Kumar</strong>
+                                        <p>JavaScript Basics — Session 6</p>
+                                    </div>
+                                </div>
+                                <span class="status-pill green">Paid</span>
+                            </div>
+                            <div class="transaction-details">
+                                <div class="detail-item">
+                                    <span class="detail-label">Date</span>
+                                    <span class="detail-value">Apr 5, 2025</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Amount</span>
+                                    <span class="detail-value amount-green">+$85</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -947,6 +1073,65 @@
                 </div>
             </section>
 
+            <!-- Create Course Modal -->
+            <div id="courseModal" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2>Create New Course</h2>
+                        <button class="modal-close" id="modalClose">&times;</button>
+                    </div>
+                    <form id="courseForm" class="modal-form">
+                        <div class="form-group">
+                            <label for="courseName">Course Name *</label>
+                            <input type="text" id="courseName" name="courseName" placeholder="Enter course name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="courseCategory">Category *</label>
+                            <select id="courseCategory" name="courseCategory" required>
+                                <option value="">Select a category</option>
+                                <option value="Web Dev">Web Development</option>
+                                <option value="Backend">Backend Development</option>
+                                <option value="Frontend">Frontend Development</option>
+                                <option value="Database">Database</option>
+                                <option value="DevOps">DevOps</option>
+                                <option value="Mobile">Mobile Development</option>
+                                <option value="AI/ML">AI & Machine Learning</option>
+                            </select>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="courseDuration">Duration (hours) *</label>
+                                <input type="number" id="courseDuration" name="courseDuration" placeholder="e.g., 24" min="1" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="courseIcon">Course Icon *</label>
+                                <select id="courseIcon" name="courseIcon" required>
+                                    <option value="">Select an icon</option>
+                                    <option value="fas fa-palette">Design</option>
+                                    <option value="fas fa-code">Code</option>
+                                    <option value="fas fa-server">Server</option>
+                                    <option value="fas fa-database">Database</option>
+                                    <option value="fab fa-react">React</option>
+                                    <option value="fab fa-js-square">JavaScript</option>
+                                    <option value="fas fa-code-branch">Git</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="courseDescription">Description *</label>
+                            <textarea id="courseDescription" name="courseDescription" placeholder="Describe your course" rows="4" required></textarea>
+                        </div>
+                        <div class="modal-actions">
+                            <button type="button" class="secondary-btn" id="modalCancel">Cancel</button>
+                            <button type="submit" class="primary-btn">Create Course</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Notification Toast -->
+            <div id="notification" class="notification"></div>
+
         </main>
     </div>
 
@@ -1029,6 +1214,111 @@
             sidebar.classList.remove('active');
             sidebarOverlay.classList.remove('active');
         }
+    });
+
+    // ==================== COURSE CREATION MODAL ====================
+    const courseModal = document.getElementById('courseModal');
+    const courseForm = document.getElementById('courseForm');
+    const modalClose = document.getElementById('modalClose');
+    const modalCancel = document.getElementById('modalCancel');
+    const notification = document.getElementById('notification');
+
+    // Get all Create Course buttons
+    const createCourseButtons = Array.from(document.querySelectorAll('.primary-btn')).filter(btn => 
+        btn.textContent.includes('Create')
+    );
+
+    // Open modal
+    createCourseButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+            courseModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    });
+
+    // Close modal
+    function closeModal() {
+        courseModal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+        courseForm.reset();
+    }
+
+    modalClose.addEventListener('click', closeModal);
+    modalCancel.addEventListener('click', closeModal);
+
+    // Close modal when clicking outside
+    courseModal.addEventListener('click', function(e) {
+        if (e.target === courseModal) {
+            closeModal();
+        }
+    });
+
+    // Show notification
+    function showNotification(message, type = 'success') {
+        notification.textContent = message;
+        notification.className = 'notification active ' + type;
+        setTimeout(() => {
+            notification.classList.remove('active');
+        }, 3000);
+    }
+
+    // Handle form submission
+    courseForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const courseName = document.getElementById('courseName').value;
+        const courseCategory = document.getElementById('courseCategory').value;
+        const courseDuration = document.getElementById('courseDuration').value;
+        const courseIcon = document.getElementById('courseIcon').value;
+        const courseDescription = document.getElementById('courseDescription').value;
+
+        // Create a color for the icon
+        const iconColors = {
+            'Web Dev': 'blue',
+            'Backend': 'green',
+            'Frontend': 'blue',
+            'Database': 'purple',
+            'DevOps': 'gray',
+            'Mobile': 'orange',
+            'AI/ML': 'purple'
+        };
+        const iconColor = iconColors[courseCategory] || 'blue';
+
+        // Create the course card HTML
+        const courseCard = document.createElement('div');
+        courseCard.className = 'course-card-item';
+        courseCard.innerHTML = `
+            <div class="course-card-header">
+                <div class="course-card-icon ${iconColor}"><i class="${courseIcon}"></i></div>
+                <span class="status-pill green">Published</span>
+            </div>
+            <h3>${courseName}</h3>
+            <div class="course-meta"><span class="course-badge ${iconColor}">${courseCategory}</span><span>${courseDuration} hours</span></div>
+            <p class="course-desc">Just now</p>
+            <div class="course-stats">
+                <div class="stat-item"><span class="stat-label">Students</span><span class="stat-value">0</span></div>
+                <div class="stat-item"><span class="stat-label">Revenue</span><span class="stat-value">—</span></div>
+                <div class="stat-item"><span class="stat-label">Progress</span><span class="stat-value">0%</span></div>
+            </div>
+            <div class="progress-bar-sm"><div class="progress-fill" style="width:0%"></div></div>
+            <div class="course-actions">
+                <button class="icon-btn"><i class="fas fa-edit"></i> Edit</button>
+                <button class="icon-btn"><i class="fas fa-chart-bar"></i> Analytics</button>
+                <button class="icon-btn"><i class="fas fa-ellipsis-v"></i></button>
+            </div>
+        `;
+
+        // Add course to the grid
+        const coursesGrid = document.querySelector('#my-courses .courses-grid');
+        if (coursesGrid) {
+            coursesGrid.insertBefore(courseCard, coursesGrid.firstChild);
+        }
+
+        // Show notification
+        showNotification('🎉 Course posted successfully!', 'success');
+
+        // Close modal
+        closeModal();
     });
 </script>
 </body>

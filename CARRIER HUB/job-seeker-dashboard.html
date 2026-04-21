@@ -9,14 +9,6 @@
 </head>
 <body>
     <div class="sidebar-overlay" id="sidebarOverlay"></div>
-    <div class="page-loader" id="pageLoader">
-        <div class="loader-spinner">
-            <div class="spinner-ring"></div>
-            <div class="spinner-ring"></div>
-            <div class="spinner-ring"></div>
-            <p>Loading...</p>
-        </div>
-    </div>
     
     <div class="dashboard-container">
         <!-- Sidebar Navigation -->
@@ -35,8 +27,6 @@
                     <li><a href="#applications"><i class="fas fa-file-alt"></i> Applications</a></li>
                     <li><a href="#saved-jobs"><i class="fas fa-heart"></i> Saved Jobs</a></li>
                     <li><a href="#my-profile"><i class="fas fa-user-circle"></i> My Profile</a></li>
-                    <li><a href="#resume"><i class="fas fa-file-pdf"></i> Resume/Portfolio</a></li>
-                    <li><a href="#skills"><i class="fas fa-award"></i> Skills & Endorsements</a></li>
                     <li><a href="#messages"><i class="fas fa-envelope"></i> Messages</a></li>
                     <li><a href="#interviews"><i class="fas fa-video"></i> Interviews</a></li>
                     <li><a href="#notifications"><i class="fas fa-bell"></i> Notifications</a></li>
@@ -66,7 +56,7 @@
                         <h1>Welcome back, Professional! </h1>
                         <p>Here's your job search overview and opportunities</p>
                     </div>
-                    <button class="primary-btn"><i class="fas fa-search"></i> Find Jobs</button>
+                    <button class="primary-btn" onclick="window.location.href='jobs-marketplace.html'"><i class="fas fa-search"></i> Find Jobs</button>
                 </div>
 
                 <!-- Stats Grid -->
@@ -284,7 +274,7 @@
             <section id="job-listings" class="content-section page-section" style="display:none;">
                 <div class="page-header">
                     <div><h1>Job Listings</h1><p>Browse and apply for available positions</p></div>
-                    <button class="primary-btn"><i class="fas fa-filter"></i> Advanced Search</button>
+                    <button class="primary-btn" onclick="window.location.href='jobs-marketplace.html'"><i class="fas fa-filter"></i> Advanced Search</button>
                 </div>
                 <div class="filter-bar">
                     <div class="filter-tabs">
@@ -554,16 +544,13 @@
                         </div>
                     </div>
                 </div>
-            </section>
 
-            <!-- ===================== RESUME/PORTFOLIO PAGE ===================== -->
-            <section id="resume" class="content-section page-section" style="display:none;">
-                <div class="page-header">
-                    <div><h1>Resume & Portfolio</h1><p>Upload and manage your resume and portfolio</p></div>
-                    <button class="primary-btn"><i class="fas fa-upload"></i> Upload New Resume</button>
-                </div>
-                <div class="card-section">
-                    <div class="section-header"><h2><i class="fas fa-file"></i> Your Documents</h2></div>
+                <!-- Resume & Portfolio Section -->
+                <div class="card-section" style="margin-top: 2em;">
+                    <div class="section-header">
+                        <h2><i class="fas fa-file"></i> Resume & Portfolio</h2>
+                        <button class="primary-btn" style="margin-left:auto"><i class="fas fa-upload"></i> Upload New Resume</button>
+                    </div>
                     <div class="courses-grid">
                         <div class="course-card">
                             <div class="course-header">
@@ -600,16 +587,13 @@
                         </div>
                     </div>
                 </div>
-            </section>
 
-            <!-- ===================== SKILLS PAGE ===================== -->
-            <section id="skills" class="content-section page-section" style="display:none;">
-                <div class="page-header">
-                    <div><h1>Skills & Endorsements</h1><p>Manage your skills and receive endorsements from professionals</p></div>
-                    <button class="primary-btn"><i class="fas fa-plus"></i> Add Skill</button>
-                </div>
+                <!-- Skills & Endorsements Section -->
                 <div class="card-section">
-                    <div class="section-header"><h2><i class="fas fa-award"></i> Your Skills (12)</h2></div>
+                    <div class="section-header">
+                        <h2><i class="fas fa-award"></i> Skills & Endorsements (12)</h2>
+                        <button class="primary-btn" style="margin-left:auto"><i class="fas fa-plus"></i> Add Skill</button>
+                    </div>
                     <div class="courses-grid">
                         <div class="course-card">
                             <div class="course-header">
@@ -692,8 +676,10 @@
             </section>
 
             <!-- ===================== INTERVIEWS PAGE ===================== -->
-            <section id="interviews" class="content-section page-section" style="display:none; position: absolute; top:4em; padding: 20px;">
-                <h2 style="font-size: 16px; margin: 0 0 16px 0; color: var(--text-primary);">Scheduled Interviews</h2>
+            <section id="interviews" class="content-section page-section" style="display:none; position: absolute; top: 5em;">
+                <div class="page-header">
+                    <div><h1>Interviews</h1><p>View and manage your scheduled interviews</p></div>
+                </div>
                 <div class="card-section">
                     <div class="section-header"><h2><i class="fas fa-video"></i> Upcoming Interviews</h2></div>
                     <div class="sessions-list">
@@ -726,8 +712,10 @@
             </section>
 
             <!-- ===================== NOTIFICATIONS PAGE ===================== -->
-            <section id="notifications" class="content-section page-section" style="display:none; position: absolute; top:4em; padding: 20px;">
-                <h2 style="font-size: 16px; margin: 0 0 16px 0; color: var(--text-primary);">Notifications</h2>
+            <section id="notifications" class="content-section page-section" style="display:none;">
+                <div class="page-header">
+                    <div><h1>Notifications</h1><p>Stay updated with your latest activities and opportunities</p></div>
+                </div>
                 <div class="card-section">
                     <div class="activity-list">
                         <div class="activity-item">
@@ -825,8 +813,6 @@
         'applications': document.getElementById('applications'),
         'saved-jobs': document.getElementById('saved-jobs'),
         'my-profile': document.getElementById('my-profile'),
-        'resume': document.getElementById('resume'),
-        'skills': document.getElementById('skills'),
         'messages': document.getElementById('messages'),
         'interviews': document.getElementById('interviews'),
         'notifications': document.getElementById('notifications'),
@@ -897,29 +883,6 @@
             sidebar.classList.remove('active');
             sidebarOverlay.classList.remove('active');
         }
-    });
-
-    // Page Loader functionality
-    const pageLoader = document.getElementById('pageLoader');
-    const navLinks = document.querySelectorAll('.sidebar-nav a');
-
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            // Show loader for external page navigation
-            if (this.href.includes('.html')) {
-                pageLoader.classList.add('active');
-            }
-        });
-    });
-
-    // Hide loader when page fully loads
-    window.addEventListener('load', function() {
-        pageLoader.classList.remove('active');
-    });
-
-    // Hide loader after a short delay for same-page navigation
-    document.addEventListener('DOMContentLoaded', function() {
-        pageLoader.classList.remove('active');
     });
 </script>
 </body>

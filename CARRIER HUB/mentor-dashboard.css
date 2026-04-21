@@ -114,83 +114,6 @@ body {
     50% { transform: translateY(-5px); }
 }
 
-/* ========== PAGE LOADER - FANCY LOADING EFFECT ========== */
-.page-loader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba(26, 61, 92, 0.95), rgba(30, 103, 167, 0.95));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 9999;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.4s ease, visibility 0.4s ease;
-}
-
-.page-loader.active {
-    opacity: 1;
-    visibility: visible;
-}
-
-.loader-spinner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 24px;
-}
-
-.spinner-ring {
-    width: 60px;
-    height: 60px;
-    border: 4px solid rgba(255, 255, 255, 0.3);
-    border-top: 4px solid #ffffff;
-    border-radius: 50%;
-    animation: spin 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-    position: absolute;
-}
-
-.spinner-ring:nth-child(1) {
-    width: 80px;
-    height: 80px;
-    animation-delay: -0.45s;
-}
-
-.spinner-ring:nth-child(2) {
-    width: 65px;
-    height: 65px;
-    animation-delay: -0.3s;
-}
-
-.spinner-ring:nth-child(3) {
-    width: 50px;
-    height: 50px;
-    animation-delay: -0.15s;
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-.loader-spinner p {
-    position: absolute;
-    bottom: -50px;
-    color: white;
-    font-size: 14px;
-    font-weight: 500;
-    letter-spacing: 2px;
-    animation: fadeInOut 1.5s ease-in-out infinite;
-}
-
-@keyframes fadeInOut {
-    0%, 100% { opacity: 0.5; }
-    50% { opacity: 1; }
-}
-
 .sidebar-nav ul {
     list-style: none;
 }
@@ -203,12 +126,12 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
-    padding: 6px 14px;
+    padding: 12px 20px;
     color: rgba(255, 255, 255, 0.85);
     text-decoration: none;
     border-radius: 6px;
     transition: all 0.3s ease;
-    font-size: 12px;
+    font-size: 15px;
     font-weight: 500;
 }
 
@@ -962,6 +885,12 @@ body {
 
 /* Responsive Design */
 @media (max-width: 1200px) {
+    /* Earnings Chart - Large Tablets */
+    .chart-bars { gap: 14px; }
+    .chart-bar-wrap { gap: 6px; }
+    .bar-tip { font-size: 13px; }
+    .bar-label { font-size: 12px; }
+    
     .courses-grid {
         grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     }
@@ -2304,6 +2233,55 @@ textarea.form-input { resize: vertical; font-family: inherit; }
     position: relative; cursor: pointer; transition: all 0.3s; min-height: 20px;
 }
 .chart-bar:hover { background: linear-gradient(180deg, rgba(99,102,241,0.35), rgba(99,102,241,0.15)); }
+.bar-tip { position: absolute; top: -28px; left: 50%; transform: translateX(-50%); font-size: 12px; font-weight: 700; color: var(--primary-color); background: transparent; }
+.bar-label { font-size: 12px; color: var(--text-secondary); font-weight: 600; }
+.active-bar { background: linear-gradient(180deg, rgba(99,102,241,0.4), rgba(99,102,241,0.2)); }
+
+/* Transaction Cards - Responsive Alternative to Table */
+.transactions-list { display: flex; flex-direction: column; gap: 12px; }
+.transaction-card {
+    background: white; border: 1px solid var(--border-color); border-radius: 8px; padding: 16px;
+    transition: all 0.2s ease; box-shadow: var(--shadow-sm);
+}
+.transaction-card:hover { box-shadow: var(--shadow-md); border-color: var(--primary-color); }
+.transaction-header {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 12px;
+}
+.student-info {
+    display: flex; align-items: center; gap: 12px; flex: 1; min-width: 0;
+}
+.student-info strong { display: block; font-size: 14px; color: var(--text-primary); margin-bottom: 2px; }
+.student-info p { font-size: 13px; color: var(--text-secondary); margin: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.transaction-details {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; padding-top: 12px; border-top: 1px solid var(--border-color);
+}
+.detail-item { display: flex; flex-direction: column; gap: 4px; }
+.detail-label { font-size: 11px; color: var(--text-secondary); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+.detail-value { font-size: 14px; font-weight: 600; color: var(--text-primary); }
+.amount-green { color: var(--success-color); }
+.amount-pending { color: var(--warning-color); }
+
+/* Course Progress Cards - Responsive Alternative to Table */
+.courses-list { display: flex; flex-direction: column; gap: 12px; }
+.course-progress-card {
+    background: white; border: 1px solid var(--border-color); border-radius: 8px; padding: 16px;
+    transition: all 0.2s ease; box-shadow: var(--shadow-sm);
+}
+.course-progress-card:hover { box-shadow: var(--shadow-md); border-color: var(--primary-color); }
+.card-header {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 12px;
+}
+.course-info {
+    display: flex; align-items: center; gap: 12px; flex: 1; min-width: 0;
+}
+.course-info h3 { display: block; font-size: 14px; color: var(--text-primary); margin: 0 0 2px 0; }
+.course-info p { font-size: 13px; color: var(--text-secondary); margin: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.card-details {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; padding-top: 12px; padding-bottom: 12px; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);
+}
+.card-actions {
+    display: flex; gap: 8px; justify-content: flex-end; align-items: center;
+}
 
 /* ========== MODAL STYLES ========== */
 .modal {
@@ -2554,6 +2532,182 @@ textarea.form-input { resize: vertical; font-family: inherit; }
 .danger-card { border-color: rgba(239,68,68,0.2); }
 .danger-card h3 { color: #ef4444; }
 
+/* ============== MODAL STYLES ============== */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal.active {
+    display: flex;
+    opacity: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: var(--card-bg);
+    padding: 32px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-lg);
+    width: 90%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+    animation: slideInUp 0.3s ease;
+}
+
+@keyframes slideInUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.modal-header h2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.modal-close:hover {
+    background-color: var(--light-bg);
+    color: var(--text-primary);
+}
+
+.modal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.modal-form .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.modal-form .form-group label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.modal-form .form-group input,
+.modal-form .form-group select,
+.modal-form .form-group textarea {
+    padding: 10px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: inherit;
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+}
+
+.modal-form .form-group input:focus,
+.modal-form .form-group select:focus,
+.modal-form .form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border-color);
+}
+
+.modal-actions button {
+    flex: 1;
+}
+
+/* ============== NOTIFICATION TOAST ============== */
+.notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: white;
+    padding: 16px 20px;
+    border-radius: 8px;
+    box-shadow: var(--shadow-lg);
+    z-index: 3000;
+    min-width: 300px;
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-left: 4px solid var(--success-color);
+}
+
+.notification.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.notification.success {
+    border-left-color: var(--success-color);
+    color: var(--success-color);
+}
+
+.notification.error {
+    border-left-color: var(--danger-color);
+    color: var(--danger-color);
+}
+
+.notification.warning {
+    border-left-color: var(--warning-color);
+    color: var(--warning-color);
+}
+
 /* ========== SESSION TIME BLOCK IN SESSIONS PAGE ========== */
 .sessions-list .session-card { background: white; border: 1px solid var(--border-color); border-radius: 12px; padding: 20px; margin-bottom: 12px; }
 .sessions-list .session-card:last-child { margin-bottom: 0; }
@@ -2580,6 +2734,23 @@ textarea.form-input { resize: vertical; font-family: inherit; }
     .candidates-grid { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; padding: 16px; }
     .payments-grid { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; padding: 16px; }
     .contracts-grid { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; padding: 16px; }
+    
+    /* Earnings Page - Medium Tablet Responsive */
+    .stats-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; }
+    .chart-bars { height: 180px; gap: 13px; }
+    .filter-tabs { overflow-x: auto; -webkit-overflow-scrolling: touch; flex-wrap: nowrap; }
+    .transaction-card { padding: 14px; }
+    .transaction-header { gap: 12px; }
+    .transaction-details { grid-template-columns: repeat(2, 1fr); }
+    .detail-label { font-size: 10px; }
+    .detail-value { font-size: 13px; }
+    
+    /* Course Cards - Medium Tablet */
+    .course-progress-card { padding: 14px; }
+    .card-header { gap: 12px; }
+    .card-details { grid-template-columns: repeat(3, 1fr); gap: 10px; padding-top: 10px; padding-bottom: 10px; }
+    .course-info h3 { font-size: 13px; }
+    .course-info p { font-size: 12px; }
     .course-card-item { padding: 20px; }
     .assignment-card { padding: 20px; }
     .project-card { padding: 20px; }
@@ -2634,6 +2805,43 @@ textarea.form-input { resize: vertical; font-family: inherit; }
     .courses-grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; padding: 12px; }
     .assignments-grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; padding: 12px; }
     .projects-grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; padding: 12px; }
+
+    /* Modal responsive */
+    .modal-content {
+        width: 95%;
+        max-width: 90vw;
+        padding: 20px;
+    }
+
+    .modal-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .modal-close {
+        align-self: flex-end;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-actions {
+        flex-direction: column;
+    }
+
+    .modal-actions button {
+        width: 100%;
+    }
+
+    /* Notification responsive */
+    .notification {
+        left: 10px;
+        right: 10px;
+        min-width: auto;
+        max-width: calc(100% - 20px);
+    }
     .candidates-grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; padding: 12px; }
     .payments-grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; padding: 12px; }
     .contracts-grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; padding: 12px; }
@@ -2690,6 +2898,36 @@ textarea.form-input { resize: vertical; font-family: inherit; }
     .mini-progress { min-width: 60px; }
     .row-actions { gap: 2px; }
     .row-actions .icon-btn { padding: 4px; font-size: 12px; }
+    
+    /* Transaction Cards - Tablet */
+    .transaction-card { padding: 14px; }
+    .student-info { gap: 10px; }
+    .student-info strong { font-size: 13px; }
+    .student-info p { font-size: 12px; }
+    .transaction-details { gap: 10px; padding-top: 10px; }
+    .detail-label { font-size: 10px; }
+    .detail-value { font-size: 12px; }
+    
+    /* Course Cards - Tablet */
+    .course-progress-card { padding: 14px; }
+    .card-header { gap: 12px; }
+    .card-details { grid-template-columns: repeat(2, 1fr); gap: 10px; padding-top: 10px; padding-bottom: 10px; }
+    .course-info h3 { font-size: 13px; }
+    .course-info p { font-size: 12px; }
+    
+    /* Earnings Page - Tablet Responsive */
+    .stats-grid { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+    .stat-card { padding: 18px; }
+    .stat-icon { font-size: 28px; }
+    .stat-number { font-size: 24px; }
+    .stat-content h3 { font-size: 13px; }
+    
+    /* Earnings Chart - Tablet */
+    .earnings-chart { padding: 16px 0 0; }
+    .chart-bars { height: 160px; gap: 12px; padding: 0 12px 0; }
+    .chart-bar-wrap { flex: 1; }
+    .bar-tip { font-size: 12px; padding: 4px; }
+    .bar-label { font-size: 12px; }
 }
 
 @media (max-width: 768px) {
@@ -2737,11 +2975,19 @@ textarea.form-input { resize: vertical; font-family: inherit; }
     .filter-select { width: 100%; }
     
     /* Stats */
-    .stats-grid { gap: 12px; }
+    .stats-grid { gap: 12px; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); }
     .stat-card { flex-direction: column; align-items: center; text-align: center; padding: 16px; }
     .stat-icon { font-size: 24px; }
     .stat-number { font-size: 22px; }
     .stat-content h3 { font-size: 12px; }
+    
+    /* Earnings Chart - Mobile */
+    .earnings-chart { padding: 12px 0 0; }
+    .chart-bars { height: 140px; gap: 8px; padding: 0 8px 0; }
+    .chart-bar { min-height: 16px; }
+    .chart-bar-wrap { flex: 1; }
+    .bar-tip { font-size: 10px; padding: 3px; }
+    .bar-label { font-size: 10px; }
     
     /* Buttons */
     .primary-btn, .secondary-btn { padding: 8px 14px; font-size: 12px; }
@@ -2751,6 +2997,27 @@ textarea.form-input { resize: vertical; font-family: inherit; }
     .course-card { padding: 14px; }
     .student-card { padding: 16px; }
     .card-section { padding: 12px; margin-bottom: 12px; }
+    
+    /* Transaction Cards - Mobile */
+    .transaction-card { padding: 12px; }
+    .transaction-header { flex-direction: column; gap: 8px; }
+    .student-info { gap: 8px; }
+    .student-info strong { font-size: 12px; }
+    .student-info p { font-size: 11px; }
+    .transaction-details { grid-template-columns: 1fr; gap: 8px; padding-top: 8px; }
+    .detail-label { font-size: 10px; }
+    .detail-value { font-size: 11px; }
+    .status-pill { font-size: 10px; padding: 4px 8px; }
+    
+    /* Course Cards - Mobile */
+    .course-progress-card { padding: 12px; }
+    .card-header { flex-direction: column; gap: 8px; align-items: flex-start; }
+    .course-info h3 { font-size: 12px; }
+    .course-info p { font-size: 11px; }
+    .card-details { grid-template-columns: 1fr; gap: 8px; padding-top: 8px; padding-bottom: 8px; }
+    .detail-label { font-size: 10px; }
+    .detail-value { font-size: 11px; }
+    .card-actions { gap: 4px; }
     
     /* Tables - Enhance scrollability */
     .courses-table-wrap { 
